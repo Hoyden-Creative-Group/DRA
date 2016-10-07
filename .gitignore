@@ -1,0 +1,13 @@
+# Ignore everything in this directory
+/*
+
+# Except these files
+!.gitignore
+!wp-config.php
+!README.md
+
+# Except these directories
+!wp-content/
+
+# Always ignore these files no matter at what level
+.DS_Store
