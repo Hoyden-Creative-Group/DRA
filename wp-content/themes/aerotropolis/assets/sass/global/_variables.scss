@@ -1,0 +1,43 @@
+/**
+ * @package Aerotropolis Theme Support Plugin
+ * @author  Bryan Stanley <bstanley.0811@gmail.com>
+ *
+ * SASS Variables
+ */
+
+
+/* Paths */
+/********************************************************/
+$font-base-path: '../fonts';
+$image-base-path: '../img';
+$desktop-images: '#{$image-base-path}/desktop';
+
+
+/* Fonts */
+/********************************************************/
+$body-font: unquote("latoregular");
+$font-arial: unquote("Arial, Helvetica, sans-serif");
+$font-lato: unquote("latoregular");
+$font-latoBold: unquote("latobold");
+$font-latoHeavy: unquote("latoheavy");
+$font-latoBlack: unquote("latoblack");
+
+
+/* Layout */
+/********************************************************/
+$maxWidth: 1270px;
+$minWidth: 1155px;
+
+
+/* Colors */
+/********************************************************/
+$darkBlue: #0669A3;
+$lightBlue: #37A2D8;
+$darkGrey: #4B4B4B;
+$grey: #7D7D7C;
+$lightGrey: #AFAFAF;
+
+
+/* Z Indices */
+/********************************************************/
+$zIndex-stickyMenu: 100;

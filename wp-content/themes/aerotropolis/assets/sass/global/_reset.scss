@@ -1,0 +1,86 @@
+/**
+ * @package Aerotropolis Theme Support Plugin
+ * @author  Bryan Stanley <bstanley.0811@gmail.com>
+ *
+ * CSS Reset
+ */
+
+/* Resets with HTML5 */
+/********************************************************/
+html, body, div, span, button, input, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video, a img {
+
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: none;
+	font-size: 100%;
+	font: inherit;
+	@include box-sizing( border-box );
+}
+
+img, button, input, textarea{ vertical-align: top; }
+img{line-height: 0px;}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, small { display: block; }
+ol, ul { list-style: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+
+
+/* HTML Elements */
+/********************************************************/
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+html, body{ height: 100%; }
+body {
+	font-family: $body-font;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	position: relative;
+}
+
+object { outline: none; }
+strong{ font-weight: bold; }
+em{ font-style: italic; }
+a{ text-decoration: none; }
+sup, sub { height: 0; line-height: 1; vertical-align: baseline; _vertical-align: bottom; position: relative; font-size: .8em }
+sup { bottom: .4em; }
+sub { top: .5ex; }
+strong{ font-weight: bold; }
+h1,h2,h3,h4{ font-weight: normal; }
+p{ margin: 15px 0; }
+* > p:first-child,
+* > h1:first-child,
+* > h2:first-child,
+* > h3:first-child { margin-top: 0px; }
+button{ cursor: pointer; background: none; border:none; }
+ul{
+
+	&.inline{
+		font-size: 0px;
+
+		li{
+			font-family: $body-font;
+			display: inline-block;
+		}
+	}
+
+	&.list{
+		li{
+			display: block;
+		}
+	}
+
+	&.bulleted{
+		list-style: disc;
+	}
+}
+ol{
+	list-style: decimal;
+	padding-left: 30px;
+}

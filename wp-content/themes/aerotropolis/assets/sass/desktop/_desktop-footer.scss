@@ -1,0 +1,155 @@
+/**
+ * @package Aerotropolis Theme Support Plugin
+ * @author  Bryan Stanley <bstanley.0811@gmail.com>
+ *
+ * Desktop footer elements
+ */
+
+// --- Footer Contact Widgets. ------------------- //
+
+.content-bottom-widgets{
+  height: 350px;
+  background: url( '#{$desktop-images}/clouds.jpg' ) no-repeat center center;
+  background-size: cover;
+
+  .widget-area {
+    display: flex;
+    justify-content: space-between;
+    max-width: $maxWidth;
+    margin: 0px auto;
+    align-items: center;
+    height: 100%;
+  }
+
+  .widget {
+    background: rgba(#FFFFFF, .5);
+    width: 100%;
+    height: 250px;
+    max-width: 560px;
+    padding: 35px 50px;
+
+    &.divider {
+      width: 300px;
+      background: url( '#{$desktop-images}/plane@2x.png' ) no-repeat center center;
+      background-size: 129px 55px;
+    }
+  }
+
+  .aero_newsletter {
+    .text1, .text2 {
+      color: $darkBlue;
+      font: 32px/45px $font-latoBold;
+      margin: 0px;
+    }
+    form {
+      margin-top: 60px;
+      display: flex;
+    }
+    input[type=text] {
+      flex: 2 2 30px;
+      padding: 7px 15px;
+      font-size: 16px;
+      color: $darkGrey;
+      width: 300px;
+      @include input-placeholder {
+        color: $darkBlue;
+      }
+    }
+    input[type=submit] {
+      flex: 1 1 0;
+      cursor: pointer;
+
+      @include button(12px 30px, null, 16px, $font-latoBold, #FFFFFF, #77B1D8);
+
+      &:hover{
+        background-color: $darkBlue;
+      }
+    }
+  }
+
+  .aero_more_information {
+    .phone-title, .email-title{
+      color: $darkBlue;
+      margin: 0;
+      font: 16px/25px $font-latoBold;
+    }
+    a.phone, a.email{
+      font: 32px/32px $font-latoBold;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .button{
+      @include button(12px 30px, null, 16px, $font-latoBold, #FFFFFF, #77B1D8);
+      display: block;
+      margin-top: 16px;
+
+      &:hover{
+        background-color: $darkBlue;
+      }
+    }
+  }
+}
+
+
+
+
+// --- Footer. ------------------- //
+
+
+
+.site-footer{
+  background: #0669A3;
+  padding: 35px 15px 85px 15px;
+}
+
+.footer-links, .footer-social{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.footer-links{
+  width: 652px;
+
+  li {
+    display: inline-block;
+    width: 293px;
+    margin-right: 30px;
+
+    a{
+      font: 22px/36px $font-latoBlack;
+      text-transform: uppercase;
+      color: #fff;
+
+      &:hover{
+        color: #989898;
+      }
+    }
+  }
+}
+
+.footer-social{
+  width: 295px;
+
+  .search-form{
+    padding: 0;
+  }
+
+  .social-links{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+
+    a{
+      color: #FFF;
+      font-size: 40px;
+    }
+  }
+
+  .copyright{
+    margin-top: 35px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+  }
+}

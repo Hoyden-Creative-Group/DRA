@@ -1,0 +1,89 @@
+/**
+ * @package Aerotropolis Theme Support Plugin
+ * @author  Bryan Stanley <bstanley.0811@gmail.com>
+ *
+ * Global common buttons
+ */
+
+@mixin flatButton($color) {
+  background: $color;
+  color: #FFFFFF;
+  border: solid 2px $color;
+
+  &:hover{
+    background: #FFFFFF;
+    color: $color;
+  }
+}
+
+@mixin outlineButton($color) {
+  background: #FFFFFF;
+  color: $color;
+  border: solid 2px $color;
+
+  &:hover{
+    background: $color;
+    color: #FFFFFF;
+  }
+}
+
+@mixin button($padding, $fontWeight, $fontSize, $font, $color, $backgroundColor){
+  display: inline-block;
+  text-align: center;
+  padding: $padding;
+  text-transform: uppercase;
+  font: $fontWeight #{$fontSize}/#{$fontSize} $font;
+  color: $color;
+  background: $backgroundColor;
+  transition: background-color .1s ease-in-out, border .1s ease-in-out, color .1s ease-in-out;
+}
+
+.button{
+
+  @include button(
+    10px 35px,
+    bold,
+    22px,
+    $font-latoBold,
+    #CCCCCC,
+    #FFFFFF
+  );
+
+  &.flat{
+
+    &.lightBlue{
+      @include flatButton(#77B1D8);
+    }
+
+    &.blue{
+      @include flatButton($darkBlue);
+    }
+
+    &.grey{
+      @include flatButton($grey);
+    }
+
+    &.darkgrey{
+      @include flatButton($darkGrey);
+    }
+  }
+
+  &.outline{
+
+    &.lightBlue{
+      @include outlineButton(#77B1D8);
+    }
+
+    &.blue{
+      @include outlineButton($darkBlue);
+    }
+
+    &.grey{
+      @include outlineButton($grey);
+    }
+
+    &.darkgrey{
+      @include outlineButton($darkGrey);
+    }
+  }
+}

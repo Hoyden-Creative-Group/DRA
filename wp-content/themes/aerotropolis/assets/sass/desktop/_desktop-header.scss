@@ -1,0 +1,146 @@
+/**
+ * @package Aerotropolis Theme Support Plugin
+ * @author  Bryan Stanley <bstanley.0811@gmail.com>
+ *
+ * Desktop header elements
+ */
+
+
+// --- Main Navigation. ------------------- //
+
+.main-nav{
+  background: #4B4B4B;
+
+  &.sticky{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    z-index: $zIndex-stickyMenu;
+
+    .buildings{
+      opacity: 0;
+      transform: translate3d(-155px, 0, 0);
+    }
+
+    .text{
+      transform: translate3d(-155px, 0, 0);
+    }
+  }
+}
+
+.aerotropolis-logo{
+  width: 373px;
+  height: 138px;
+  position: absolute;
+  left: 0px;
+  top: -48px;
+  z-index: 1;
+
+  .buildings{
+    @include retina-sprite( 'logo-buildings', desktop );
+    transition: transform .5s ease-in-out, opacity .5s ease-in-out;
+  }
+
+  .text{
+    @include retina-sprite( 'logo-text', desktop );
+    margin-top: 30px;
+    transition: transform .5s ease-in-out;
+  }
+}
+
+
+// --- Secondary Navigation. ------------------- //
+
+.menu-secondary-main-menu-container{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+ul.secondary_menu{
+  font-size: 0px;
+  text-align: right;
+
+  li{
+    font: 14px/14px $font-latoBold;
+    display: inline-block;
+
+    a {
+      color: #7D7D7C;
+      display: block;
+      padding: 21px 18px;
+
+      &:hover{
+        color: #4B4B4B;
+      }
+    }
+  }
+}
+
+.secondary-nav{
+  .search-form {
+    .search-field{
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .search-submit{
+      color: #7D7D7C;
+      background: none;
+    }
+
+    &:hover {
+      .search-field {
+        width: 300px;
+        height: auto;
+        opacity: 1;
+        transition: opacity .5s ease-in-out;
+      }
+      .search-submit {
+        background: #7D7D7C;
+        color: #FFFFFF;
+      }
+    }
+  }
+}
+
+
+/* Search Form */
+/********************************************************/
+
+.search-form{
+  font-size: 0px;
+  padding: 10px;
+  text-align: right;
+  display: inline-block;
+  vertical-align: middle;
+
+  .search-field{
+    border: solid 1px #7D7D7C;
+    color: #7D7D7C;
+    display: inline-block;
+    font: 16px/28px $font-latoBold;
+    padding: 0 15px;
+    text-align: left;
+    width: 265px;
+  }
+
+  .search-submit{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: #7D7D7C;
+    color: #FFFFFF;
+    font-size: 17px;
+    transition: background .2s ease-in-out;
+  }
+
+  &:hover {
+    .search-submit {
+      background: #4B4B4B;
+      color: #FFFFFF;
+    }
+  }
+}

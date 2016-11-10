@@ -1,0 +1,157 @@
+// --- Required Styles. ------------------- //
+
+.sf-menu, .sf-menu * {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.sf-menu {
+	font-size: 0px;
+
+	li {
+		position: relative;
+	}
+
+	ul {
+		position: absolute;
+		display: none;
+		top: 100%;
+		left: 0;
+		z-index: 99;
+	}
+
+	&> li {
+		display: inline-block;
+	}
+
+	li:hover > ul,
+	li.sfHover > ul {
+		display: block;
+	}
+
+	a {
+		display: block;
+		position: relative;
+		font-size: 12px;
+	}
+
+	ul ul {
+		top: 0;
+		left: 100%;
+	}
+}
+
+// --- End Required Styles. ------------------- //
+
+
+
+
+.sf-menu {
+	margin-bottom: 1em;
+	text-align: right;
+
+	a {
+		transition: none;
+	}
+
+	ul {
+		// box-shadow: 2px 2px 6px rgba(0,0,0,.2);
+		min-width: 12em; /* allow long menu items to determine submenu width */
+		*width: 12em; /* no auto sub width for IE7, see white-space comment below */
+		text-align: left;
+		padding: 20px 0;
+		background: #F5F5F5;
+
+		li {
+			background: #F5F5F5;
+
+			a {
+				font-size: 16px;
+				padding: 7px 15px;
+				text-transform: none;
+
+				&:hover {
+					color: #1F1F1F;
+				}
+			}
+
+		}
+
+	}
+
+	li {
+		white-space: nowrap; /* no need for Supersubs plugin */
+		*white-space: normal; /* ...unless you support IE7 (let it wrap) */
+		-webkit-transition: background .2s;
+		transition: background .2s;
+
+		&:hover,
+		&.sfHover {
+			background: #F5F5F5;
+			/* only transition out, not in */
+			-webkit-transition: none;
+			transition: none;
+
+			a {
+				color: #4B4B4B;
+			}
+		}
+
+		ul{}
+	}
+
+	a {
+		padding: 43px 12px 15px 12px;
+		text-decoration: none;
+		zoom: 1; /* IE7 */
+		color: #FFFFFF;
+		font: 18px/18px $font-latoHeavy;
+		text-transform: uppercase;
+	}
+}
+
+// arrows
+// .sf-arrows .sf-with-ul {
+// 	padding-right: 2.5em;
+// 	*padding-right: 1em; /* no CSS arrows for IE7 (lack pseudo-elements) */
+
+// 	&:after {
+// 		content: '';
+// 		position: absolute;
+// 		top: 50%;
+// 		right: 1em;
+// 		margin-top: -3px;
+// 		height: 0;
+// 		width: 0;
+// 		/* order of following 3 rules important for fallbacks to work */
+// 		border: 5px solid transparent;
+// 		border-top-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
+// 		border-top-color: rgba(255,255,255,.5);
+// 	}
+// }
+
+// .sf-arrows {
+// 	&> li > .sf-with-ul:focus:after,
+// 	&> li:hover > .sf-with-ul:after,
+// 	&> .sfHover > .sf-with-ul:after {
+// 		border-top-color: white; /* IE8 fallback colour */
+// 	}
+
+// 	ul {
+// 		/* styling for right-facing arrows */
+// 		.sf-with-ul:after {
+// 			margin-top: -5px;
+// 			margin-right: -3px;
+// 			border-color: transparent;
+// 			border-left-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
+// 			border-left-color: rgba(255,255,255,.5);
+// 		}
+
+// 		li > .sf-with-ul:focus:after,
+// 		li:hover > .sf-with-ul:after,
+// 		.sfHover > .sf-with-ul:after {
+// 			border-left-color: white;
+// 		}
+// 	}
+// }

@@ -1,0 +1,267 @@
+/**
+ * @package Aerotropolis Theme Support Plugin
+ * @author  Bryan Stanley <bstanley.0811@gmail.com>
+ *
+ * Desktop home page
+ */
+
+
+// --- Full Width Video. ------------------- //
+.video-wrapper{
+  position: relative;
+  height: 690px;
+  overflow: hidden;
+
+  .video-container{
+    position: absolute;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: -50%;
+  }
+
+  video{
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    right: -9999px;
+    bottom: -9999px;
+    margin: auto;
+    min-width: 50%;
+    min-height: 100%;
+  }
+}
+
+
+// --- Why Detroit. ------------------- //
+.choose-detroit{
+  display: flex;
+  height: 543px;
+  margin: 135px 0;
+
+  .map{
+    flex: 2 2 0;
+    background-position: left top;
+    background-size: cover;
+    min-width: 895px;
+  }
+
+  .details{
+    flex: 1 1 0;
+    padding: 0 35px;
+    display: flex;
+    flex-direction: column;
+
+    h3{
+      margin-top: -5px;
+    }
+
+    .summary{
+      flex: 2 2 0;
+    }
+
+    .call-to-action{
+      flex: 1 1 80px;
+    }
+
+    .button{
+      display: block;
+      margin-top: 25px;
+    }
+
+  }
+}
+
+
+// --- Site Selection Items. ------------------- //
+
+.site-selection-row{
+  background: #E6E6E6;
+  text-align: center;
+  padding: 100px 0 130px 0;
+
+  .site-selection-header{
+    margin-bottom: 65px;
+  }
+}
+
+.site-selection{
+  max-width: 400px;
+  min-height: 495px;
+  margin: 0 auto;
+  text-align: left;
+  background: #FFFFFF;
+  padding: 50px 55px;
+  display: flex;
+  flex-direction: column;
+  transition: transform .1s ease-in-out, box-shadow 0.1s ease-in-out;
+
+  [class^="icon-"]{
+    background: #84CDDF;
+    width: 142px;
+    height: 142px;
+    margin: 0px auto;
+    border-radius: 100%;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 65px;
+    line-height: 142px;
+    margin-bottom: 25px;
+  }
+
+  .icon-trophy:before{
+    margin-left: 8px;
+  }
+
+  .icon-workforce:before{
+    margin-left: 10px;
+  }
+
+  h4{
+    color: $darkGrey;
+    text-align: center;
+  }
+
+  p{
+    flex: 2 2 0;
+  }
+
+  &.clickable {
+    cursor: pointer;
+
+    &:hover{
+      transform: scale(1.05);
+      box-shadow: 0 0px 25px 0px rgba(0,0,0,0.2);
+
+      .button{
+        color: #FFFFFF;
+        background: $darkBlue;
+      }
+    }
+  }
+}
+
+
+// --- Industry Items. ------------------- //
+.our-industries {
+  padding: 85px 0 112px 0;
+  .our-industries-header{
+    margin-bottom: 53px;
+    text-align: center;
+  }
+}
+
+.industry-item{
+  width: 295px;
+
+  .thumbnail{
+    width: 295px;
+    height: 204px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-bottom: 23px;
+
+    &.retina{
+      background-size: 295px auto;
+    }
+  }
+
+  h4{
+    color: $darkGrey;
+    flex: 1 1 70px
+  }
+
+  .details{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.industry-button{
+  text-align: center;
+  margin: 30px auto 0;
+}
+
+
+// --- Testimonial Slideshow. ------------------- //
+.aero-testimonial-slideshow{
+  height: 500px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .aero-slider{
+    width: 940px;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .aero-testimonial-wrapper{
+    padding: 60px 70px;
+    background: rgba(#FFFFFF, .9);
+    color: $grey;
+    width: 840px;
+    transition: opacity .5s ease-in-out;
+
+    &.hidden{
+      opacity: 0;
+    }
+  }
+
+  .aero-nav{
+    font-size: 55px;
+    color: #FFFFFF;
+    opacity: .7;
+    transition: opacity .1s ease-in-out, transform .3s ease-in-out;
+    cursor: pointer;
+
+    &.hidden{
+      opacity: 0;
+
+      &.aero-left{
+        transform: translate3d(15px, 0, 0);
+      }
+      &.aero-right{
+        transform: translate3d(-15px, 0, 0);
+      }
+    }
+
+    &:hover{
+      opacity: .9;
+    }
+
+    &.aero-left:hover{
+      transform: translate3d(-10px, 0, 0);
+    }
+    &.aero-right:hover{
+      transform: translate3d(10px, 0, 0);
+    }
+  }
+
+  .aero-testimonial{
+    font: 30px/36px $font-latoBold;
+  }
+
+  .aero-author{
+    font: 800 26px/26px $font-lato;
+    text-transform: uppercase;
+    text-align: right;
+    margin-top: 40px;
+  }
+
+  &.home{
+    height: 823px;
+
+    .aero-slider{
+      height: 450px;
+    }
+
+    h2{
+      text-align: center;
+      color: #FFFFFF;
+      margin: 0;
+      padding: 180px 0 70px 0;
+    }
+  }
+}

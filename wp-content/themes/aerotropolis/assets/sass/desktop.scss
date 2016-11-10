@@ -1,0 +1,28 @@
+/**
+ * @package Aerotropolis Theme Support Plugin
+ * @author  Bryan Stanley <bstanley.0811@gmail.com>
+ *
+ * Base setup for desktop css.
+ *
+ * NOTE: Globbing possible by 'sudo gem install sass-globbing'
+ */
+
+
+/* Global Elements */
+/********************************************************/
+
+@import "global/imports";
+@import "plugins/superfish";
+
+
+/* Common */
+/********************************************************/
+
+@import "desktop/desktop-common",
+        "desktop/desktop-header",
+        "desktop/desktop-footer";
+
+/* Pages */
+/********************************************************/
+
+@import "desktop/pages/**/*";

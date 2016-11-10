@@ -1,0 +1,71 @@
+/**
+ * @package Aerotropolis Theme Support Plugin
+ * @author  Bryan Stanley <bstanley.0811@gmail.com>
+ *
+ * Global common elements
+ */
+
+
+/* HTML Elements */
+/********************************************************/
+
+body {
+  font: 18px/26px $font-lato;
+  color: $darkGrey;
+  min-width: $minWidth;
+}
+
+a{
+  color: $darkBlue;
+  text-decoration: none;
+  transition: color .1s ease-in-out;
+
+  &:hover{
+    color: $lightBlue;
+  }
+}
+
+h1,h2,h3,h4,h5,h6{
+  text-transform: uppercase;
+}
+
+h1{
+  font: 40px/50px $font-latoHeavy;
+  color: $darkBlue;
+}
+
+h2{
+  font: 34px/40px $font-latoHeavy;
+  color: $lightBlue;
+}
+
+h3{
+  font: 30px/35px $font-latoHeavy;
+  color: $darkGrey;
+}
+
+h4{
+  font: 28px/35px $font-latoBold;
+  color: $grey;
+}
+
+h5{
+  font: 26px/30px $font-latoBold;
+  color: $grey;
+}
+
+h6{
+  font: 25px/30px $font-latoBold;
+  color: $lightGrey;
+}
+
+
+
+/* Common Classes */
+/********************************************************/
+
+.clearfix{
+  content: "";
+  display: table;
+  clear: both;
+}

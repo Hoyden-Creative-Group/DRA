@@ -1,0 +1,84 @@
+/**
+ * @package Aerotropolis Theme Support Plugin
+ * @author  Bryan Stanley <bstanley.0811@gmail.com>
+ *
+ * Global fonts
+ */
+
+@font-face {
+  font-family: 'latoregular';
+  src: url('#{$font-base-path}/lato/reg/lato-regular-webfont.woff2') format('woff2'),
+       url('#{$font-base-path}/lato/reg/lato-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'latobold';
+  src: url('#{$font-base-path}/lato/bold/lato-bold-webfont.woff2') format('woff2'),
+       url('#{$font-base-path}/lato/bold/lato-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'latoheavy';
+  src: url('#{$font-base-path}/lato/heavy/lato-heavy-webfont.woff2') format('woff2'),
+       url('#{$font-base-path}/lato/heavy/lato-heavy-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'latoblack';
+  src: url('#{$font-base-path}/lato/black/lato-black-webfont.woff2') format('woff2'),
+       url('#{$font-base-path}/lato/black/lato-black-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'aerotropolis';
+  src: url('#{$font-base-path}/fontello/aerotropolis.woff2?v=1') format('woff2'),
+       url('#{$font-base-path}/fontello/aerotropolis.woff?v=1') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "aerotropolis";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-linkedin:before { content: '\61'; } /* 'a' */
+.icon-search:before { content: '\62'; } /* 'b' */
+.icon-twitter:before { content: '\63'; } /* 'c' */
+.icon-map-marker-hollow:before { content: '\64'; } /* 'd' */
+.icon-map-marker:before { content: '\65'; } /* 'e' */
+.icon-nav1-arrow-left:before { content: '\66'; } /* 'f' */
+.icon-nav1-arrow-right:before { content: '\67'; } /* 'g' */
+.icon-trophy:before { content: '\68'; } /* 'h' */
+.icon-workforce:before { content: '\69'; } /* 'i' */

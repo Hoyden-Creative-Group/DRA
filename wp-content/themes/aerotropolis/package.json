@@ -1,0 +1,27 @@
+{
+  "name": "aerotropolis",
+  "version": "1.0.0",
+  "description": "Aerotropolis Website",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hoyden-Creative-Group/DRA.git"
+  },
+  "author": "Bryan Stanley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hoyden-Creative-Group/DRA/issues"
+  },
+  "homepage": "https://github.com/Hoyden-Creative-Group/DRA#readme",
+  "dependencies": {
+    "gulp": "3.9.1",
+    "gulp-compass": "2.1.0",
+    "gulp-concat": "2.6.0",
+    "gulp-sass": "2.3.2",
+    "gulp-uglify": "2.0.0",
+    "sass-globbing": "1.0.0-alpha1"
+  }
+}

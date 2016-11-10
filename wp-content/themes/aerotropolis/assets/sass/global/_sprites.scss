@@ -1,0 +1,10 @@
+/**
+ * @package Aerotropolis Theme Support Plugin
+ * @author  Bryan Stanley <bstanley.0811@gmail.com>
+ *
+ * Sprite setup for non-retina and retina sprites.
+ */
+
+
+$retina-sprite-spacing: 30px;
+@include retina-sprite-add(desktop, "sprites/desktop/*.png", "sprites-retina/desktop/*.png");

@@ -1,0 +1,31 @@
+/**
+ * @package Aerotropolis Theme Support Plugin
+ * @author  Bryan Stanley <bstanley.0811@gmail.com>
+ *
+ * Desktop common elements
+ */
+
+// --- Layout. ------------------- //
+
+.content-area{
+  overflow: hidden;
+}
+
+.content-wrapper{
+  max-width: $maxWidth;
+  min-width: $minWidth;
+  margin: 0px auto;
+  position: relative;
+}
+
+.align-right{
+  text-align: right;
+}
+
+.row-centered{
+  max-width: $maxWidth + 30px; // +30 here due to how visual composer handles internal rows
+  min-width: $minWidth;
+  margin: 0px auto !important;
+}
+
+

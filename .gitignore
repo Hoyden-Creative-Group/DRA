@@ -6,8 +6,14 @@
 !wp-config.php
 !README.md
 
-# Except these directories
-!wp-content/
-
 # Always ignore these files no matter at what level
 .DS_Store
+.sass-cache/
+node_modules/
+uploads/
+wp-content/plugins/*
+assets/stock/
+
+# Except these directories
+!wp-content/
+!wp-content/plugins/aerotropolis-theme-support/
