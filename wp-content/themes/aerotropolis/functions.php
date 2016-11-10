@@ -40,11 +40,12 @@ function theme_setup() {
 
 	// Register our desired menu sections
 	register_nav_menus( array(
-		'main_menu'					=> 'Main Menu',
-		'secondary_menu'		=> 'Secondary Main Menu',
-		'sticky_side_menu'	=> 'Sticky Side Menu',
-		'footer_menu'				=> 'Footer Menu',
-		'footer_social'			=> 'Footer Social'
+		'main_menu'							=> 'Main Menu',
+		'secondary_menu'				=> 'Secondary Main Menu',
+		'sticky_side_menu_home'	=> 'Sticky Side Menu - HOME',
+		'sticky_side_menu_dra'	=> 'Sticky Side Menu - WHY DRA',
+		'footer_menu'						=> 'Footer Menu',
+		'footer_social'					=> 'Footer Social'
 	) );
 
 	// Switch default core markup to use HTML5

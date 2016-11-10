@@ -17,6 +17,15 @@ get_header(); ?>
 		// Start the loop.
 		while ( have_posts() ) : the_post();
 
+			$secondaryNav = get_post_meta( get_the_ID(), 'aero-secondary-nav', true );
+
+			if (!empty($secondaryNav)) {
+				wp_nav_menu( array(
+					'theme_location'	=> $secondaryNav,
+					'menu_class'  		=> 'sticky-secondary-nav'
+				) );
+			}
+
 			// Include the page content template.
 			get_template_part( 'template-parts/content', 'page' );
 
