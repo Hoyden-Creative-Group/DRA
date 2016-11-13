@@ -52,6 +52,44 @@
         }
       }
     }
+
+    .aero_news_contact{
+      text-align: center;
+      margin-top: 55px;
+
+      .image img{
+        width: 150px;
+        border-radius: 100%;
+      }
+
+      .email, .phone, .twitter {
+        font-size: 14px;
+        line-height: 20px;
+        margin: 3px 0;
+
+        a{
+          color: $darkGrey;
+
+          &:hover{
+            color: $darkBlue;
+          }
+        }
+      }
+
+      .news-button a{
+        display: block;
+        background: $darkGrey;
+        color: #FFFFFF;
+        font-size: 16px;
+        line-height: 40px;
+        text-transform: uppercase;
+        transition: background-color .1s ease-in-out;
+
+        &:hover{
+          background: lighten($darkGrey, 10%)
+        }
+      }
+    }
   }
 
   .site-main {

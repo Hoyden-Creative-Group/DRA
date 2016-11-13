@@ -19,6 +19,8 @@ include 'admin/post_types/posttype-testimonials.php';
 include 'admin/post_types/meta_boxes/metabox-author.php';
 include 'admin/post_types/meta_boxes/metabox-secondary-nav.php';
 include 'visualComposer/shortcodes.php';
+
 include 'widgets/widget-newsletter.php';
+include 'widgets/widget-news-contact.php';
 include 'widgets/widget-moreInformation.php';
 include 'widgets/widget-divider.php';
