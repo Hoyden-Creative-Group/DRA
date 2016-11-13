@@ -1,0 +1,131 @@
+/**
+ * @package Aerotropolis Theme Support
+ * @author  Bryan Stanley <bstanley.0811@gmail.com>
+ *
+ * News page
+ */
+
+.news-page{
+  max-width: $maxWidth;
+  margin: 0 auto;
+  padding: 80px 0 115px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .news-sidebar, .site-main{
+
+  }
+
+  .news-sidebar{
+    width: 300px;
+    background: #E6E6E6;
+    padding: 35px;
+
+    .widget_categories{
+      h2 {
+        display: none;
+      }
+      text-align: center;
+
+      ul{
+        display: inline-block;
+        text-align: left;
+      }
+
+      a{
+
+        &:before{
+          @include rightArrow;
+          line-height: 26px;
+          vertical-align: top;
+          margin-right: 8px;
+          text-transform: none;
+        }
+
+        font: 18px/22px $font-latoHeavy;
+        color: $darkBlue;
+        text-transform: uppercase;
+
+        &:hover{
+          color: $lightBlue;
+        }
+      }
+    }
+  }
+
+  .site-main {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+
+// --- Post Previews. ------------------- //
+
+.post-preview{
+  margin-bottom: 70px;
+
+  h2{
+    font: inherit;
+  }
+
+  figure{
+    overflow: hidden;
+    margin-bottom: 20px;
+
+    img{
+      width: 100%;
+      height: auto;
+      transition: transform .3s ease-in-out;
+
+      &:hover{
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .entry-title a{
+    font: 30px/33px $font-latoHeavy;
+    color: $darkGrey;
+
+    &:hover{
+      color: $darkBlue;
+    }
+  }
+  .post-meta{
+    font-size: 18px;
+    line-height: 32px;
+  }
+  .teaser{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 10px;
+  }
+  .excerpt{
+    margin-right: 30px;
+  }
+  .button{
+    margin-top: 3px;
+  }
+
+  &.category-meetings{
+    position: relative;
+
+    &:before{
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: solid 5px #84CDDF;
+      z-index: -1;
+      width: 106%;
+      height: 120%;
+      left: -3%;
+      top: -12%;
+    }
+  }
+
+}

@@ -51,6 +51,6 @@ function aero_register_testimonials() {
     'rewrite'               => array( 'slug' => $slug ),
   );
   register_post_type( 'testimonials', $args );
-  register_taxonomy( 'testimonial-categories', 'testimonials', array ('hierarchical' => true, 'label' => __('Category')));
+  register_taxonomy( 'testimonial-categories', 'testimonials', array ('hierarchical' => true, 'label' => __('Testimonial Category')));
 }
 add_action( 'init', 'aero_register_testimonials', 0 );

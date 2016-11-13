@@ -13,12 +13,12 @@ function add_admin_options () {
   // add a sidebar menu option
   add_menu_page(
     'Aerotropolis Settings',
-    'Aerotropolis',
+    'Global Settings',
     'manage_options',
     'aerotropolis_settings',
     'aero_theme_settings_page',
-    '',
-    101
+    'dashicons-admin-generic',
+    27
   );
 
   // add a submenu page to the options
@@ -60,7 +60,7 @@ function aero_custom_settings () {
   register_setting('aero-settings-group', 'twitter');
 
   add_settings_section('aero-general-settings', 'General Information', 'aero_general_settings', 'aerotropolis_settings');
-  add_settings_field('copyright', 'Copyright', 'aero_copyright', 'aerotropolis_settings', 'aero-general-settings');
+  add_settings_field('copyright', 'Copyright Text', 'aero_copyright', 'aerotropolis_settings', 'aero-general-settings');
 
   add_settings_section('aero-contact-settings', 'Contact Information', 'aero_contact_settings', 'aerotropolis_settings');
   add_settings_field('phone_number', 'Phone Number', 'aero_phone_number', 'aerotropolis_settings', 'aero-contact-settings');

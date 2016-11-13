@@ -1,5 +1,5 @@
 /**
- * @package Aerotropolis Theme Support Plugin
+ * @package Aerotropolis Theme Support
  * @author  Bryan Stanley <bstanley.0811@gmail.com>
  *
  * Desktop common elements
@@ -9,6 +9,7 @@
 
 .content-area{
   overflow: hidden;
+  min-height: 400px;
 }
 
 .content-wrapper{
@@ -50,12 +51,7 @@
     cursor: pointer;
 
     &:before{
-      display: inline-block;
-      content: '\67';
-      font-family: "aerotropolis";
-      font-style: normal;
-      font-weight: normal;
-      text-align: center;
+      @include rightArrow;
       color: #FFFFFF;
       background: #4B4B4B;
       width: 50px;

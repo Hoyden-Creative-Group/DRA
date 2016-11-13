@@ -1,5 +1,5 @@
 /**
- * @package Aerotropolis Theme Support Plugin
+ * @package Aerotropolis Theme Support
  * @author  Bryan Stanley <bstanley.0811@gmail.com>
  *
  * Global mixins
@@ -10,4 +10,11 @@
   :-moz-placeholder           {@content}
   ::-moz-placeholder          {@content}
   :-ms-input-placeholder      {@content}
+}
+
+@mixin rightArrow {
+  display: inline-block;
+  content: '\67';
+  font: normal normal 12px/12px "aerotropolis";
+  text-align: center;
 }

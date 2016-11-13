@@ -1,5 +1,5 @@
 /**
- * @package Aerotropolis Theme Support Plugin
+ * @package Aerotropolis Theme Support
  * @author  Bryan Stanley <bstanley.0811@gmail.com>
  *
  * Global common buttons
@@ -32,6 +32,7 @@
   text-align: center;
   padding: $padding;
   text-transform: uppercase;
+  white-space: nowrap;
   font: $fontWeight #{$fontSize}/#{$fontSize} $font;
   color: $color;
   background: $backgroundColor;
@@ -66,6 +67,10 @@
     &.darkgrey{
       @include flatButton($darkGrey);
     }
+
+    &.white{
+      @include flatButton(#FFFFFF);
+    }
   }
 
   &.outline{
@@ -84,6 +89,11 @@
 
     &.darkgrey{
       @include outlineButton($darkGrey);
+    }
+
+    &.white{
+      @include outlineButton(#FFFFFF);
+      background: none;
     }
   }
 }

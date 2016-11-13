@@ -41,6 +41,16 @@
 			<p class="copyright">&copy <?php echo date("Y") . ' '. get_option('copyright'); ?> </p>
 		</div>
 
+		<div class="footer-latest-news">
+			<?php $latestMeetingInfo = get_latest_meeting(); ?>
+			<p class="title">
+				<a href="<?php echo $latestMeetingInfo['permalink']; ?>"><?php echo $latestMeetingInfo['title']; ?></a>
+			</p>
+			<p class="date"><?php echo $latestMeetingInfo['date']; ?></p>
+			<p class="excerpt"><?php echo $latestMeetingInfo['excerpt']; ?></p>
+			<a class="button outline white" href="<?php echo $latestMeetingInfo['permalink']; ?>">Read More</a>
+		</div>
+
 	</div>
 </footer>
 
