@@ -17,6 +17,8 @@ get_header(); ?>
 
 	<main id="main" class="site-main" role="main">
 
+		<h1 class="page-title">News</h1>
+
 		<?php if ( have_posts() ) : ?>
 
 			<?php

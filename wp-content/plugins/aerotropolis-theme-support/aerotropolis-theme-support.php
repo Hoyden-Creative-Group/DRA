@@ -22,5 +22,6 @@ include 'visualComposer/shortcodes.php';
 
 include 'widgets/widget-newsletter.php';
 include 'widgets/widget-news-contact.php';
+include 'widgets/widget-news-subscribe.php';
 include 'widgets/widget-moreInformation.php';
 include 'widgets/widget-divider.php';
