@@ -18,7 +18,7 @@ function add_admin_options () {
     'aerotropolis_settings',
     'aero_theme_settings_page',
     'dashicons-admin-generic',
-    27
+    26
   );
 
   // add a submenu page to the options

@@ -1,3 +1,17 @@
+/**
+ * Since we are using the latest version of jQuery, we need to add the jQuery
+ * migration script from 2.x to 3.x (this is added in our gulp build process).
+ * The migrator script dumps console output to help with migrating, however,
+ * due to plugins that could be installed and that are out of control, we want
+ * to suppress those console log messages.
+ */
+jQuery.migrateMute = true;
+
+
+/**
+ * Our main document ready function that handles the core javascript items
+ * for our theme
+ */
 $(function() {
 
   var $window = $(window);
