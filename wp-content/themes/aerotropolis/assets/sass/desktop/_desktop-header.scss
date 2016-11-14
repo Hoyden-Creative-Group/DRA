@@ -28,6 +28,18 @@
       transform: translate3d(-155px, 0, 0);
     }
   }
+
+  li.menu-property-search{
+    text-align: center;
+    margin-top: 15px;
+    color: $darkBlue;
+
+    a{
+      @include button(10px 35px, null, 22px, $font-latoBold, $darkBlue, #FFFFFF);
+      @include outlineButton($darkBlue);
+      background: none;
+    }
+  }
 }
 
 .aerotropolis-logo{

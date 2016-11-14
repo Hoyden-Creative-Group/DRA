@@ -99,6 +99,11 @@
 		}
 
 		ul{}
+
+		&.split{
+			display: inline-block;
+			vertical-align: top;
+		}
 	}
 
 	a {

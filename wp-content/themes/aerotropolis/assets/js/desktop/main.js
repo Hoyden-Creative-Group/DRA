@@ -6,6 +6,35 @@ $(function() {
    * Main Menu
    */
   function initMainMenu () {
+
+    var $splitMenu = $('.split-menu');
+
+    $splitMenu.each(function() {
+      var $this = $(this);
+      var $ul = $('ul', $this);
+      var $lis = $('li:not(.full)', $this);
+      var $fulls = $('li.full', $this);
+      var index = Math.floor($lis.length/2);
+
+      // swap li to p
+      $lis.each(function() {
+        var $this = $(this);
+        $this.replaceWith('<p>' + $this.html() + '</p>');
+      });
+
+      // select all and then remove from the menu
+      $lis = $('p', $splitMenu).remove();
+
+      // splitting the group, re-add to the menu but in split sections
+      $ul.append($lis.slice(0, index).wrapAll('<li class="split"><div class="slit-links"></div></li>').parent().parent());
+      $ul.append($lis.slice(index).wrapAll('<li class="split"><div class="slit-links"></div></li>').parent().parent());
+
+      // anything labeled as full width will be appended
+      $fulls.each(function() {
+        $ul.append($(this));
+      });
+    });
+
     $('#menu-main-menu').superfish({
       autoArrows: false
     });
