@@ -26,7 +26,7 @@
 			<div class="social-links">
 			<?php
 				$linkedin = get_option('linkedin');
-				$twitter = get_option('twitter');
+				$twitter = 'https://twitter.com/'. preg_replace("/^@/", "", get_option('twitter'));
 
 				if (!empty($twitter)) {
 					echo '<a class="icon-twitter" href="'. $twitter .'" title="Twitter"></a>';

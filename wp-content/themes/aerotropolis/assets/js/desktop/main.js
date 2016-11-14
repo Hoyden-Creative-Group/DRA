@@ -48,8 +48,6 @@ $(function() {
     var $stickySideNav = $('.sticky-secondary-nav'),
         navHeight = $('.main-nav').outerHeight(true);
 
-        console.log(navHeight);
-
     if ($stickySideNav.length) {
       $('li', $stickySideNav).on('click', function (e) {
         e.stopPropagation();

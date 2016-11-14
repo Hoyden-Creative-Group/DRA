@@ -67,7 +67,7 @@ class Aero_MoreInformation extends WP_Widget {
     //display
     echo $before_widget;
     echo empty($phoneNumber) || empty($phoneText) ? '' : '<p class="phone-title">'. $phoneText .'</p>';
-    echo empty($phoneNumber) ? '' : '<a class="phone" href="tel:'. $phoneNumber .'">'. $phoneNumber .'</a>';
+    echo empty($phoneNumber) ? '' : '<a class="phone" href="tel:'. $phoneNumber .'">+1 '. $phoneNumber .'</a>';
     echo empty($email) || empty($emailText) ? '' : '<p class="email-title">'. $emailText .'</p>';
     echo empty($email) ? '' : '<a class="email" href="mailto:'. $email .'">'. $email .'</a>';
     echo empty($buttonLink) || empty($buttonText) ? '' : '<a href="'. $buttonLink .'" class="button">' . $buttonText .'</a>';

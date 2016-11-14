@@ -79,11 +79,13 @@ class Aero_NewsContact extends WP_Widget {
       <input type="hidden" id="<?php echo $this->get_field_id('imageURL'); ?>" name="<?php echo $this->get_field_name('imageURL'); ?>" value="<?php echo $instance['imageURL']; ?>" />
     </div>
 
+    <?php /*
     <p><label for="<?php echo $this->get_field_id('email'); ?>">Email: <input class="widefat" id="<?php echo $this->get_field_id('email'); ?>" name="<?php echo $this->get_field_name('email'); ?>" type="text" value="<?php echo attribute_escape($email); ?>" /></label></p>
 
     <p><label for="<?php echo $this->get_field_id('phone'); ?>">Phone Number: <input class="widefat" id="<?php echo $this->get_field_id('phone'); ?>" name="<?php echo $this->get_field_name('phone'); ?>" type="text" value="<?php echo attribute_escape($phone); ?>" /></label></p>
 
     <p><label for="<?php echo $this->get_field_id('twitter'); ?>">Twitter handle: <input class="widefat" id="<?php echo $this->get_field_id('twitter'); ?>" name="<?php echo $this->get_field_name('twitter'); ?>" type="text" value="<?php echo attribute_escape($twitter); ?>" /></label></p>
+    */ ?>
 
     <p><label for="<?php echo $this->get_field_id('buttonText'); ?>">Button text: <input class="widefat" id="<?php echo $this->get_field_id('buttonText'); ?>" name="<?php echo $this->get_field_name('buttonText'); ?>" type="text" value="<?php echo attribute_escape($buttonText); ?>" /></label></p>
 
@@ -97,9 +99,9 @@ class Aero_NewsContact extends WP_Widget {
     $instance['title'] = $new_instance['title'];
     $instance['attachmentID'] = $new_instance['attachmentID'];
     $instance['imageURL'] = $new_instance['imageURL'];
-    $instance['email'] = $new_instance['email'];
-    $instance['phone'] = $new_instance['phone'];
-    $instance['twitter'] = $new_instance['twitter'];
+    // $instance['email'] = $new_instance['email'];
+    // $instance['phone'] = $new_instance['phone'];
+    // $instance['twitter'] = $new_instance['twitter'];
     $instance['buttonText'] = $new_instance['buttonText'];
     $instance['buttonLink'] = $new_instance['buttonLink'];
     return $instance;
@@ -111,9 +113,9 @@ class Aero_NewsContact extends WP_Widget {
     //get vars
     $title = $instance['title'];
     $imageURL = $instance['imageURL'];
-    $email = $instance['email'];
-    $phone = $instance['phone'];
-    $twitter = $instance['twitter'];
+    $email = get_option('email');
+    $phone = get_option('phone_number');
+    $twitter = get_option('twitter');
     $buttonText = $instance['buttonText'];
     $buttonLink = $instance['buttonLink'];
 
@@ -121,8 +123,8 @@ class Aero_NewsContact extends WP_Widget {
     echo $before_widget;
     echo empty($title) ? '' : '<h5>'. $title .'</h5>';
     echo empty($imageURL) ? '' : '<p class="image"><img src="'. esc_url($imageURL) .'" /></p>';
-    echo empty($email) ? '' : '<p class="email">'. $email .'</p>';
-    echo empty($phone) ? '' : '<p class="phone"><a href="tel:'. $phone .'">'. $phone .'</a></p>';
+    echo empty($email) ? '' : '<p class="email"><a href="mailto:'. $email .'">'. $email .'</a></p>';
+    echo empty($phone) ? '' : '<p class="phone"><a href="tel:'. $phone .'">+1 '. $phone .'</a></p>';
     echo empty($twitter) ? '' : '<p class="twitter"><a href="https://twitter.com/'. preg_replace("/^@/", "", $twitter) .'">'. $twitter .'</a></p>';
     echo empty($buttonLink) ? 'no button' : '<p class="news-button"><a href="'. $buttonLink .'">'. $buttonText .'</a></p>';
     echo $after_widget;

@@ -56,6 +56,9 @@ function aero_custom_settings () {
   register_setting('aero-settings-group', 'copyright');
   register_setting('aero-settings-group', 'phone_number', 'validate_phone_number');
   register_setting('aero-settings-group', 'email', 'validate_email');
+  register_setting('aero-settings-group', 'address', 'validate_address');
+  register_setting('aero-settings-group', 'contact_person_name');
+  register_setting('aero-settings-group', 'contact_person_title');
   register_setting('aero-settings-group', 'linkedin');
   register_setting('aero-settings-group', 'twitter');
 
@@ -65,6 +68,9 @@ function aero_custom_settings () {
   add_settings_section('aero-contact-settings', 'Contact Information', 'aero_contact_settings', 'aerotropolis_settings');
   add_settings_field('phone_number', 'Phone Number', 'aero_phone_number', 'aerotropolis_settings', 'aero-contact-settings');
   add_settings_field('email', 'Email Address', 'aero_email', 'aerotropolis_settings', 'aero-contact-settings');
+  add_settings_field('address', 'Address', 'aero_address', 'aerotropolis_settings', 'aero-contact-settings');
+  add_settings_field('contact_person_name', 'Contact Person Name', 'aero_contact_person_name', 'aerotropolis_settings', 'aero-contact-settings');
+  add_settings_field('contact_person_title', 'Contact Person Title', 'aero_contact_person_title', 'aerotropolis_settings', 'aero-contact-settings');
 
   add_settings_section('aero-social-media', 'Social Media', 'aero_social_media', 'aerotropolis_settings');
   add_settings_field('linkedin', 'LinkedIn', 'aero_linkedin', 'aerotropolis_settings', 'aero-social-media');
@@ -107,6 +113,21 @@ function aero_email () {
   echo '<input type="text" name="email" value="'. $email .'" placeholder="Email Address" class="regular-text" />';
 }
 
+function aero_address () {
+  $address = esc_attr( get_option('address') );
+  echo '<textarea name="address" placeholder="Address" class="wide" cols="50" rows="5">'. $address .'</textarea>';
+}
+
+function aero_contact_person_name () {
+  $contact_person_name = esc_attr( get_option('contact_person_name') );
+  echo '<input type="text" name="contact_person_name" value="'. $contact_person_name .'" placeholder="Contact person name" class="regular-text" />';
+}
+
+function aero_contact_person_title () {
+  $contact_person_title = esc_attr( get_option('contact_person_title') );
+  echo '<input type="text" name="contact_person_title" value="'. $contact_person_title .'" placeholder="Contact person title" class="regular-text" />';
+}
+
 function aero_linkedin () {
   $linkedin = esc_attr( get_option('linkedin') );
   echo '<input type="text" name="linkedin" value="'. $linkedin .'" placeholder="LinkedIn Url" class="regular-text code" />';
@@ -137,6 +158,15 @@ function validate_email ($email) {
   }
 
   return $email;
+}
+
+function validate_address ($address) {
+  if (empty($address)) {
+    add_settings_error('address', 'address', 'Address cannot be empty');
+    return esc_attr( get_option('address') );
+  }
+
+  return $address;
 }
 
 
