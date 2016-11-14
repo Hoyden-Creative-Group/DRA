@@ -19,10 +19,10 @@ class Aero_Divider extends WP_Widget {
   }
 
   public function widget($args, $instance){
+
     //display
-    echo $before_widget;
     echo '<div class="widget divider"></div>';
-    echo $after_widget;
+
   }
 
 }

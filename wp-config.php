@@ -37,7 +37,7 @@ if( preg_match("/^www\.aerotropolis\.com/", $_SERVER['HTTP_HOST']) ) {
 } else {
   define('ENVIRONMENT', 'LOCAL');
   define('WP_DEBUG', true);
-  define('DB_NAME', 'aerotropolis');
+  define('DB_NAME', 'aerotropolis_v2');
   define('DB_USER', 'root');
   define('DB_PASSWORD', 'root');
 }
