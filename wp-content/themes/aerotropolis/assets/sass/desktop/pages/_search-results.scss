@@ -1,0 +1,32 @@
+/**
+ * @package Aerotropolis Theme Support
+ * @author  Bryan Stanley <bstanley.0811@gmail.com>
+ *
+ * News page
+ */
+
+.search-results-content{
+  max-width: $maxWidth;
+  margin: 0 auto;
+  padding: 80px 0 115px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .site-main {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .post-preview{
+    .teaser{
+      display: flex;
+    }
+    .excerpt {
+      flex: 2 0 0;
+    }
+    .button{
+      flex: 1 0 0;
+    }
+  }
+}

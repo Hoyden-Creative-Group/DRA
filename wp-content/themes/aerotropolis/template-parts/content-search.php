@@ -3,51 +3,21 @@
  * @package Aerotropolis Theme
  * @author  Bryan Stanley <bstanley.0811@gmail.com>
  *
- * Template Part: Not Found
- * Description: The template part for displaying results in search pages
+ * Template Part: Search
+ * Description: Shows all the items that match the search criteria
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-	</header><!-- .entry-header -->
+<article id="post-<?php the_ID(); ?>" <?php post_class('post-preview'); ?>>
+	<?php if(has_post_thumbnail()):?>
+		<figure class="image-box"><a href="<?php echo esc_url(get_permalink(get_the_id()));?>"><?php the_post_thumbnail('aero-news-excerpt');?></a></figure>
+	<?php endif;?>
 
-	<?php twentysixteen_post_thumbnail(); ?>
-
-	<?php twentysixteen_excerpt(); ?>
-
-	<?php if ( 'post' === get_post_type() ) : ?>
-
-		<footer class="entry-footer">
-			<?php twentysixteen_entry_meta(); ?>
-			<?php
-				edit_post_link(
-					sprintf(
-						/* translators: %s: Name of current post */
-						__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
-						get_the_title()
-					),
-					'<span class="edit-link">',
-					'</span>'
-				);
-			?>
-		</footer><!-- .entry-footer -->
-
-	<?php else : ?>
-
-		<?php
-			edit_post_link(
-				sprintf(
-					/* translators: %s: Name of current post */
-					__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
-					get_the_title()
-				),
-				'<footer class="entry-footer"><span class="edit-link">',
-				'</span></footer><!-- .entry-footer -->'
-			);
-		?>
-
-	<?php endif; ?>
-</article><!-- #post-## -->
+	<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+	<div class="post-meta"><?php echo get_the_date('M d, Y');?></div>
+	<div class="teaser">
+		<div class="excerpt"><?php the_excerpt();?></div>
+		<a href="<?php echo esc_url(get_permalink(get_the_id()));?>" class="button outline blue">Read More</a>
+	</div>
+</article>
 
