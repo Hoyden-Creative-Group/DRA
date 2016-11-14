@@ -12,7 +12,7 @@
 
 <div class="video-wrapper">
   <div class="video-container">
-    <video playsinline autoplay muted loop id="bgvid" poster="<?php echo $video_poster; ?>">
+    <video playsinline autoplay muted loop id="bgvid" poster="<?php echo wp_get_attachment_image_src( $video_poster, 'full' )[0]; ?>">
       <source src="<?php echo $video_webm; ?>" type="video/webm">
       <source src="<?php echo $video_mp4; ?>" type="video/mp4">
     </video>
