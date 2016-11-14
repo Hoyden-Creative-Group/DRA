@@ -1,18 +1,18 @@
 <?php
 /**
- * The template used for displaying page content
+ * @package Aerotropolis Theme
+ * @author  Bryan Stanley <bstanley.0811@gmail.com>
  *
- * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
+ * Template Part: Page
+ * Description: Shows the content of a page
  */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<div class="entry-content">
-		<?php the_content(); ?>
+  <div class="entry-content">
+    <?php the_content(); ?>
 
-	</div>
+  </div>
 
 </article>

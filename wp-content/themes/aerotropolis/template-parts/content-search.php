@@ -1,10 +1,10 @@
 <?php
 /**
- * The template part for displaying results in search pages
+ * @package Aerotropolis Theme
+ * @author  Bryan Stanley <bstanley.0811@gmail.com>
  *
- * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
+ * Template Part: Not Found
+ * Description: The template part for displaying results in search pages
  */
 ?>
 

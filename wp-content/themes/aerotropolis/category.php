@@ -1,20 +1,23 @@
 <?php
+
 /**
  * @package Aerotropolis Theme
  * @author  Bryan Stanley <bstanley.0811@gmail.com>
  *
- * Template Name: News
+ * The category template file.
  */
-
 
 get_header(); ?>
 
+<div id="primary" class="content-area news-page category-page">
 
-<div id="primary" class="content-area">
-
-  <?php dynamic_sidebar( 'news-side-bar' ); ?>
+  <aside class="news-sidebar">
+    <?php dynamic_sidebar( 'news-side-bar' ); ?>
+  </aside>
 
   <main id="main" class="site-main" role="main">
+
+    <h1 class="page-title"><?php echo single_cat_title(); ?></h1>
 
     <?php if ( have_posts() ) : ?>
 
@@ -37,11 +40,5 @@ get_header(); ?>
   </main><!-- .site-main -->
 
 </div><!-- .content-area -->
-
-<aside id="content-bottom-widgets" class="content-bottom-widgets" role="complementary">
-  <div class="widget-area">
-    <?php dynamic_sidebar( 'footer-contact-bar' ); ?>
-  </div>
-</aside>
 
 <?php get_footer(); ?>

@@ -129,12 +129,12 @@ function aero_sidebars_init() {
 add_action( 'widgets_init', 'aero_sidebars_init' );
 
 
-
-function wpb_force_empty_cats($cat_args) {
-	$cat_args['hide_empty'] = 0;
-	return $cat_args;
-}
-add_filter( 'widget_categories_args', 'wpb_force_empty_cats' );
+// force show categories even if they don't have entries
+// function wpb_force_empty_cats($cat_args) {
+// 	$cat_args['hide_empty'] = 0;
+// 	return $cat_args;
+// }
+// add_filter( 'widget_categories_args', 'wpb_force_empty_cats' );
 
 
 /**
