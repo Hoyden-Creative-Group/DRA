@@ -1,6 +1,4 @@
 var desktopVendorScripts = [
-  'assets/js/vendor/jquery/jquery-3.1.1.min.js',
-  'assets/js/vendor/jquery/jquery-migrate-3.0.0.js',
   'assets/js/vendor/jquery/jquery.hoverIntent.js',
   'assets/js/vendor/jquery/superfish.js'
 ];

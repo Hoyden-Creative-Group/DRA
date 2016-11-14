@@ -84,19 +84,9 @@ function aerotropolis_scripts() {
 	// Theme stylesheet
 	wp_enqueue_style( 'aerotropolis-desktop', get_template_directory_uri() . '/assets/dist/desktop.css' );
 
-	/**
-	 * If not in the admin, don't load the outdated version of jquery that comes with WP.
-	 * Our generated js script file will contain a version of jquery, which we want to
-	 * always be loaded; however, to prevent plugins trying to load another version of
-	 * jQuery, we're going to register our generated as jQuery. Even though the script will
-	 * contain other combined JS files.  We mainly do this to prevent additional http requests.
-	 */
 	if (!is_admin()) {
-		wp_deregister_script('jquery');
-		wp_deregister_script('jquery-core');
-		wp_deregister_script('jquery-migrate');
-		wp_register_script('jquery', get_template_directory_uri() . $jsPath . '/desktop.js' );
-		wp_enqueue_script('jquery');
+		wp_register_script('aerotropolis', get_template_directory_uri() . $jsPath . '/desktop.js', array('jquery') );
+		wp_enqueue_script('aerotropolis');
 	}
 }
 add_action( 'wp_enqueue_scripts', 'aerotropolis_scripts' );

@@ -50,7 +50,7 @@
     this.currentIndex = 0;
     this.timer = 0;
 
-    $(function() {
+    jQuery(function($) {
       _this.$slideshow = $('#testimonial-slideshow-' + _this.id);
       _this.$wrapper = $('.aero-testimonial-wrapper', _this.$slideshow);
       _this.$testimonial = $('.aero-testimonial', _this.$slideshow);
