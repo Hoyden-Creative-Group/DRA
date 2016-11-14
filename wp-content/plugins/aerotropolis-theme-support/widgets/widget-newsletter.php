@@ -23,7 +23,7 @@ class Aero_Newsletter extends WP_Widget {
       'description' => 'Newsletter widget',
     );
 
-    $this->WP_Widget('aero_newsletter', 'Aerotropolis Newsletter', $options);
+    parent::__construct('aero_newsletter', 'Aerotropolis Newsletter', $options);
   }
 
   public function form($instance){

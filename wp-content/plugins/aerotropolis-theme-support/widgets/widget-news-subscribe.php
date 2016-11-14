@@ -23,7 +23,7 @@ class Aero_News_Subscribe extends WP_Widget {
       'description' => 'News Sidebar Newsletter Widget',
     );
 
-    $this->WP_Widget('aero_news_subscribe', 'Aerotropolis Sidebar Newsletter', $options);
+    parent::__construct('aero_news_subscribe', 'Aerotropolis Sidebar Newsletter', $options);
   }
 
   public function form($instance){

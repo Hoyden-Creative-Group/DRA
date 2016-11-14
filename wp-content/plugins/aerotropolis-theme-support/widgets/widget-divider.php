@@ -15,7 +15,7 @@ class Aero_Divider extends WP_Widget {
       'description' => 'Divider',
     );
 
-    $this->WP_Widget('aero_divider', 'Divider', $options);
+    parent::__construct('aero_divider', 'Divider', $options);
   }
 
   public function widget($args, $instance){

@@ -24,7 +24,7 @@ class Aero_MoreInformation extends WP_Widget {
       'description' => 'More information widget',
     );
 
-    $this->WP_Widget('aero_more_information', 'Aerotropolis More Information', $options);
+    parent::__construct('aero_more_information', 'Aerotropolis More Information', $options);
   }
 
   public function form($instance){

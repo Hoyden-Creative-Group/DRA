@@ -27,7 +27,7 @@ class Aero_NewsContact extends WP_Widget {
       'description' => 'News contact widget',
     );
 
-    $this->WP_Widget('aero_newscontact', 'Aerotropolis News Contact', $options);
+    parent::__construct('aero_newscontact', 'Aerotropolis News Contact', $options);
 
     add_action( 'admin_head-widgets.php', array( $this, 'newscontact_head' ) );
     add_action( 'sidebar_admin_setup', array( $this, 'newscontact_setup' ) );

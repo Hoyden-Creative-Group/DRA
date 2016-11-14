@@ -18,24 +18,30 @@
  * @package WordPress
  */
 
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'aerotropolis_v2');
-
-/** MySQL database username */
-define('DB_USER', 'root');
-
-/** MySQL database password */
-define('DB_PASSWORD', 'root');
-
-/** MySQL hostname */
 define('DB_HOST', 'localhost');
-
-/** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');
-
-/** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
+
+if( preg_match("/^www\.aerotropolis\.com/", $_SERVER['HTTP_HOST']) ) {
+  define('ENVIRONMENT', 'PROD');
+  define('WP_DEBUG', false);
+  define('DB_NAME', '');
+  define('DB_USER', '');
+  define('DB_PASSWORD', '');
+} elseif ( $_SERVER['HTTP_HOST'] == "aerotropolis.hoydencreative.com" ) {
+  define('ENVIRONMENT', 'STAGING');
+  define('WP_DEBUG', true);
+  define('DB_NAME', 'mollymas_aerotropolis');
+  define('DB_USER', 'mollymas_aero');
+  define('DB_PASSWORD', 'hoyden_aero');
+} else {
+  define('ENVIRONMENT', 'LOCAL');
+  define('WP_DEBUG', true);
+  define('DB_NAME', 'aerotropolis');
+  define('DB_USER', 'root');
+  define('DB_PASSWORD', 'root');
+}
+
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -83,7 +89,7 @@ define('WP_DEBUG', false);
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
+  define('ABSPATH', dirname(__FILE__) . '/');
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
