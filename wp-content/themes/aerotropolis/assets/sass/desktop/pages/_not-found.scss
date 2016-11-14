@@ -1,0 +1,28 @@
+/**
+ * @package Aerotropolis Theme Support
+ * @author  Bryan Stanley <bstanley.0811@gmail.com>
+ *
+ * 404 Page
+ */
+
+.not-found{
+  .site-main{
+    display: flex;
+    margin: 0 -20px;
+    align-content: space-between;
+    align-items: center;
+  }
+
+  .not-found-img{
+    flex: 1.5 0 0;
+    background: url( '#{$desktop-images}/industry-rails-train-path@2x.jpg' ) no-repeat center center;
+    background-size: cover;
+    margin: 0px 20px;
+    min-height: 600px;
+  }
+
+  .not-found-search{
+    flex: 1 0 0;
+    margin: 0px 20px;
+  }
+}

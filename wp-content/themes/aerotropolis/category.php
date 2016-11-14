@@ -10,13 +10,11 @@
 get_header(); ?>
 
 <div id="primary" class="content-area news-page category-page">
-
   <aside class="news-sidebar">
     <?php dynamic_sidebar( 'news-side-bar' ); ?>
   </aside>
 
   <main id="main" class="site-main" role="main">
-
     <h1 class="page-title"><?php echo single_cat_title(); ?></h1>
 
     <?php if ( have_posts() ) : ?>
@@ -36,9 +34,7 @@ get_header(); ?>
 
     endif;
     ?>
-
-  </main><!-- .site-main -->
-
-</div><!-- .content-area -->
+  </main>
+</div>
 
 <?php get_footer(); ?>

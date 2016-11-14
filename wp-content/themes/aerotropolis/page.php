@@ -7,9 +7,7 @@
  * Template for displaying pages.
  */
 
-
 get_header(); ?>
-
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
@@ -32,10 +30,8 @@ get_header(); ?>
 			// End of the loop.
 		endwhile;
 		?>
-
-	</main><!-- .site-main -->
-
-</div><!-- .content-area -->
+	</main>
+</div>
 
 <aside id="content-bottom-widgets" class="content-bottom-widgets" role="complementary">
 	<div class="widget-area">

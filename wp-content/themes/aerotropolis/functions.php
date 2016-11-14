@@ -162,6 +162,16 @@ function get_latest_meeting() {
 	$cachedMeetingPost = get_transient(AERO_FOOTER_TRANSIENT);
 
 	if (!$cachedMeetingPost) {
+		// defaults
+		$meeting = array(
+			"title" => "",
+			"excerpt" => "",
+			"permalink" => "",
+			"date" => ""
+		);
+		$expires = 60*60*1;
+
+		// query for the latest post in the meeting category
 		$args = array(
 			'posts_per_page' => 1,
 			'category_name' => AERO_FOOTER_SLUG
@@ -176,11 +186,13 @@ function get_latest_meeting() {
 				"permalink" => esc_url(get_permalink()),
 				"date" => get_the_date('M d, Y')
 			);
+			// reset the expires to be further out
+			$expires = 60*60*6;
 		}
 		wp_reset_postdata();
 
 		// save to cache
-		set_transient( AERO_FOOTER_TRANSIENT, $meeting, 60*60*6 );
+		set_transient( AERO_FOOTER_TRANSIENT, $meeting, $expires );
 	}
 
 	return $cachedMeetingPost;
