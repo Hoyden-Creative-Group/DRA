@@ -14,7 +14,8 @@ class Aero_NewsContact extends WP_Widget {
   public function __construct () {
     $this->defaults = array(
       'title'      => '',
-      'photo'      => '',
+      'attachmentID' => '',
+      'imageURL' => '',
       'email'      => '',
       'phone'      => '',
       'twitter'    => '',
@@ -65,7 +66,7 @@ class Aero_NewsContact extends WP_Widget {
     $buttonLink = $instance['buttonLink'];
     ?>
 
-    <p><label for="<?php echo $this->get_field_id('title'); ?>">Text: <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo attribute_escape($title); ?>" /></label></p>
+    <p><label for="<?php echo $this->get_field_id('title'); ?>">Text: <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></label></p>
 
     <div>
       <label>
@@ -80,16 +81,16 @@ class Aero_NewsContact extends WP_Widget {
     </div>
 
     <?php /*
-    <p><label for="<?php echo $this->get_field_id('email'); ?>">Email: <input class="widefat" id="<?php echo $this->get_field_id('email'); ?>" name="<?php echo $this->get_field_name('email'); ?>" type="text" value="<?php echo attribute_escape($email); ?>" /></label></p>
+    <p><label for="<?php echo $this->get_field_id('email'); ?>">Email: <input class="widefat" id="<?php echo $this->get_field_id('email'); ?>" name="<?php echo $this->get_field_name('email'); ?>" type="text" value="<?php echo esc_attr($email); ?>" /></label></p>
 
-    <p><label for="<?php echo $this->get_field_id('phone'); ?>">Phone Number: <input class="widefat" id="<?php echo $this->get_field_id('phone'); ?>" name="<?php echo $this->get_field_name('phone'); ?>" type="text" value="<?php echo attribute_escape($phone); ?>" /></label></p>
+    <p><label for="<?php echo $this->get_field_id('phone'); ?>">Phone Number: <input class="widefat" id="<?php echo $this->get_field_id('phone'); ?>" name="<?php echo $this->get_field_name('phone'); ?>" type="text" value="<?php echo esc_attr($phone); ?>" /></label></p>
 
-    <p><label for="<?php echo $this->get_field_id('twitter'); ?>">Twitter handle: <input class="widefat" id="<?php echo $this->get_field_id('twitter'); ?>" name="<?php echo $this->get_field_name('twitter'); ?>" type="text" value="<?php echo attribute_escape($twitter); ?>" /></label></p>
+    <p><label for="<?php echo $this->get_field_id('twitter'); ?>">Twitter handle: <input class="widefat" id="<?php echo $this->get_field_id('twitter'); ?>" name="<?php echo $this->get_field_name('twitter'); ?>" type="text" value="<?php echo esc_attr($twitter); ?>" /></label></p>
     */ ?>
 
-    <p><label for="<?php echo $this->get_field_id('buttonText'); ?>">Button text: <input class="widefat" id="<?php echo $this->get_field_id('buttonText'); ?>" name="<?php echo $this->get_field_name('buttonText'); ?>" type="text" value="<?php echo attribute_escape($buttonText); ?>" /></label></p>
+    <p><label for="<?php echo $this->get_field_id('buttonText'); ?>">Button text: <input class="widefat" id="<?php echo $this->get_field_id('buttonText'); ?>" name="<?php echo $this->get_field_name('buttonText'); ?>" type="text" value="<?php echo esc_attr($buttonText); ?>" /></label></p>
 
-    <p><label for="<?php echo $this->get_field_id('buttonLink'); ?>">Button link: <input class="widefat" id="<?php echo $this->get_field_id('buttonLink'); ?>" name="<?php echo $this->get_field_name('buttonLink'); ?>" type="text" value="<?php echo attribute_escape($buttonLink); ?>" /></label></p>
+    <p><label for="<?php echo $this->get_field_id('buttonLink'); ?>">Button link: <input class="widefat" id="<?php echo $this->get_field_id('buttonLink'); ?>" name="<?php echo $this->get_field_name('buttonLink'); ?>" type="text" value="<?php echo esc_attr($buttonLink); ?>" /></label></p>
 
     <?php
   }

@@ -34,14 +34,14 @@ class Aero_News_Subscribe extends WP_Widget {
     $buttonText = $instance['buttonText'];
     ?>
 
-    <p><label for="<?php echo $this->get_field_id('title'); ?>">Title: <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo attribute_escape($title); ?>" /></label></p>
+    <p><label for="<?php echo $this->get_field_id('title'); ?>">Title: <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></label></p>
     <p>
       <label for="<?php echo $this->get_field_id('text'); ?>">
         Text:
-        <textarea class="widefat" id="<?php echo $this->get_field_id('text'); ?>" style="height: 120px;" name="<?php echo $this->get_field_name('text'); ?>"><?php echo attribute_escape($text); ?></textarea>
+        <textarea class="widefat" id="<?php echo $this->get_field_id('text'); ?>" style="height: 120px;" name="<?php echo $this->get_field_name('text'); ?>"><?php echo esc_attr($text); ?></textarea>
       </label>
     </p>
-    <p><label for="<?php echo $this->get_field_id('buttonText'); ?>">Button Text: <input class="widefat" id="<?php echo $this->get_field_id('buttonText'); ?>" name="<?php echo $this->get_field_name('buttonText'); ?>" type="text" value="<?php echo attribute_escape($buttonText); ?>" /></label></p>
+    <p><label for="<?php echo $this->get_field_id('buttonText'); ?>">Button Text: <input class="widefat" id="<?php echo $this->get_field_id('buttonText'); ?>" name="<?php echo $this->get_field_name('buttonText'); ?>" type="text" value="<?php echo esc_attr($buttonText); ?>" /></label></p>
 
     <?php
   }

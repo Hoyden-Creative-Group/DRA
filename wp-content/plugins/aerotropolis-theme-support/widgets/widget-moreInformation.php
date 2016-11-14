@@ -36,10 +36,10 @@ class Aero_MoreInformation extends WP_Widget {
     $buttonLink = $instance['buttonLink'];
     ?>
 
-    <p><label for="<?php echo $this->get_field_id('phoneText'); ?>">Phone title: <input class="widefat" id="<?php echo $this->get_field_id('phoneText'); ?>" name="<?php echo $this->get_field_name('phoneText'); ?>" type="text" value="<?php echo attribute_escape($phoneText); ?>" /></label></p>
-    <p><label for="<?php echo $this->get_field_id('emailText'); ?>">Email title: <input class="widefat" id="<?php echo $this->get_field_id('emailText'); ?>" name="<?php echo $this->get_field_name('emailText'); ?>" type="text" value="<?php echo attribute_escape($emailText); ?>" /></label></p>
-    <p><label for="<?php echo $this->get_field_id('buttonText'); ?>">Button text: <input class="widefat" id="<?php echo $this->get_field_id('buttonText'); ?>" name="<?php echo $this->get_field_name('buttonText'); ?>" type="text" value="<?php echo attribute_escape($buttonText); ?>" /></label></p>
-    <p><label for="<?php echo $this->get_field_id('buttonLink'); ?>">Button link: <input class="widefat" id="<?php echo $this->get_field_id('buttonLink'); ?>" name="<?php echo $this->get_field_name('buttonLink'); ?>" type="text" value="<?php echo attribute_escape($buttonLink); ?>" /></label></p>
+    <p><label for="<?php echo $this->get_field_id('phoneText'); ?>">Phone title: <input class="widefat" id="<?php echo $this->get_field_id('phoneText'); ?>" name="<?php echo $this->get_field_name('phoneText'); ?>" type="text" value="<?php echo esc_attr($phoneText); ?>" /></label></p>
+    <p><label for="<?php echo $this->get_field_id('emailText'); ?>">Email title: <input class="widefat" id="<?php echo $this->get_field_id('emailText'); ?>" name="<?php echo $this->get_field_name('emailText'); ?>" type="text" value="<?php echo esc_attr($emailText); ?>" /></label></p>
+    <p><label for="<?php echo $this->get_field_id('buttonText'); ?>">Button text: <input class="widefat" id="<?php echo $this->get_field_id('buttonText'); ?>" name="<?php echo $this->get_field_name('buttonText'); ?>" type="text" value="<?php echo esc_attr($buttonText); ?>" /></label></p>
+    <p><label for="<?php echo $this->get_field_id('buttonLink'); ?>">Button link: <input class="widefat" id="<?php echo $this->get_field_id('buttonLink'); ?>" name="<?php echo $this->get_field_name('buttonLink'); ?>" type="text" value="<?php echo esc_attr($buttonLink); ?>" /></label></p>
 
     <?php
   }
