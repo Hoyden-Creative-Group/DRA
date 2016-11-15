@@ -170,9 +170,11 @@ jQuery(function($) {
 
   function initHomeVideo() {
     var $videoWrapper = $('#home-video'),
+        $videoContainer = $('.video-container'),
         $videoOverlay = $('.video-overlay', $videoWrapper),
         $videoPlayer = document.getElementById('aero-home-video'),
-        $videoScroller = $('.scroll-down', $videoWrapper);
+        $videoScroller = $('.scroll-down', $videoWrapper),
+        canPausePlay = true;
 
     // set the height of the video to the viewport
     if ($videoWrapper.length) {
@@ -180,12 +182,32 @@ jQuery(function($) {
     }
 
     // set controls
-    $videoOverlay.on('click', function (e) {
-      var $this = $(this);
-      $this.fadeOut(300, function(){
-        $videoPlayer.play();
-        $this.remove();
-      })
+    $videoContainer.on('click', function(e){
+      if (!canPausePlay){
+        return;
+      }
+
+      canPausePlay = false;
+
+      if ($videoPlayer.paused) {
+        $videoOverlay.fadeOut({
+          duration: 300,
+          queue: false,
+          complete: function(){
+            $videoPlayer.play();
+            canPausePlay = true;
+          }
+        });
+      } else {
+        $videoPlayer.pause();
+        $videoOverlay.fadeIn({
+          duration: 300,
+          queue: false,
+          complete: function() {
+            canPausePlay = true;
+          }
+        });
+      }
     });
 
     $videoScroller.on('click', function (e) {
