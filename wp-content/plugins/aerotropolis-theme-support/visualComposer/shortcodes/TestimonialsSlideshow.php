@@ -79,12 +79,12 @@ class TestimonialsSlideshow {
 
   public function getTemplate ($atts, $content) {
     extract( shortcode_atts( array(
-      'image' => 'image',
-      'title' => 'title',
-      'number' => 'number',
-      'duration' => 'duration',
-      'category' => 'category',
-      'class' => 'class'
+      'image' => '',
+      'title' => '',
+      'number' => '',
+      'duration' => '',
+      'category' => '',
+      'class' => ''
     ), $atts ) );
 
     $output = '';

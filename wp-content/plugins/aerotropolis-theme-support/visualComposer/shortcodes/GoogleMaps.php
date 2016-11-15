@@ -78,12 +78,12 @@ class GoogleMaps {
   public function getTemplate ($atts, $content) {
 
     extract( shortcode_atts( array(
-      'title' => 'title',
-      'map_address' => 'map_address',
-      'zoom' => 'zoom',
-      'marker' => 'marker',
-      'api_key' => 'api_key',
-      'class' => 'class'
+      'title' => '',
+      'map_address' => '',
+      'zoom' => '',
+      'marker' => '',
+      'api_key' => '',
+      'class' => ''
     ), $atts ) );
 
     $output = '';

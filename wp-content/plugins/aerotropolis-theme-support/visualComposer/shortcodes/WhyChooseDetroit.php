@@ -68,11 +68,11 @@ class WhyChooseDetroit {
 
   public function getTemplate ($atts, $content) {
     extract( shortcode_atts( array(
-      'image' => 'image',
-      'title' => 'title',
-      'summary' => 'summary',
-      'button1' => 'button1',
-      'button2' => 'button2'
+      'image' => '',
+      'title' => '',
+      'summary' => '',
+      'button1' => '',
+      'button2' => ''
     ), $atts ) );
 
     $output = '';

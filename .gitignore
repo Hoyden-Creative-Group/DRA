@@ -12,7 +12,7 @@
 node_modules/
 uploads/
 wp-content/plugins/*
-assets/stock/
+stock/
 
 # Except these directories
 !wp-content/

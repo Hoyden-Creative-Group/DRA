@@ -10,9 +10,15 @@
 
 <?php ob_start() ;?>
 
-<div class="video-wrapper">
+<div id="home-video" class="video-wrapper">
   <div class="video-container">
-    <video playsinline autoplay muted loop id="bgvid" poster="<?php echo wp_get_attachment_image_src( $video_poster, 'full' )[0]; ?>">
+
+    <div class="video-overlay" style="background-image: url(<?php echo wp_get_attachment_image_src( $video_poster, 'full' )[0]; ?>)">
+      <div class="icon-play-button"></div>
+      <?php echo empty($video_slide_to) ? "" : '<div class="icon-down-arrow scroll-down" data-slide-to="'. $video_slide_to .'"></div>'; ?>
+    </div>
+
+    <video muted loop id="aero-home-video">
       <source src="<?php echo $video_webm; ?>" type="video/webm">
       <source src="<?php echo $video_mp4; ?>" type="video/mp4">
     </video>

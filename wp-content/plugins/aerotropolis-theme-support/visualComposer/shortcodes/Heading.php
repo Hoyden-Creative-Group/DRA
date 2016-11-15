@@ -66,9 +66,9 @@ class Heading {
 
   public function getTemplate ($atts, $content) {
     extract( shortcode_atts( array(
-      'heading' => 'heading',
-      'text' => 'text',
-      'class' => 'class'
+      'heading' => '',
+      'text' => '',
+      'class' => ''
     ), $atts ) );
 
     $output = '';

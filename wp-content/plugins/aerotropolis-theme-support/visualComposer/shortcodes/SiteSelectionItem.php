@@ -72,10 +72,10 @@ class SiteSelectionItem {
 
   public function getTemplate ($atts, $content) {
     extract( shortcode_atts( array(
-      'icon' => 'icon',
-      'title' => 'title',
-      'description' => 'description',
-      'button1' => 'button1'
+      'icon' => '',
+      'title' => '',
+      'description' => '',
+      'button1' => ''
     ), $atts ) );
 
     $output = '';

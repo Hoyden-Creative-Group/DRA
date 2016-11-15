@@ -33,7 +33,8 @@ class Html5Video {
           "class" => "",
           "heading" => "Video Poster Image",
           "param_name" => "video_poster",
-          "description" => "Poster image of the video while it loads"
+          "description" => "Poster image of the video while it loads",
+          "value" => ""
         ),
         array(
           "type" => "textfield",
@@ -46,6 +47,13 @@ class Html5Video {
           "heading" => "WebM Video Link",
           "param_name" => "video_webm",
           "holder" => "div"
+        ),
+        array(
+          "type" => "textfield",
+          "heading" => "Slide into view class name",
+          "param_name" => "video_slide_to",
+          "holder" => "div",
+          "description" => "The class name to scroll into view when clicking down arrow"
         )
       )
     );
@@ -57,9 +65,10 @@ class Html5Video {
 
   public function getTemplate ($atts, $content) {
     extract( shortcode_atts( array(
-      'video_poster' => 'video_poster',
-      'video_mp4' => 'video_mp4',
-      'video_webm' => 'video_webm'
+      'video_poster' => '',
+      'video_mp4' => '',
+      'video_webm' => '',
+      'video_slide_to' => ''
     ), $atts ) );
 
     $output = '';

@@ -77,10 +77,10 @@ class CustomButton {
 
   public function getTemplate ($atts, $content) {
     extract( shortcode_atts( array(
-      'type' => 'type',
-      'color' => 'color',
-      'button' => 'button',
-      'class' => 'class'
+      'type' => '',
+      'color' => '',
+      'button' => '',
+      'class' => ''
     ), $atts ) );
 
     $output = '';

@@ -69,10 +69,10 @@ class IndustryItem {
 
   public function getTemplate ($atts, $content) {
     extract( shortcode_atts( array(
-      'image' => 'image',
-      'image_class' => 'image_class',
-      'title' => 'title',
-      'summary' => 'summary'
+      'image' => '',
+      'image_class' => '',
+      'title' => '',
+      'summary' => ''
     ), $atts ) );
 
     $output = '';

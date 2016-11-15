@@ -440,7 +440,8 @@
  */
 jQuery(function($) {
 
-  var $window = $(window);
+  var $window = $(window),
+      navHeight = $('.main-nav').outerHeight(true);
 
   /**
    * Main Menu
@@ -485,8 +486,7 @@ jQuery(function($) {
    * Side menu
    */
   function initSideMenu () {
-    var $stickySideNav = $('.sticky-secondary-nav'),
-        navHeight = $('.main-nav').outerHeight(true);
+    var $stickySideNav = $('.sticky-secondary-nav');
 
     if ($stickySideNav.length) {
       $('li', $stickySideNav).on('click', function (e) {
@@ -496,21 +496,32 @@ jQuery(function($) {
         var href = anchor.attr('href');
 
         if (!/^#/.test(href)) {
-          console.log('does not start with pound');
           window.location.href = href;
         } else {
-          var elem = $(href.replace("#", "."));
-          var currentOffset = $window.scrollTop();
-          var offset = elem.offset().top - navHeight;
-          var diff = Math.abs(currentOffset - offset);
-          var base = 500;
-          var speed = (diff * base) / 1000;
-
-          $("html,body").animate({
-            scrollTop: offset
-          }, speed, 'easeInOutCubic');
+          slideToClass(href.replace("/^#/", ""));
         }
       });
+    }
+  }
+
+  function slideToClass (className) {
+    // if the classname is passed with a period, lets remove it
+    className = className.replace("/^./", "");
+
+    var elem = $('.' + className);
+
+    if (elem.length === 1) {
+      var currentOffset = $window.scrollTop();
+      var offset = elem.offset().top - navHeight;
+      var diff = Math.abs(currentOffset - offset);
+      var base = 500;
+      var speed = (diff * base) / 1000;
+
+      $("html,body").animate({
+        scrollTop: offset
+      }, speed, 'easeInOutCubic');
+    } else {
+      console.log('not a unique class');
     }
   }
 
@@ -524,7 +535,10 @@ jQuery(function($) {
         $footerContact = $('.content-bottom-widgets'),
         $footer = $('.site-footer'),
         mainNavOffset = $secondaryNav.outerHeight(true),
-        sideNavHeight = $stickySideNav.outerHeight(true);
+        sideNavHeight = $stickySideNav.outerHeight(true),
+        sideNavTop = ($window.height() / 2) - (sideNavHeight / 2);
+
+    var stickySideNavBaseCss = {'top': sideNavTop};
 
     var sticky = {
       mainNav: {
@@ -546,7 +560,7 @@ jQuery(function($) {
         scrollHandler: function (win, scrollPosition) {
           var offset = $footerContact.position().top - sideNavHeight;
 
-          if ((offset - scrollPosition) <= 300) {
+          if ((offset - scrollPosition) <= sideNavTop) {
             sticky.sideNav.pause(offset);
           } else {
             sticky.sideNav.play();
@@ -561,7 +575,8 @@ jQuery(function($) {
           $stickySideNav
             .addClass('fixed')
             .removeClass('pause')
-            .removeAttr('style');
+            .removeAttr('style')
+            .css(stickySideNavBaseCss);
         }
       }
     };
@@ -589,8 +604,36 @@ jQuery(function($) {
   });
 
 
+  function initHomeVideo() {
+    var $videoWrapper = $('#home-video'),
+        $videoOverlay = $('.video-overlay', $videoWrapper),
+        $videoPlayer = document.getElementById('aero-home-video'),
+        $videoScroller = $('.scroll-down', $videoWrapper);
+
+    // set the height of the video to the viewport
+    if ($videoWrapper.length) {
+      $videoWrapper.height($window.height() - $videoWrapper.offset().top);
+    }
+
+    // set controls
+    $videoOverlay.on('click', function (e) {
+      var $this = $(this);
+      $this.fadeOut(300, function(){
+        $videoPlayer.play();
+        $this.remove();
+      })
+    });
+
+    $videoScroller.on('click', function (e) {
+      e.stopPropagation();
+      slideToClass($(this).data('slide-to'));
+    })
+  }
+
+
   initMainMenu();
   initSideMenu();
   initStickyBars();
+  initHomeVideo();
 
 });

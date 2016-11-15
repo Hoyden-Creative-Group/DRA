@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="106px" height="106px" viewBox="0 0 106 106" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>Combined Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Desktop-Designs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home" transform="translate(-819.000000, -300.000000)" fill="#FFFFFF">
+            <g id="Top-Video" transform="translate(0.000000, 129.000000)">
+                <g id="play-video" transform="translate(819.000000, 171.000000)">
+                    <g id="Group-11">
+                        <g id="play-button">
+                            <path d="M53,106 C82.2710917,106 106,82.2710917 106,53 C106,23.7289083 82.2710917,0 53,0 C23.7289083,0 0,23.7289083 0,53 C0,82.2710917 23.7289083,106 53,106 Z M53,100 C27.0426168,100 6,78.9573832 6,53 C6,27.0426168 27.0426168,6 53,6 C78.9573832,6 100,27.0426168 100,53 C100,78.9573832 78.9573832,100 53,100 Z M33,24 L88,54 L33,84 L33,24 Z" id="Combined-Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
