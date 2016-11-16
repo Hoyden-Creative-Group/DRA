@@ -7,14 +7,18 @@ var desktopScripts = [
   'assets/js/desktop/**/*.js'
 ];
 
+var vcScripts = [
+  'assets/js/vc_extend/**/*.js'
+];
+
 // NOTE: declare these prior to setting up NPM concat
 
 // -- only scripts to be js hinted
 var jsHintScripts = [];
-jsHintScripts = jsHintScripts.concat( desktopScripts );
+jsHintScripts = jsHintScripts.concat( desktopScripts, vcScripts );
 
 // -- combine vendor and custom scripts
-var desktopScripts = desktopVendorScripts.concat( desktopScripts );
+var desktopScripts = desktopVendorScripts.concat( desktopScripts, vcScripts );
 
 
 
@@ -24,6 +28,7 @@ var concat    = require('gulp-concat');
 var gulp      = require('gulp');
 var sass      = require('gulp-sass');
 var uglify    = require('gulp-uglify');
+var jshint    = require('gulp-jshint');
 
 
 function swallowError (error) {
@@ -112,7 +117,17 @@ gulp.task('compass', function() {
 /* Javascript */
 /********************************************************/
 
-gulp.task('concat-js', function(){
+gulp.task('jshint', function() {
+
+  var hinted = gulp.src( jsHintScripts )
+    .pipe( jshint('.jshintrc') )
+    .pipe( jshint.reporter('jshint-stylish') );
+
+  return hinted;
+
+});
+
+gulp.task('concat-js', ['jshint'], function(){
   var destination = "assets/dist/";
   var devDestination = "assets/js/bundled/";
   var desktop = gulp.src( desktopScripts )

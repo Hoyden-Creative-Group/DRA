@@ -10,6 +10,8 @@
 
 define('AERO_FOOTER_SLUG', 'meetings');
 define('AERO_FOOTER_TRANSIENT', 'aero_latest_meeting');
+define('AERO_TESTIMONIALS_SLUG', 'testimonials');
+define('AERO_TESTIMONIALS_TRANSIENT', 'aero_testimonials');
 
 
 /**
@@ -146,6 +148,52 @@ add_action( 'admin_bar_menu', 'custom_admin_bar', 999 );
 
 
 /**
+ * Testimonials query for home page slider
+ */
+function get_testimonials($numberToShow, $category) {
+	$cachedTestimonials = get_transient(AERO_TESTIMONIALS_TRANSIENT);
+
+	if (!$cachedTestimonials) {
+		// defaults
+		$testimonials = array();
+		$expires = 60*60*1;
+
+		// query for the testimonials
+		$args = array(
+			'post_type' => 'testimonials',
+			'showposts' => $numberToShow,
+			'orderby' => 'rand',
+			'testimonial-categories' => $category
+		);
+		$query = new WP_Query($args);
+
+		while ($query->have_posts()) {
+			$query->the_post();
+
+			array_push(
+				$testimonials,
+				array(
+					"testimonial" => get_the_content(),
+					"author" => get_field('author')
+				)
+			);
+
+			// reset the expires to be further out
+			$expires = 60*60*6;
+		}
+		wp_reset_postdata();
+
+		// save to cache
+		set_transient( AERO_TESTIMONIALS_TRANSIENT, $testimonials, $expires );
+
+		$cachedTestimonials = $testimonials;
+	}
+
+	return $cachedTestimonials;
+}
+
+
+/**
  * Latest meeting query for footer
  */
 function get_latest_meeting() {
@@ -183,17 +231,24 @@ function get_latest_meeting() {
 
 		// save to cache
 		set_transient( AERO_FOOTER_TRANSIENT, $meeting, $expires );
+
+		$cachedMeetingPost = $meeting;
 	}
 
 	return $cachedMeetingPost;
 }
 
 /**
- * Latest meeting cache buster when post is created or saved
+ * Cache buster when post is created or saved
  */
 add_action( 'save_post', 'save_post_function', 10, 3 );
-function save_post_function( $post_ID, $post, $update ) {
-	$categories = wp_get_post_categories($post_ID, array('fields' => 'all'));
+function save_post_function( $postID, $post, $update ) {
+	if ($post->post_type == AERO_TESTIMONIALS_SLUG) {
+		delete_transient(AERO_TESTIMONIALS_TRANSIENT);
+		return;
+	}
+
+	$categories = wp_get_post_categories($postID, array('fields' => 'all'));
 	foreach ($categories as $category) {
 		if ($category->slug == AERO_FOOTER_SLUG) {
 			delete_transient(AERO_FOOTER_TRANSIENT);

@@ -97,7 +97,6 @@ jQuery(function($) {
         $secondaryNav = $('.secondary-nav'),
         $stickySideNav = $('.sticky-secondary-nav'),
         $footerContact = $('.content-bottom-widgets'),
-        $footer = $('.site-footer'),
         mainNavOffset = $secondaryNav.outerHeight(true),
         sideNavHeight = $stickySideNav.outerHeight(true),
         sideNavTop = ($window.height() / 2) - (sideNavHeight / 2);
@@ -162,7 +161,9 @@ jQuery(function($) {
 
   $.easing = Object.assign({}, $.easing, {
     easeInOutCubic: function (x, t, b, c, d) {
-      if ((t/=d/2) < 1) return c/2*t*t*t + b;
+      if ((t/=d/2) < 1) {
+        return c/2*t*t*t + b;
+      }
       return c/2*((t-=2)*t*t + 2) + b;
     }
   });
@@ -182,7 +183,7 @@ jQuery(function($) {
     }
 
     // set controls
-    $videoContainer.on('click', function(e){
+    $videoContainer.on('click', function(){
       if (!canPausePlay){
         return;
       }
@@ -213,7 +214,7 @@ jQuery(function($) {
     $videoScroller.on('click', function (e) {
       e.stopPropagation();
       slideToClass($(this).data('slide-to'));
-    })
+    });
   }
 
 

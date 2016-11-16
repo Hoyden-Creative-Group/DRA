@@ -16,7 +16,6 @@ Author: Bryan Stanley
 
 include 'admin/pages/page-options.php';
 include 'admin/post_types/posttype-testimonials.php';
-include 'admin/post_types/meta_boxes/metabox-author.php';
 include 'admin/post_types/meta_boxes/metabox-secondary-nav.php';
 include 'visualComposer/shortcodes.php';
 

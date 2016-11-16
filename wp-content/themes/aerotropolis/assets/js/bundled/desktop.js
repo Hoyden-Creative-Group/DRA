@@ -533,7 +533,6 @@ jQuery(function($) {
         $secondaryNav = $('.secondary-nav'),
         $stickySideNav = $('.sticky-secondary-nav'),
         $footerContact = $('.content-bottom-widgets'),
-        $footer = $('.site-footer'),
         mainNavOffset = $secondaryNav.outerHeight(true),
         sideNavHeight = $stickySideNav.outerHeight(true),
         sideNavTop = ($window.height() / 2) - (sideNavHeight / 2);
@@ -598,7 +597,9 @@ jQuery(function($) {
 
   $.easing = Object.assign({}, $.easing, {
     easeInOutCubic: function (x, t, b, c, d) {
-      if ((t/=d/2) < 1) return c/2*t*t*t + b;
+      if ((t/=d/2) < 1) {
+        return c/2*t*t*t + b;
+      }
       return c/2*((t-=2)*t*t + 2) + b;
     }
   });
@@ -618,7 +619,7 @@ jQuery(function($) {
     }
 
     // set controls
-    $videoContainer.on('click', function(e){
+    $videoContainer.on('click', function(){
       if (!canPausePlay){
         return;
       }
@@ -646,13 +647,10 @@ jQuery(function($) {
       }
     });
 
-
-
-
     $videoScroller.on('click', function (e) {
       e.stopPropagation();
       slideToClass($(this).data('slide-to'));
-    })
+    });
   }
 
 
@@ -662,3 +660,57 @@ jQuery(function($) {
   initHomeVideo();
 
 });
+function AeroTestimonial(id, testimonials, duration) {
+  var _this = this;
+
+  this.id = id;
+  this.content = testimonials;
+  this.total = testimonials.length;
+  this.duration = duration;
+  this.currentIndex = 0;
+  this.timer = 0;
+
+  jQuery(function($) {
+    _this.$slideshow = $('#testimonial-slideshow-' + _this.id);
+    _this.$wrapper = $('.aero-testimonial-wrapper', _this.$slideshow);
+    _this.$testimonial = $('.aero-testimonial', _this.$slideshow);
+    _this.$author = $('.aero-author', _this.$slideshow);
+
+    $('.aero-left').on('click', _this.prevSlide.bind(_this));
+    $('.aero-right').on('click', _this.nextSlide.bind(_this));
+
+    $('.aero-nav', _this.$slideshow).removeClass('hidden');
+
+    _this.showTestimonial();
+  });
+}
+
+AeroTestimonial.prototype.nextSlide = function() {
+  clearTimeout(this.timer);
+  this.currentIndex++;
+  this.currentIndex = this.currentIndex >= this.total ? 0 : this.currentIndex;
+  this.loadTestimonial();
+};
+
+AeroTestimonial.prototype.prevSlide = function() {
+  clearTimeout(this.timer);
+  this.currentIndex--;
+  this.currentIndex = this.currentIndex < 0 ? this.total - 1 : this.currentIndex;
+  this.loadTestimonial();
+};
+
+AeroTestimonial.prototype.loadTestimonial = function() {
+  this.$wrapper.addClass('hidden');
+  this.$wrapper.one("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", this.showTestimonial.bind(this));
+};
+
+AeroTestimonial.prototype.showTestimonial = function() {
+  var _this = this;
+  this.$testimonial.text(this.content[this.currentIndex].testimonial);
+  this.$author.html('&mdash; ' + this.content[this.currentIndex].author);
+  this.$wrapper.removeClass('hidden');
+
+  this.$wrapper.one("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function() {
+    _this.timer = setTimeout(_this.nextSlide.bind(_this), _this.duration);
+  });
+};
