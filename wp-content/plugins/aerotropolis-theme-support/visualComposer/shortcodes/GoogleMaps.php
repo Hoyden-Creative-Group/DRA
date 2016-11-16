@@ -29,12 +29,6 @@ class GoogleMaps {
       "params" => array(
         array(
           "type" => "textfield",
-          "heading" => "Title",
-          "param_name" => "title",
-          "holder" => "div"
-        ),
-        array(
-          "type" => "textfield",
           "heading" => "Map Address",
           "param_name" => "map_address",
           "holder" => "div",
@@ -78,7 +72,6 @@ class GoogleMaps {
   public function getTemplate ($atts, $content) {
 
     extract( shortcode_atts( array(
-      'title' => '',
       'map_address' => '',
       'zoom' => '',
       'marker' => '',

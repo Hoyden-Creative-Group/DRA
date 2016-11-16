@@ -76,6 +76,14 @@ function theme_setup() {
 add_action( 'after_setup_theme', 'theme_setup' );
 
 
+/**
+ * Send HTML emails
+ */
+add_filter( 'wp_mail_content_type', 'set_content_type' );
+function set_content_type( $content_type ){
+	return 'text/html';
+}
+
 
 /**
  * Enqueues scripts and styles.
@@ -89,6 +97,12 @@ function aerotropolis_scripts() {
 	if (!is_admin()) {
 		wp_register_script('aerotropolis', get_template_directory_uri() . $jsPath . '/desktop.js', array('jquery') );
 		wp_enqueue_script('aerotropolis');
+
+		// add recaptcha to contact page
+		if (is_page('contact')) {
+			wp_register_script('aero_recaptcha', 'https://www.google.com/recaptcha/api.js');
+			wp_enqueue_script('aero_recaptcha');
+		}
 	}
 }
 add_action( 'wp_enqueue_scripts', 'aerotropolis_scripts' );

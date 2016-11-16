@@ -6,8 +6,110 @@
  */
 
 .areo-contact{
+  padding: 70px 0 50px 0;
+
+  .contact-heading{
+    width: 60%;
+    min-width: 500px;
+    display: inline-block;
+    float: right;
+    padding-top: 7px;
+    margin-bottom: -8px;
+  }
+
+  .form-errors{
+    &:before{
+      content: "";
+      clear: both;
+    }
+
+    float: right;
+    border: solid 1px #ebccd1;
+    background: #F2DEDF;
+    color: #a94442;
+    width: 500px;
+    padding: 10px 15px;
+    margin-top: 16px;
+
+    ul{
+      list-style-type: disc;
+      padding-left: 25px;
+    }
+  }
+
+  .contact-success{
+    float: right;
+    text-align: left;
+    width: 500px;
+    margin-top: 140px;
+  }
+
+  .contact-form{
+    text-align: right;
+
+    label{
+      display: inline-block;
+      padding-right: 10px;
+      margin-top: 4px;
+      color: #777777;
+      font-size: 14px;
+
+      .req{
+        color: #AB0001;
+      }
+    }
+
+    form{
+      display: inline-block;
+    }
+
+    .form-field{
+      input, textarea{
+        border: solid 1px #ccc;
+        padding: 6px 15px;
+        width: 70%;
+        min-width: 500px;
+        font: 18px/22px $font-lato;
+        transition: box-shadow .2s ease-in-out;
+        outline: none;
+
+        &:focus{
+          box-shadow: 0 0 5px #bbbbbb;
+        }
+      }
+
+      textarea{
+        resize: none;
+        height: 150px;
+        padding: 8px 15px;
+      }
+    }
+
+    .g-recaptcha{
+      float: right;
+      margin-right: 95px;
+    }
+
+    .submit{
+      content: "";
+      clear: both;
+      text-align: right;
+      padding-top: 15px;
+    }
+
+    .button{
+      @include flatButton($darkBlue);
+      width: 70%;
+      min-width:500px;
+    }
+  }
+
+  .office-location-heading{
+    margin: 15px 0 10px 0;
+  }
+
   .google-map{
-    width: 513px;
-    height: 300px;
+    width: 500px;
+    height: 457px;
   }
 }
