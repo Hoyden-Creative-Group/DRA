@@ -23,6 +23,9 @@
       if (status == google.maps.GeocoderStatus.OK) {
         if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
           map.setCenter(results[0].geometry.location);
+          map.setOptions({
+            scrollwheel: false
+          });
 
           var infowindow = new google.maps.InfoWindow(
               { content: '<b><?php echo preg_replace("/'/", "\'", $marker); ?></b>',

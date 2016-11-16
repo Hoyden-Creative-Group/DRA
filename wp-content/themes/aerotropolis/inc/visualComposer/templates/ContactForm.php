@@ -217,7 +217,9 @@
         <input type="text" name="aero_phonenumber" id="aero_phonenumber" placeholder="218-454-8321" value="<?php echo !empty($_POST['aero_phonenumber']) ? $_POST['aero_phonenumber'] : ""; ?>" />
       </p>
 
-      <div class="g-recaptcha" data-sitekey="<?php echo $captcha_site_key; ?>"></div>
+      <div class="captcha-wrapper">
+        <div class="g-recaptcha" data-sitekey="<?php echo $captcha_site_key; ?>"></div>
+      </div>
 
       <p class="submit">
         <input type="submit" class="button" value="Send Message" />

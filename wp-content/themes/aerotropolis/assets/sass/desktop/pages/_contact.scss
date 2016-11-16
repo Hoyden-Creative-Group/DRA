@@ -9,8 +9,8 @@
   padding: 70px 0 50px 0;
 
   .contact-heading{
-    width: 60%;
-    min-width: 500px;
+    min-width: 330px;
+    width: 70%;
     display: inline-block;
     float: right;
     padding-top: 7px;
@@ -27,7 +27,8 @@
     border: solid 1px #ebccd1;
     background: #F2DEDF;
     color: #a94442;
-    width: 500px;
+    min-width: 330px;
+    width: 70%;
     padding: 10px 15px;
     margin-top: 16px;
 
@@ -40,7 +41,8 @@
   .contact-success{
     float: right;
     text-align: left;
-    width: 500px;
+    min-width: 330px;
+    width: 70%;
     margin-top: 140px;
   }
 
@@ -48,27 +50,31 @@
     text-align: right;
 
     label{
-      display: inline-block;
-      padding-right: 10px;
-      margin-top: 4px;
-      color: #777777;
-      font-size: 14px;
+      // display: inline-block;
+      // padding-right: 10px;
+      // margin-top: 4px;
+      // color: #777777;
+      // font-size: 14px;
 
-      .req{
-        color: #AB0001;
-      }
+      // .req{
+      //   color: #AB0001;
+      // }
+      display: none;
     }
 
     form{
       display: inline-block;
+      width: 70%;
+      min-width: 330px;
     }
 
     .form-field{
       input, textarea{
         border: solid 1px #ccc;
         padding: 6px 15px;
-        width: 70%;
-        min-width: 500px;
+        display: block;
+        width: 100%;
+        min-width: 330px;
         font: 18px/22px $font-lato;
         transition: box-shadow .2s ease-in-out;
         outline: none;
@@ -85,22 +91,25 @@
       }
     }
 
+    .captcha-wrapper{
+      text-align: center;
+    }
+
     .g-recaptcha{
-      float: right;
-      margin-right: 95px;
+      display: inline-block;
     }
 
     .submit{
       content: "";
       clear: both;
       text-align: right;
-      padding-top: 15px;
+      padding-top: 10px;
     }
 
     .button{
       @include flatButton($darkBlue);
-      width: 70%;
-      min-width:500px;
+      display: block;
+      width: 100%;
     }
   }
 
@@ -111,5 +120,25 @@
   .google-map{
     width: 500px;
     height: 457px;
+  }
+
+  .contact-information{
+    padding: 20px 30px;
+    border: solid 1px #ccc;
+    border-top: none;
+    width: 500px;
+
+    p{
+      margin: 7px 0;
+      line-height: 22px;
+
+      a{
+        color: $darkGrey;
+
+        &:hover{
+          color: $darkBlue;
+        }
+      }
+    }
   }
 }
