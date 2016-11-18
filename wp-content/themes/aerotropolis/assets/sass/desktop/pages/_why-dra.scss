@@ -148,6 +148,7 @@
 .economic-overview{
   .content-left{
     min-height: 650px;
+    background: #E7E6E2;
   }
   .content-right{
     padding: 80px 70px;
@@ -163,3 +164,27 @@
     }
   }
 }
+
+
+// --- Higher Education. ------------------- //
+.higher-edu-header-row{
+  min-height: 600px;
+}
+
+.higher-edu-row{
+  text-align: center;
+  padding: 20px 0 80px 0;
+
+  .content{
+    text-align: left;
+    max-width: 620px;
+    margin: 35px auto 40px;
+  }
+}
+
+
+
+
+
+
+
