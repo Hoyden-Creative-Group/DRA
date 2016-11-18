@@ -60,7 +60,9 @@
 
 // --- Our Goal. ------------------- //
 
-.our-goal{
+.our-goal-row{
+  box-shadow: 0 0 30px -3px rgba(0,0,0,.8);
+
   .content-left{
     padding: 80px 70px;
     margin: 0px auto;
@@ -145,7 +147,7 @@
 
 // --- Economic Overview. ------------------- //
 
-.economic-overview{
+.economic-overview-row{
   .content-left{
     min-height: 650px;
     background: #E7E6E2;
@@ -167,11 +169,11 @@
 
 
 // --- Higher Education. ------------------- //
-.higher-edu-header-row{
+.higher-education-row{
   min-height: 600px;
 }
 
-.higher-edu-row{
+.higher-education-content{
   text-align: center;
   padding: 20px 0 80px 0;
 
