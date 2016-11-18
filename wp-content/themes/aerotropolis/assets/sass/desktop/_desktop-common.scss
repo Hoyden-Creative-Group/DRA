@@ -5,10 +5,27 @@
  * Desktop common elements
  */
 
+// --- Visual Composer Overrides. ------------------- //
+.row-centered{
+  max-width: $maxWidth + 30px; // +30 here due to how visual composer handles internal rows
+  min-width: $minWidth;
+  margin: 0px auto !important;
+}
+.row-no-padding{
+  .vc_column-inner {
+    padding-top: 0px !important;
+  }
+  .content-no-padding{
+    margin-bottom: 0px !important;
+  }
+}
+
 // --- Layout. ------------------- //
 
 .content-area{
-  overflow: hidden;
+  // overflow: hidden;
+  max-width: 1270px;
+  margin: 0px auto;
   min-height: 400px;
 }
 
@@ -21,12 +38,6 @@
 
 .align-right{
   text-align: right;
-}
-
-.row-centered{
-  max-width: $maxWidth + 30px; // +30 here due to how visual composer handles internal rows
-  min-width: $minWidth;
-  margin: 0px auto !important;
 }
 
 h1.page-title{

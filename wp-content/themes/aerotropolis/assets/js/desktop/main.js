@@ -62,7 +62,7 @@ jQuery(function($) {
         if (!/^#/.test(href)) {
           window.location.href = href;
         } else {
-          slideToClass(href.replace("/^#/", ""));
+          slideToClass(href.replace(/^#/, ""));
         }
       });
     }
@@ -70,7 +70,7 @@ jQuery(function($) {
 
   function slideToClass (className) {
     // if the classname is passed with a period, lets remove it
-    className = className.replace("/^./", "");
+    className = className.replace(/^\./, "");
 
     var elem = $('.' + className);
 
@@ -85,7 +85,7 @@ jQuery(function($) {
         scrollTop: offset
       }, speed, 'easeInOutCubic');
     } else {
-      console.log('not a unique class');
+      console.log(className, 'is not a unique class', elem.length);
     }
   }
 
@@ -132,7 +132,7 @@ jQuery(function($) {
         pause: function (offset) {
           $stickySideNav
             .removeClass('fixed')
-            .css({'top': offset, position: 'absolute'});
+            .css({'top': offset, 'left': 0, position: 'absolute'});
         },
         play: function () {
           $stickySideNav

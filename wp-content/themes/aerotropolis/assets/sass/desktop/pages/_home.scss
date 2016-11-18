@@ -83,39 +83,43 @@
 
 
 // --- Why Detroit. ------------------- //
-.choose-detroit{
-  display: flex;
-  height: 543px;
-  margin: 135px 0;
+.overview-row{
+  padding: 135px 0;
 
-  .map{
-    flex: 2 2 0;
-    background-position: left top;
-    background-size: cover;
-    min-width: 895px;
+  .content-left{
+    background: #f3f3f3;
+    min-height: 500px;
+
+    &>.vc_column-inner{
+      background-position: right center !important;
+    }
   }
 
-  .details{
-    flex: 1 1 0;
-    padding: 0 35px;
-    display: flex;
-    flex-direction: column;
+  .content-right{
+    padding-left: 35px;
+    max-width: 515px;
+
+    &>.vc_column-inner>.wpb_wrapper{
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
 
     h3{
-      margin-top: -5px;
+      margin-bottom: 25px;
     }
 
-    .summary{
-      flex: 2 2 0;
+    .details{
+      flex: 2 0 0;
     }
 
-    .call-to-action{
-      flex: 1 1 80px;
+    .button-wrapper{
+      margin-top: 25px;
     }
 
     .button{
       display: block;
-      margin-top: 25px;
     }
 
   }
@@ -127,10 +131,16 @@
 .site-selection-row{
   background: #E6E6E6;
   text-align: center;
-  padding: 100px 0 130px 0;
+  padding-top: 100px;
+}
+
+.site-selection-content{
+  background: #E6E6E6;
+  text-align: center;
+  padding: 65px 0 130px 0;
 
   .site-selection-header{
-    margin-bottom: 65px;
+    // margin-bottom: 65px;
   }
 }
 
