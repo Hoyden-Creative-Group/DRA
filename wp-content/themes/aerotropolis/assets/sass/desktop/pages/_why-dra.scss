@@ -1,0 +1,165 @@
+/**
+ * @package Aerotropolis Theme Support
+ * @author  Bryan Stanley <bstanley.0811@gmail.com>
+ *
+ * Why Aerotropolis page
+ */
+
+
+// --- Hero. ------------------- //
+.why-dra-hero{
+  padding: 40px 20px 100px 20px;
+
+  h1{
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 60px;
+  }
+
+  .why-dra{
+    background: rgba(#FFFFFF, .9);
+    padding: 50px 35px;
+    height: 100%;
+
+    [class^="icon-"]{
+      color: #167EBF;
+      font-size: 127px;
+    }
+
+    .icon-cellbars:before{
+      margin-left: -6px;
+    }
+
+    .icon-road:before{
+      margin-left: -19px;
+      font-size: 105px;
+    }
+
+    .icon-megaphone:before{
+      margin-left: 0px;
+    }
+
+    h4{
+      color: $grey;
+      font-size: 26px;
+      flex: 0 0 80px;
+    }
+
+    p{
+      padding: 0 15px;
+    }
+  }
+}
+
+.why-dra-cards{
+  .vc_column-inner>.wpb_wrapper{
+    height: 100%;
+  }
+}
+
+
+// --- Our Goal. ------------------- //
+
+.our-goal{
+  .content-left{
+    padding: 80px 70px;
+    margin: 0px auto;
+
+    h2{
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    ul{
+      padding: 0 130px 0 70px;
+      list-style: disc;
+    }
+  }
+
+  .content-right{
+    min-height: 650px;
+  }
+}
+
+
+// --- What we offer. ------------------- //
+
+.what-we-offer-row, .what-we-offer-content{
+  background: #F5F5F5;
+}
+
+.what-we-offer-row{
+  text-align: center;
+  padding-top: 15px;
+}
+
+.what-we-offer-content{
+  padding: 40px 0 100px 0;
+
+  .vc_column-inner .wpb_wrapper{
+    display: flex;
+    flex-direction: column;
+  }
+
+  h5{
+    text-align: center;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    flex: 1 70px;
+  }
+
+  .wpb_text_column{
+    flex: 1 0 0;
+  }
+}
+
+
+// --- Live, work, play. ------------------- //
+.live-work-play-content{
+  background: rgba(#FFFFFF, .9);
+  padding: 55px 100px;
+  margin: 100px 0;
+
+  h2{
+    text-align: center;
+    flex: 1 100%;
+    margin-bottom: 50px;
+  }
+
+  .inner-content{
+    .wpb_wrapper{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+
+  .content-left{
+    flex: 2 0;
+    margin-right: 50px;
+  }
+  .content-right{
+    flex: 1 0;
+  }
+}
+
+
+// --- Economic Overview. ------------------- //
+
+.economic-overview{
+  .content-left{
+    min-height: 650px;
+  }
+  .content-right{
+    padding: 80px 70px;
+    margin: 0px auto;
+
+    h2{
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    ul{
+      padding: 0 130px 0 70px;
+      list-style: disc;
+    }
+  }
+}

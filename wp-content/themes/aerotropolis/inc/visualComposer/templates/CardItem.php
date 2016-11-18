@@ -4,7 +4,7 @@
  * @package Aerotropolis Theme
  * @author  Bryan Stanley <bstanley.0811@gmail.com>
  *
- * Visual Composer template for SiteSelectionItem.
+ * Visual Composer template for CardItem.
  */
 
 
@@ -12,7 +12,7 @@
 
   $button1 = getButton($button1, 'button outline blue');
 
-  $class = 'site-selection';
+  $class = 'card-item ' . $class;
   $class = empty($button1["url"]) ? $class : $class . ' clickable';
 
   $onclick = empty($button1["onclick"]) ? '' : ' onClick="'. $button1["onclick"] .'"';
@@ -24,7 +24,7 @@
   <?php if(!empty($icon)) { echo '<div class="icon-'. $icon .'"></div>'; }?>
   <h4><?php echo $title; ?></h4>
   <p><?php echo $description; ?></p>
-  <?php echo $button1["button"]; ?>
+  <?php echo empty($button1['url']) ? "" : $button1["button"]; ?>
 </div>
 
 <?php

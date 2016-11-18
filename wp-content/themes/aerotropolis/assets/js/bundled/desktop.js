@@ -533,7 +533,9 @@ jQuery(function($) {
         $secondaryNav = $('.secondary-nav'),
         $stickySideNav = $('.sticky-secondary-nav'),
         $footerContact = $('.content-bottom-widgets'),
-        mainNavOffset = $secondaryNav.outerHeight(true),
+        $body = $('body'),
+        mainNavOffset = $mainNav.outerHeight(true),
+        secondaryNavOffset = $secondaryNav.outerHeight(true),
         sideNavHeight = $stickySideNav.outerHeight(true),
         sideNavTop = ($window.height() / 2) - (sideNavHeight / 2);
 
@@ -542,7 +544,7 @@ jQuery(function($) {
     var sticky = {
       mainNav: {
         scrollHandler: function (win, scrollPosition) {
-          if (scrollPosition > mainNavOffset) {
+          if (scrollPosition >= secondaryNavOffset) {
             sticky.mainNav.show();
           } else {
             sticky.mainNav.hide();
@@ -550,9 +552,11 @@ jQuery(function($) {
         },
         show: function () {
           $mainNav.addClass('sticky');
+          $body.css({'padding-top': mainNavOffset});
         },
         hide: function () {
           $mainNav.removeClass('sticky');
+          $body.removeAttr('style');
         }
       },
       sideNav: {

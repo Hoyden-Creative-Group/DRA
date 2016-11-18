@@ -4,14 +4,14 @@
  * @package Aerotropolis Theme Support Plugin
  * @author  Bryan Stanley <bstanley.0811@gmail.com>
  *
- * Adds a custom element called Site Selection Item.  This is a teaser
+ * Adds a custom element called Card.  This is a teaser
  * section to highlight a specific items about Aerotropolis.
  */
 
 
-class SiteSelectionItem {
+class CardItem {
   function __construct ($namespace = "", $category = "") {
-    $this->name = "site_selection";
+    $this->name = "card_item";
     $this->namespace = $namespace;
     $this->category = $category;
     $this->templatePath = '';
@@ -23,11 +23,11 @@ class SiteSelectionItem {
 
   public function getComponent () {
     return array(
-      "name" => "Site selection item",
+      "name" => "Card item",
       "base" => $this->getName(),
       "class" => "",
       "category" => $this->category,
-      "description" => 'Site selection item',
+      "description" => 'Card item',
       "params" => array(
         array(
           "type" => "dropdown",
@@ -40,7 +40,10 @@ class SiteSelectionItem {
               'map-marker' => 'Map Marker Full',
               'map-marker-hollow' => 'Map Marker Hollow',
               'trophy' => 'Trophy',
-              'workforce' => 'People'
+              'workforce' => 'People',
+              'cellbars' => 'Celluar Bars',
+              'road' => 'Highway',
+              'megaphone' => 'Megaphone',
             )
           )
         ),
@@ -61,6 +64,12 @@ class SiteSelectionItem {
           "heading" => "Button",
           "param_name" => "button1",
           "holder" => "div"
+        ),
+        array(
+          "type" => "textfield",
+          "heading" => "Additional class",
+          "param_name" => "class",
+          "holder" => "div"
         )
       )
     );
@@ -75,7 +84,8 @@ class SiteSelectionItem {
       'icon' => '',
       'title' => '',
       'description' => '',
-      'button1' => ''
+      'button1' => '',
+      'class' => ''
     ), $atts ) );
 
     $output = '';
