@@ -97,21 +97,59 @@
 .what-we-offer-content{
   padding: 40px 0 100px 0;
 
-  .vc_column-inner .wpb_wrapper{
+  .card-item {
+    background: none;
+    padding: 0 15px;
     display: flex;
     flex-direction: column;
   }
 
-  h5{
-    text-align: center;
-    padding: 0 10px;
-    margin-bottom: 20px;
-    flex: 1 70px;
+  h4{
+    flex: 0 85px;
+    font: 26px/30px $font-latoBold;
+    color: $grey;
   }
 
-  .wpb_text_column{
-    flex: 1 0 0;
+  ul {
+    list-style: disc;
+    padding-left: 35px;
+    flex: 1 0;
   }
+
+  [class^="icon-"]{
+    border-radius: 100%;
+    background: #84CDDF;
+    color: #FFFFFF;
+  }
+
+  .icon-workforce:before{
+    margin-left: 10px;
+  }
+
+  .icon-cargo-plane{
+    line-height: 115px;
+
+    &:before{
+      margin-left: -50px;
+      font-size: 50px;
+    }
+  }
+
+  // .vc_column-inner .wpb_wrapper{
+  //   display: flex;
+  //   flex-direction: column;
+  // }
+
+  // h5{
+  //   text-align: center;
+  //   padding: 0 10px;
+  //   margin-bottom: 20px;
+  //   flex: 1 70px;
+  // }
+
+  // .wpb_text_column{
+  //   flex: 1 0 0;
+  // }
 }
 
 

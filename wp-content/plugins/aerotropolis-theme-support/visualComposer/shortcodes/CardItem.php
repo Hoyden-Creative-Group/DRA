@@ -37,13 +37,14 @@ class CardItem {
           'value' => array_flip(
             array(
               '' => 'None',
-              'map-marker' => 'Map Marker Full',
-              'map-marker-hollow' => 'Map Marker Hollow',
+              'map-marker' => 'Map Marker',
               'trophy' => 'Trophy',
               'workforce' => 'People',
               'cellbars' => 'Celluar Bars',
               'road' => 'Highway',
               'megaphone' => 'Megaphone',
+              'plane' => 'Plane',
+              'cargo-plane' => 'Cargo Plane',
             )
           )
         ),
@@ -58,6 +59,14 @@ class CardItem {
           "heading" => "Description",
           "param_name" => "description",
           "holder" => "div"
+        ),
+        array(
+          "type" => "checkbox",
+          "holder" => "div",
+          "class" => "",
+          "param_name" => "custom_html",
+          'value' => array('Custom HTML' => true),
+          "description" => 'Check the box if there is HTML in above textarea'
         ),
         array(
           "type" => "vc_link",
@@ -84,6 +93,7 @@ class CardItem {
       'icon' => '',
       'title' => '',
       'description' => '',
+      'custom_html' => '',
       'button1' => '',
       'class' => ''
     ), $atts ) );

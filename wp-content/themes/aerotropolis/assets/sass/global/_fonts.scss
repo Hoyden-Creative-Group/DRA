@@ -39,8 +39,8 @@
 
 @font-face {
   font-family: 'aerotropolis';
-  src: url('#{$font-base-path}/fontello/aerotropolis.woff2?v=1') format('woff2'),
-       url('#{$font-base-path}/fontello/aerotropolis.woff?v=1') format('woff');
+  src: url('#{$font-base-path}/fontello/aerotropolis.woff2?v=2') format('woff2'),
+       url('#{$font-base-path}/fontello/aerotropolis.woff?v=2') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -76,14 +76,15 @@
 .icon-linkedin:before { content: '\61'; } /* 'a' */
 .icon-search:before { content: '\62'; } /* 'b' */
 .icon-twitter:before { content: '\63'; } /* 'c' */
-.icon-map-marker-hollow:before { content: '\64'; } /* 'd' */
-.icon-map-marker:before { content: '\65'; } /* 'e' */
-.icon-nav1-arrow-left:before { content: '\66'; } /* 'f' */
-.icon-nav1-arrow-right:before { content: '\67'; } /* 'g' */
-.icon-trophy:before { content: '\68'; } /* 'h' */
-.icon-workforce:before { content: '\69'; } /* 'i' */
-.icon-down-arrow:before { content: '\6a'; } /* 'j' */
-.icon-play-button:before { content: '\6b'; } /* 'k' */
-.icon-cellbars:before { content: '\6c'; } /* 'l' */
-.icon-road:before { content: '\6d'; } /* 'm' */
-.icon-megaphone:before { content: '\6e'; } /* 'n' */
+.icon-map-marker:before { content: '\64'; } /* 'd' */
+.icon-nav1-arrow-left:before { content: '\65'; } /* 'e' */
+.icon-nav1-arrow-right:before { content: '\66'; } /* 'f' */
+.icon-trophy:before { content: '\67'; } /* 'g' */
+.icon-workforce:before { content: '\68'; } /* 'h' */
+.icon-down-arrow:before { content: '\69'; } /* 'i' */
+.icon-play-button:before { content: '\6a'; } /* 'j' */
+.icon-cellbars:before { content: '\6b'; } /* 'k' */
+.icon-road:before { content: '\6c'; } /* 'l' */
+.icon-megaphone:before { content: '\6d'; } /* 'm' */
+.icon-plane:before { content: '\6e'; } /* 'n' */
+.icon-cargo-plane:before { content: '\6f'; } /* 'o' */
