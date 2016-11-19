@@ -118,7 +118,24 @@
 
     form {
       display: flex;
+      flex-wrap: wrap;
     }
+
+    .message{
+      flex: 1 0 100%;
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 20px;
+
+      &.error{
+        color: $error-color;
+      }
+
+      &.success{
+        color: $success-color;
+      }
+    }
+
     input[type=text] {
       flex: 1 0 0;
       width: 120px;
@@ -128,6 +145,10 @@
 
       @include input-placeholder {
         color: $darkBlue;
+      }
+
+      &.error{
+        border: solid 1px $error-color;
       }
     }
 

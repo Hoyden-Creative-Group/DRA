@@ -61,6 +61,8 @@ function aero_custom_settings () {
   register_setting('aero-settings-group', 'contact_person_title');
   register_setting('aero-settings-group', 'linkedin');
   register_setting('aero-settings-group', 'twitter');
+  register_setting('aero-settings-group', 'mailchimp_api_key');
+  register_setting('aero-settings-group', 'mailchimp_list_id');
 
   add_settings_section('aero-general-settings', 'General Information', 'aero_general_settings', 'aerotropolis_settings');
   add_settings_field('copyright', 'Copyright Text', 'aero_copyright', 'aerotropolis_settings', 'aero-general-settings');
@@ -75,21 +77,33 @@ function aero_custom_settings () {
   add_settings_section('aero-social-media', 'Social Media', 'aero_social_media', 'aerotropolis_settings');
   add_settings_field('linkedin', 'LinkedIn', 'aero_linkedin', 'aerotropolis_settings', 'aero-social-media');
   add_settings_field('twitter', 'Twitter', 'aero_twitter', 'aerotropolis_settings', 'aero-social-media');
+
+  add_settings_section('aero-mailchimp', 'Mail Chimp Settings', 'aero_mailchip', 'aerotropolis_settings');
+  add_settings_field('mailchimp_api_key', 'API Key', 'aero_mailchimp_api_key', 'aerotropolis_settings', 'aero-mailchimp');
+  add_settings_field('mailchimp_list_id', 'List ID', 'aero_mailchimp_list_id', 'aerotropolis_settings', 'aero-mailchimp');
 }
 
 /**
  * Section titles
  */
 function aero_general_settings () {
+  echo '<hr />';
   echo 'Please set your general settings.';
 }
 
 function aero_contact_settings () {
+  echo '<hr />';
   echo 'Please set your contact information.';
 }
 
 function aero_social_media () {
+  echo '<hr />';
   echo 'Please set your social media information';
+}
+
+function aero_mailchip () {
+  echo '<hr />';
+  echo 'Please set your Mail Chimp settings';
 }
 
 
@@ -136,6 +150,16 @@ function aero_linkedin () {
 function aero_twitter () {
   $twitter = esc_attr( get_option('twitter') );
   echo '<input type="text" name="twitter" value="'. $twitter .'" placeholder="Twitter Url" class="regular-text code" />';
+}
+
+function aero_mailchimp_api_key () {
+  $apiKey = esc_attr( get_option('mailchimp_api_key') );
+  echo '<input type="text" name="mailchimp_api_key" value="'. $apiKey .'" placeholder="Mail Chimp API Key" class="regular-text code" />';
+}
+
+function aero_mailchimp_list_id () {
+  $listID = esc_attr( get_option('mailchimp_list_id') );
+  echo '<input type="text" name="mailchimp_list_id" value="'. $listID .'" placeholder="Mail Chimp List ID" class="regular-text code" />';
 }
 
 

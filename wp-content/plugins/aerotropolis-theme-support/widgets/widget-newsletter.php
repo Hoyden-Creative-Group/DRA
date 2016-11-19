@@ -4,7 +4,7 @@
  * @package Aerotropolis Theme Support Plugin
  * @author  Bryan Stanley <bstanley.0811@gmail.com>
  *
- * Adds a custom widget for signing up for a newsletter.
+ * Adds a custom widget for signing up for a newsletter (used in the footer).
  */
 
 class Aero_Newsletter extends WP_Widget {
@@ -24,6 +24,9 @@ class Aero_Newsletter extends WP_Widget {
     );
 
     parent::__construct('aero_newsletter', 'Aerotropolis Newsletter', $options);
+
+    // register our ajax hook
+    add_action('wp_ajax_aero_newsletter_subscribe', array( $this, 'aero_newsletter_ajax'));
   }
 
   public function form($instance){
@@ -50,9 +53,19 @@ class Aero_Newsletter extends WP_Widget {
   }
 
   public function widget($args, $instance){
-    extract($args, EXTR_SKIP);
+    $apiKey = get_option('mailchimp_api_key');
+    $listID = get_option('mailchimp_list_id');
+
+    if (empty($apiKey) || empty($listID)) {
+      echo "Missing API Key and/or list ID.";
+      return;
+    }
+
+    // register our javascript needed for the widget
+    wp_enqueue_script('aero_news_subscribe', plugins_url('js/newsletterSignup.js', __FILE__), array('jquery'));
 
     //get vars
+    extract($args, EXTR_SKIP);
     $text1 = $instance['text1'];
     $text2 = $instance['text2'];
     $buttonText = $instance['buttonText'];
@@ -61,11 +74,42 @@ class Aero_Newsletter extends WP_Widget {
     echo $before_widget;
     echo empty($text1) ? '' : '<p class="text1">'. $text1 .'</p>';
     echo empty($text2) ? '' : '<p class="text2">'. $text2 .'</p>';
-    echo '<form method="post">';
-      echo '<input type="text" placeholder="Email address" name="email" />';
-      echo '<input type="submit" value="'. $buttonText .'" />';
+    echo '<form action="'. site_url() .'/wp-admin/admin-ajax.php" class="aero-mailchimp-widget" method="post">';
+      echo '<div class="message"></div>';
+      echo '<input type="text" placeholder="Email address" name="email" class="email" />';
+      echo '<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_0dd5b3bdf1d979b7b8d558fd3_038174d146" tabindex="-1" value=""></div>';
+      echo '<input type="hidden" name="action" value="aero_newsletter_subscribe" />';
+      echo '<input type="submit" class="btn" data-value="'.$buttonText.'" value="'. $buttonText .'" />';
     echo '</form>';
     echo $after_widget;
+  }
+
+  /**
+   * Form submission called by ajax.  Expected return is JSON.
+   */
+  function aero_newsletter_ajax(){
+    if (empty($_POST['email'])) {
+      $result = array(
+        'success' => false,
+        'error' => true,
+        'message' => "Invalid email"
+      );
+      echo json_encode($result);
+      die(); // needed for successful ajax requests, else appends a '0' to the response.
+    }
+
+    $apiKey = get_option('mailchimp_api_key');
+    $listID = get_option('mailchimp_list_id');
+
+    $result = aero_mailchimp_do_subscribe($apiKey, $listID, $_POST['email']);
+
+    if (is_array($result)) {
+      echo json_encode($result);
+      die(); // needed for successful ajax requests, else appends a '0' to the response.
+    }
+
+    echo $result;
+    die(); // needed for successful ajax requests, else appends a '0' to the response.
   }
 
 }

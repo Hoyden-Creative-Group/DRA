@@ -6,8 +6,6 @@ jQuery(document).ready(function($){
         // Call this from the upload button to initiate the upload frame.
         uploader : function( widget_id_string, selected_media_id ) {
 
-            console.log(widget_id_string, selected_media_id);
-
             var frame = wp.media({
                 title : 'News Contact',
                 multiple : false,

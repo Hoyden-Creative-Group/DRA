@@ -53,6 +53,21 @@
     form {
       margin-top: 60px;
       display: flex;
+      flex-wrap: wrap;
+    }
+    .message{
+      flex: 1 0 100%;
+      margin-top: -50px;
+      text-align: center;
+      margin-bottom: 5px;
+
+      &.error{
+        color: $error-color;
+      }
+
+      &.success{
+        color: $success-color;
+      }
     }
     input[type=text] {
       flex: 2 2 30px;
@@ -60,9 +75,15 @@
       font-size: 16px;
       color: $darkGrey;
       width: 300px;
+
       @include input-placeholder {
         color: $darkBlue;
       }
+
+      &.error{
+        border: solid 1px $error-color;
+      }
+
     }
     input[type=submit] {
       flex: 1 1 0;

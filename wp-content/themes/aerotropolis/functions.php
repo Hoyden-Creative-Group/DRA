@@ -273,4 +273,49 @@ function save_post_function( $postID, $post, $update ) {
 
 
 
+/**
+ * Mailchimp API Subscribe Request
+ */
+function aero_mailchimp_do_subscribe( $apiKey, $listID, $emailAddress, $metaData = array() ){
+	if (empty($apiKey) || empty($listID)) {
+		return array("error" => true, "success" => false, "message" => "Missing API Key and/or list ID.");
+	}
+
+	// get the data center from the api key
+	$dc = explode('-', $apiKey);
+	if (sizeof($dc) != 2) {
+		return array("error" => true, "success" => false, "message" => "Invalid API Key");
+	}
+
+	// build our payload
+	$payload = array(
+		'apikey'        => $apiKey,
+		'email_type'		=> 'html',
+		'email_address' => $emailAddress,
+		'status'				=> 'subscribed',
+		'ip_signup'			=> $_SERVER['REMOTE_ADDR'],
+		'timestamp_signup' => $_SERVER['REQUEST_TIME']
+	);
+
+	if (!empty($metaData)) {
+		$payload['merge_fields'] = $metaData;
+	}
+
+	// build our request
+	$request = curl_init();
+	curl_setopt($request, CURLOPT_URL, 'https://' . $dc[1] . '.api.mailchimp.com/3.0/lists/' . $listID . '/members/');
+	curl_setopt($request, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Authorization: Basic '.base64_encode( 'aerotropolis:'.$apiKey )));
+	curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($request, CURLOPT_CUSTOMREQUEST, 'POST');
+	curl_setopt($request, CURLOPT_TIMEOUT, 10);
+	curl_setopt($request, CURLOPT_POST, true);
+	curl_setopt($request, CURLOPT_SSL_VERIFYPEER, false);
+	curl_setopt($request, CURLOPT_POSTFIELDS, json_encode($payload) );
+
+	// send the request
+	$result = curl_exec($request);
+
+	return $result;
+}
+
 

@@ -8,6 +8,7 @@
 
 # Always ignore these files no matter at what level
 .DS_Store
+.orig
 .sass-cache/
 node_modules/
 uploads/
