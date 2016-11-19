@@ -139,24 +139,20 @@
   text-align: center;
   padding: 65px 0 130px 0;
 
-  .site-selection-header{
-    // margin-bottom: 65px;
-  }
-}
+  .card-item{
+    [class^="icon-"]{
+      border-radius: 100%;
+      background: #84CDDF;
+      color: #FFFFFF;
+    }
 
-.site-selection{
-  [class^="icon-"]{
-    border-radius: 100%;
-    background: #84CDDF;
-    color: #FFFFFF;
-  }
+    .icon-trophy:before{
+      margin-left: 8px;
+    }
 
-  .icon-trophy:before{
-    margin-left: 8px;
-  }
-
-  .icon-workforce:before{
-    margin-left: 10px;
+    .icon-workforce:before{
+      margin-left: 10px;
+    }
   }
 }
 
