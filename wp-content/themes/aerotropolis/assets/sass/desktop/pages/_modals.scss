@@ -1,0 +1,41 @@
+/**
+ * @package Aerotropolis Theme Support
+ * @author  Bryan Stanley <bstanley.0811@gmail.com>
+ *
+ * Modals
+ */
+.popmake-title{
+  display: none;
+}
+
+.pum-close{
+  transform: rotate(45deg);
+  font-weight: bold !important;
+}
+
+.popmake-content{
+
+  color: #7D7D7D;
+
+  .hero{
+    margin-bottom: 30px;
+  }
+
+  .content-left{
+    float: left;
+    max-width: 65%;
+  }
+
+  .content-right{
+    float: right;
+    max-width: 35%;
+    padding-right: 20px;
+  }
+
+  &:after{
+    content: "";
+    display: block;
+    height: 0px;
+    clear: both;
+  }
+}
