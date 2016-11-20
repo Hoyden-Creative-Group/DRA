@@ -48,12 +48,15 @@ function theme_setup() {
 
 	// Register our desired menu sections
 	register_nav_menus( array(
-		'main_menu'							=> 'Main Menu',
-		'secondary_menu'				=> 'Secondary Main Menu',
-		'sticky_side_menu_home'	=> 'Sticky Side Menu - HOME',
-		'sticky_side_menu_dra'	=> 'Sticky Side Menu - WHY DRA',
-		'footer_menu'						=> 'Footer Menu',
-		'footer_social'					=> 'Footer Social'
+		'main_menu'                       => 'Main Menu',
+		'secondary_menu'                  => 'Secondary Main Menu',
+		'sticky_side_menu_home'           => 'Sticky Side Menu - HOME',
+		'sticky_side_menu_dra'            => 'Sticky Side Menu - WHY DRA',
+		'sticky_side_menu_about'          => 'Sticky Side Menu - ABOUT',
+		'sticky_side_menu_site_selection' => 'Sticky Side Menu - SITE SELECTION',
+		'sticky_side_menu_industries'     => 'Sticky Side Menu - INDUSTRIES',
+		'footer_menu'                     => 'Footer Menu',
+		'footer_social'                   => 'Footer Social'
 	));
 
 	// Add custom image resizes
