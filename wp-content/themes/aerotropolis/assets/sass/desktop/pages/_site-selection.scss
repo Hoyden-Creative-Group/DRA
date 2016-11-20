@@ -1,0 +1,86 @@
+/**
+ * @package Aerotropolis Theme Support
+ * @author  Bryan Stanley <bstanley.0811@gmail.com>
+ *
+ * Desktop site selection page
+ */
+
+
+// --- Site Selection Hero. ------------------- //
+
+.site-selection-hero{
+  padding: 20vw 15vw 15vw;
+
+  .content-wrapper{
+    max-width: 1000px;
+    margin: 0 auto;
+    float: none;
+    min-width: auto;
+  }
+
+  h1{
+    color: #FFFFFF;
+    line-height: 40px;
+    margin-bottom: 6vw;
+  }
+
+  .button-wrapper{
+    text-align: center;
+  }
+}
+
+.top-employers-row{
+  .content-left{
+    padding: 6vw 1vw 11vw;
+    text-align: center;
+
+    h2{
+      margin-bottom: 3vw;
+    }
+
+    ul{
+      display: inline-block;
+      list-style: none;
+      padding: 0px;
+      text-align: left;
+    }
+  }
+}
+
+.site-selection-offer-row{
+  padding: 6vw 1vw 7vw;
+
+  h2.offer-header{
+    text-align: center;
+    margin-bottom: 4vw;
+  }
+
+  .content-left{
+    text-align: center;
+    padding-right: 30px;
+
+    h2{
+      margin-bottom: 50px;
+    }
+
+    h5{
+      line-height: 27px;
+      margin-bottom: 5px;
+    }
+  }
+
+  .content-right{
+    padding-left: 30px;
+
+    h4{
+      color: $darkGrey;
+      line-height: 28px;
+    }
+
+    ul{
+      margin-top: 30px;
+      padding: 0px;
+      list-style: none;
+    }
+  }
+}

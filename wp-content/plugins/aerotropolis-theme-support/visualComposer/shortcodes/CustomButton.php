@@ -48,7 +48,7 @@ class CustomButton {
           'value' => array_flip(
             array(
               '' => 'Select Options',
-              'lightblue' => 'Light Blue',
+              'lightBlue' => 'Light Blue',
               'blue' => 'Blue',
               'grey' => 'Grey',
               'darkgrey' => 'Dark Grey'

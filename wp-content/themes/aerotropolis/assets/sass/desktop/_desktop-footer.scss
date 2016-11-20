@@ -133,6 +133,10 @@
   padding: 35px 15px 85px 15px;
 
   .content-wrapper{
+    max-width: $maxWidth;
+    min-width: $minWidth;
+    margin: 0px auto;
+    position: relative;
     display: flex;
     align-content: space-between;
   }

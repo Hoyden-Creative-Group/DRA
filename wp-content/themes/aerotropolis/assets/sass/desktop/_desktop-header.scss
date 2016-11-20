@@ -11,6 +11,13 @@
 .main-nav{
   background: #4B4B4B;
 
+  .content-wrapper{
+    max-width: $maxWidth;
+    min-width: $minWidth;
+    margin: 0px auto;
+    position: relative;
+  }
+
   &.sticky{
     position: fixed;
     top: 0px;
@@ -91,6 +98,13 @@ ul.secondary_menu{
 }
 
 .secondary-nav{
+  .content-wrapper{
+    max-width: $maxWidth;
+    min-width: $minWidth;
+    margin: 0px auto;
+    position: relative;
+  }
+
   .search-form {
     .search-field{
       opacity: 0;
