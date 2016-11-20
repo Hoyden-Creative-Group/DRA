@@ -235,6 +235,7 @@ function get_latest_meeting() {
 			$meeting = array(
 				"title" => get_the_title(),
 				"excerpt" => get_field('footer_excerpt'),
+				"post" => get_the_content(),
 				"permalink" => esc_url(get_permalink()),
 				"date" => get_the_date('M d, Y')
 			);

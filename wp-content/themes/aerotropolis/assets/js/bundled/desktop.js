@@ -539,6 +539,8 @@ jQuery(function($) {
         sideNavHeight = $stickySideNav.outerHeight(true),
         sideNavTop = ($window.height() / 2) - (sideNavHeight / 2);
 
+    sideNavTop = (sideNavTop < 300) ? 300 : sideNavTop;
+
     var stickySideNavBaseCss = {'top': sideNavTop};
 
     var sticky = {

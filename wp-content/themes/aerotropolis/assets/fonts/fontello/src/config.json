@@ -215,6 +215,18 @@
       "search": [
         "cargo-plane"
       ]
+    },
+    {
+      "uid": "e15f0d620a7897e2035c18c80142f6d9",
+      "css": "link-ext",
+      "code": 112,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "b08cfe8039de2ce815686aced2caef06",
+      "css": "download",
+      "code": 113,
+      "src": "entypo"
     }
   ]
 }
