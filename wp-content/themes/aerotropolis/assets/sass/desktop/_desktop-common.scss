@@ -6,11 +6,6 @@
  */
 
 // --- Visual Composer Overrides. ------------------- //
-// .row-centered{
-//   max-width: $maxWidth + 30px; // +30 here due to how visual composer handles internal rows
-//   min-width: $minWidth;
-//   margin: 0px auto !important;
-// }
 
 .row-no-padding{
   .vc_column-inner {
@@ -21,10 +16,20 @@
   }
 }
 
+// .row-centered{
+//   max-width: $maxWidth + 30px; // +30 here due to how visual composer handles internal rows
+//   min-width: $minWidth;
+//   margin: 0px auto !important;
+// }
+
 .wpb_text_column{
   ul{
     list-style: disc;
     padding-left: 35px;
+  }
+
+  h2{
+    margin-top: 30px;
   }
 }
 
