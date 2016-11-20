@@ -1,0 +1,125 @@
+/**
+ * @package Aerotropolis Theme Support
+ * @author  Bryan Stanley <bstanley.0811@gmail.com>
+ *
+ * Desktop industry page
+ */
+
+// --- Industry Hero. ------------------- //
+
+.industry-hero{
+  padding: 18vw 0 6vw;
+
+  .content-wrapper{
+    background: rgba(#FFFFFF, .9);
+    padding: 3vw 5vw;
+    display: flex;
+    max-width: $maxWidth;
+    margin: 0 auto;
+    float: none;
+  }
+
+  .content-left{
+    flex: 1;
+    padding-right: 30px;
+  }
+
+  .content-right{
+    flex: 1;
+    font-family: $font-latoBold;
+    padding-left: 30px;
+
+    p{
+      margin-bottom: 3px;
+    }
+
+    ul{
+      list-style: none;
+      padding: 0px;
+    }
+  }
+}
+
+
+// --- Our Industries. ------------------- //
+
+.industries-row{
+  background: #B1DBE4;
+  padding: 85px 0 112px 0;
+
+  h2{
+    color: #FFFFFF;
+    margin-bottom: 53px;
+    text-align: center;
+  }
+
+  .content-wrapper{
+    max-width: $maxWidth;
+    margin: 0 auto;
+    float: none;
+  }
+
+  .industry-item{
+    width: 295px;
+
+    .thumbnail{
+      width: 295px;
+      height: 204px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      margin-bottom: 23px;
+
+      &.retina{
+        background-size: 295px auto;
+      }
+    }
+
+    h4{
+      color: $darkGrey;
+      flex: 1 1 70px
+    }
+
+    .details{
+      display: flex;
+      flex-direction: column;
+
+      p{
+        flex: 1 160px;
+      }
+    }
+  }
+
+  .button.outline{
+    background: transparent;
+    width: 95%;
+    margin: 0px auto;
+  }
+}
+
+// --- We Can Connect You. ------------------- //
+.we-connect-row{
+
+  .content-left{
+    padding: 8vw 6vw 9vw;
+
+    h2{
+      text-align: center;
+    }
+
+    p{
+      margin: 4vw 0;
+    }
+
+    ul{
+      font-family: $font-latoBold;
+      list-style: none;
+      padding: 0px;
+
+      li{
+        margin: 10px 0;
+      }
+    }
+  }
+}
+
+

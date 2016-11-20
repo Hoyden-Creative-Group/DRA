@@ -36,18 +36,6 @@ class IndustryItem {
           "param_name" => "image"
         ),
         array(
-          "type" => "dropdown",
-          "holder" => "div",
-          "heading" => "Retina Image",
-          "param_name" => "image_class",
-          'value' => array_flip(
-            array(
-              '' => 'Is not retina',
-              'retina' => 'Is retina'
-            )
-          )
-        ),
-        array(
           "type" => "textfield",
           "heading" => "Title",
           "param_name" => "title",
@@ -57,6 +45,18 @@ class IndustryItem {
           "type" => "textarea",
           "heading" => "Summary",
           "param_name" => "summary",
+          "holder" => "div"
+        ),
+        array(
+          "type" => "vc_link",
+          "heading" => "Button",
+          "param_name" => "button1",
+          "holder" => "div"
+        ),
+        array(
+          "type" => "textfield",
+          "heading" => "Additional class",
+          "param_name" => "class",
           "holder" => "div"
         )
       )
@@ -70,9 +70,10 @@ class IndustryItem {
   public function getTemplate ($atts, $content) {
     extract( shortcode_atts( array(
       'image' => '',
-      'image_class' => '',
       'title' => '',
-      'summary' => ''
+      'summary' => '',
+      'button1' => '',
+      'class' => ''
     ), $atts ) );
 
     $output = '';
