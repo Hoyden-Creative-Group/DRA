@@ -41,10 +41,20 @@
 // --- Layout. ------------------- //
 
 .content-area{
-  // overflow: hidden;
-  max-width: 1270px;
-  margin: 0px auto;
+  overflow: hidden;
   min-height: 400px;
+  min-width: $minWidth;
+  margin: 0px auto;
+
+  // max-width: 1270px;
+  // margin: 0px auto;
+
+}
+
+.column-centered{
+  max-width: $maxWidth;
+  margin: 0 auto;
+  float: none !important;
 }
 
 // .content-wrapper{
