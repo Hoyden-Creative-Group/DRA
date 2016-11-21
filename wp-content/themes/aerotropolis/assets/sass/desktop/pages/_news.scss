@@ -280,3 +280,62 @@
     padding-left: 30px;
   }
 }
+
+
+// --- Pagination. ------------------- //
+.pagination{
+  text-align: center;
+  margin-left: -15px;
+
+  .page-numbers{
+    display: inline-block;
+    border: solid 2px #77B1D8;
+    padding: 5px 7px;
+    color: #77B1D8;
+    cursor: pointer;
+    font-family: $font-latoBold;
+    font-size: 22px;
+
+    &:hover{
+      border-color: #0669A3;
+      background: #0669A3;
+      color: #FFFFFF;
+    }
+
+    &.current{
+      background: #77B1D8;
+      color: #FFFFFF;
+
+      &:hover{
+        border-color: #77B1D8;
+      }
+    }
+
+    &.prev, &.next{
+      border: none;
+
+      &:hover{
+        background: none;
+        color: #0669A3;
+      }
+    }
+
+    &.prev{
+      &:before{
+        @include leftArrow;
+        font-size: 22px;
+        line-height: 22px;
+        margin-top: -4px;
+      }
+    }
+
+    &.next{
+      &:before{
+        @include rightArrow;
+        font-size: 22px;
+        line-height: 22px;
+        margin-top: -4px;
+      }
+    }
+  }
+}

@@ -28,6 +28,14 @@ get_header(); ?>
 			// End the loop.
 			endwhile;
 
+			// Previous/next page navigation.
+			the_posts_pagination( array(
+				'mid_size'  => 4,
+				'prev_text' => ' ',
+				'next_text' => ' ',
+				'screen_reader_text' => ' '
+			) );
+
 		// If no content, include the "No posts found" template.
 		else :
 			get_template_part( 'template-parts/content', 'none' );

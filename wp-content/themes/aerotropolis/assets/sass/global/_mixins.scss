@@ -12,6 +12,13 @@
   :-ms-input-placeholder      {@content}
 }
 
+@mixin leftArrow{
+  display: inline-block;
+  content: '\65';
+  font: normal normal 12px/12px "aerotropolis";
+  text-align: center;
+}
+
 @mixin rightArrow {
   display: inline-block;
   content: '\66';
