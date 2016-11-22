@@ -95,7 +95,7 @@ function aerotropolis_scripts() {
 	$jsPath = getEnvVar('jsPath');
 
 	// Theme stylesheet
-	wp_enqueue_style( 'aerotropolis-desktop', get_template_directory_uri() . '/assets/dist/desktop.css' );
+	wp_enqueue_style( 'aerotropolis-desktop', get_template_directory_uri() . '/assets/dist/desktop.css', array(), 1.1);
 
 	if (!is_admin()) {
 		wp_register_script('aerotropolis', get_template_directory_uri() . $jsPath . '/desktop.js', array('jquery') );
