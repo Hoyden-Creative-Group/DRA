@@ -1,0 +1,52 @@
+@media screen and (max-width: 1295px) {
+  .content-bottom-widgets{
+    .widget {
+      padding: 3vw;
+      height: auto;
+      width: 420px;
+      margin: 0px auto;
+
+      &:hover{
+        &:not(.divider){
+          transform: none;
+        }
+      }
+
+      &.divider {
+        width: 115px;
+      }
+    }
+
+    .aero_newsletter {
+      .text1, .text2 {
+        font-size: 25px;
+        line-height: 30px;
+      }
+    }
+
+    .aero_more_information {
+      .phone-title, .email-title{
+        line-height: 16px;
+      }
+      a.phone, a.email{
+        font-size: 25px;
+        line-height: 30px;
+      }
+    }
+  }
+
+  .site-footer{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .footer-links{
+    margin-right: -17vw;
+  }
+}
+
+@media screen and (max-width: $minWidth) {
+  .main-nav.sticky{
+    display: none;
+  }
+}

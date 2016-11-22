@@ -11,7 +11,7 @@
   padding: 18vw 0 6vw;
 
   .content-wrapper{
-    background: rgba(#FFFFFF, .9);
+    background: rgba(#FFFFFF, 0.9);
     padding: 3vw 5vw;
     display: flex;
     max-width: $maxWidth;
@@ -46,6 +46,7 @@
 .industries-row{
   background: #B1DBE4;
   padding: 85px 0 112px 0;
+  box-shadow: 0 0 30px -3px rgba(0,0,0,0.8);
 
   h2{
     color: #FFFFFF;
