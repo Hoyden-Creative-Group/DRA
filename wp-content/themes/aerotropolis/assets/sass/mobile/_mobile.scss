@@ -79,7 +79,7 @@
 
   // --- News Page. ------------------- //
   .news-page, .search-results-content{
-    flex-wrap: wrap;
+    padding-top: 50px;
 
     .site-main{
       max-width: 100%;
@@ -504,20 +504,21 @@
 
 
   // --- Footer Widgets. ------------------- //
-  .content-bottom-widgets .widget-area{
-    flex-wrap: wrap;
-    padding: 50px 30px;
+  .content-bottom-widgets{
+    .widget-area{
+      flex-wrap: wrap;
+      padding: 50px 30px;
 
-    .widget{
-      flex: 1 100%;
-      margin: 0px auto;
-    }
+      .widget{
+        flex: 1 100%;
+        margin: 0px auto;
+      }
 
-    .aero_newsletter{
-      margin-bottom: 30px;
+      .aero_newsletter{
+        margin-bottom: 30px;
+      }
     }
   }
-
 }
 
 
@@ -588,9 +589,20 @@
       form{
         margin-top: 15px;
       }
-      input[type=text]{
-        padding: 0.5rem 1.5rem;
+      // input[type=text]{
+      //   padding: 0.5rem 1.5rem;
+      //   font: 1.6rem/2.8rem $font-latoBold;
+      // }
+      input[type=email], input[type=submit]{
+        flex: 1;
+      }
+      input[type=email]{
+        width: 50%;
         font: 1.6rem/2.8rem $font-latoBold;
+      }
+      input[type=submit]{
+        padding-left: 5px;
+        padding-right: 5px;
       }
     }
 
@@ -600,10 +612,13 @@
         line-height: 1.8rem;
       }
       a.phone, a.email{
-        font-size: 2rem;
+        font-size: 1.8rem;
         line-height: 2.1rem;
       }
-
+      .button{
+        padding-left: 0;
+        padding-right: 0;
+      }
     }
   }
 
