@@ -13,6 +13,11 @@
     width: 75%;
     padding: 50px;
     padding-right: calc(50% - #{$maxWidth}/2);
+
+    img.size-large{
+      max-width: 100%;
+      height: auto;
+    }
   }
 
   .column-centered{
