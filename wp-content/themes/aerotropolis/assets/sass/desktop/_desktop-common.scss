@@ -16,12 +16,6 @@
   }
 }
 
-// .row-centered{
-//   max-width: $maxWidth + 30px; // +30 here due to how visual composer handles internal rows
-//   min-width: $minWidth;
-//   margin: 0px auto !important;
-// }
-
 .wpb_text_column{
   ul{
     list-style: disc;
@@ -33,22 +27,18 @@
   }
 }
 
-.vc_row, .row-content{
-  min-width: $minWidth;
-}
+// .vc_row, .row-content{
+//   min-width: $minWidth;
+// }
 
 
 // --- Layout. ------------------- //
 
 .content-area{
-  overflow: hidden;
-  min-height: 400px;
-  min-width: $minWidth;
+  // overflow: hidden;
+  // min-height: 400px;
+  // min-width: $minWidth;
   margin: 0px auto;
-
-  // max-width: 1270px;
-  // margin: 0px auto;
-
 }
 
 .column-centered{
@@ -57,12 +47,6 @@
   float: none !important;
 }
 
-// .content-wrapper{
-//   max-width: $maxWidth;
-//   min-width: $minWidth;
-//   margin: 0px auto;
-//   position: relative;
-// }
 
 .align-right{
   text-align: right;
@@ -187,7 +171,8 @@ h1.page-title{
   margin: 0 auto;
   text-align: left;
   background: #FFFFFF;
-  padding: 50px 55px;
+  //padding: 50px 55px;
+  padding: 3.5vw 3.9vw;
   display: flex;
   flex-direction: column;
   transition: transform .1s ease-in-out, box-shadow 0.1s ease-in-out;
@@ -260,6 +245,44 @@ h1.page-title{
     }
     tr:nth-child(odd) {
       background-color: #F5F5F5;
+    }
+  }
+}
+
+
+// --- Search form. ------------------- //
+.search-form{
+  font-size: 0;
+  line-height: 0;
+  padding: 10px;
+  text-align: right;
+  display: inline-block;
+  vertical-align: middle;
+
+  .search-field{
+    border: solid 1px #7D7D7C;
+    color: #7D7D7C;
+    display: inline-block;
+    font: 1.6rem/2.8rem $font-latoBold;
+    padding: 0 1.5rem;
+    text-align: left;
+    width: 265px;
+  }
+
+  .search-submit{
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    background: #7D7D7C;
+    color: #FFFFFF;
+    font-size: 1.7rem;
+    transition: background .2s ease-in-out;
+  }
+
+  &:hover {
+    .search-submit {
+      background: #4B4B4B;
+      color: #FFFFFF;
     }
   }
 }

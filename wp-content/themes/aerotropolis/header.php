@@ -40,6 +40,12 @@
 			<div class="buildings"></div>
 			<div class="text"></div>
 		</a>
+		<div class="hamburger-menu">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
 		<?php
 			wp_nav_menu( array(
 				'theme_location'	=> 'main_menu',

@@ -31,9 +31,10 @@ get_header(); ?>
 
 			// Previous/next page navigation.
 			the_posts_pagination( array(
-				'prev_text'          => 'Previous page',
-				'next_text'          => 'Next page',
-				'before_page_number' => '<span class="meta-nav screen-reader-text">Page</span>',
+				'mid_size'  => 4,
+				'prev_text' => ' ',
+				'next_text' => ' ',
+				'screen_reader_text' => ' '
 			) );
 
 		// If no content, include the "No posts found" template.

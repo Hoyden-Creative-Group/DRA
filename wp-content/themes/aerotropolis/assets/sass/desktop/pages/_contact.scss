@@ -5,12 +5,17 @@
  * Desktop contact page
  */
 
-.areo-contact{
+.aero-contact{
   padding: 70px 0 50px 0;
 
+  .content-left{
+
+  }
+
   .contact-heading{
-    min-width: 330px;
-    width: 70%;
+    // min-width: 330px;
+    // width: 70%;
+    width: 500px;
     display: inline-block;
     float: right;
     padding-top: 7px;
@@ -18,17 +23,13 @@
   }
 
   .form-errors{
-    &:before{
-      content: "";
-      clear: both;
-    }
-
     float: right;
     border: solid 1px #ebccd1;
     background: #F2DEDF;
     color: $error-color;
-    min-width: 330px;
-    width: 70%;
+    // min-width: 330px;
+    // width: 70%;
+    width: 500px;
     padding: 10px 15px;
     margin-top: 16px;
 
@@ -38,11 +39,32 @@
     }
   }
 
+  .js-form-errors{
+    display: none;
+    width: 500px;
+    padding: 10px 15px;
+    text-align: left;
+    margin-top: 30px;
+    border: solid 1px #ebccd1;
+    background: #F2DEDF;
+    color: $error-color;
+
+    &:before{
+      content: "";
+      clear: both;
+    }
+
+    p{
+      margin: 0;
+    }
+  }
+
   .contact-success{
     float: right;
     text-align: left;
-    min-width: 330px;
-    width: 70%;
+    // min-width: 330px;
+    // width: 70%;
+    width: 500px;
     margin-top: 140px;
   }
 
@@ -64,8 +86,9 @@
 
     form{
       display: inline-block;
-      width: 70%;
-      min-width: 330px;
+      // width: 70%;
+      // min-width: 330px;
+      width: 500px;
     }
 
     .form-field{
@@ -81,6 +104,10 @@
 
         &:focus{
           box-shadow: 0 0 5px #bbbbbb;
+        }
+
+        &.error{
+          border: solid 1px $error-color;
         }
       }
 

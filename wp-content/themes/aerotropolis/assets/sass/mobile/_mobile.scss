@@ -1,52 +1,666 @@
 @media screen and (max-width: 1295px) {
+  // --- Main navigation. ------------------- //
+  .aerotropolis-logo{
+    left: 30px;
+  }
+
+  // --- Card Items. ------------------- //
+  .card-item{
+    max-width: 30vw;
+  }
+
+  // --- Why DRA. ------------------- //
+  .live-work-play-content{
+    margin-left: 30px !important;
+    margin-right: 30px !important;
+  }
+
+  // --- Footer Widgets. ------------------- //
   .content-bottom-widgets{
     .widget {
       padding: 3vw;
-      height: auto;
       width: 420px;
       margin: 0px auto;
 
-      &:hover{
-        &:not(.divider){
-          transform: none;
-        }
-      }
-
       &.divider {
-        width: 115px;
+        width: 120px;
       }
     }
 
     .aero_newsletter {
       .text1, .text2 {
-        font-size: 25px;
-        line-height: 30px;
+        font-size: 2.5rem;
+        line-height: 3rem;
       }
     }
 
     .aero_more_information {
       .phone-title, .email-title{
-        line-height: 16px;
+        line-height: 1.6rem;
       }
       a.phone, a.email{
-        font-size: 25px;
-        line-height: 30px;
+        font-size: 2.5rem;
+        line-height: 3rem;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1150px) {
+  // --- Main navigation. ------------------- //
+  .aerotropolis-logo{
+    top: 0;
+    left: 30px;
+    width: 225px;
+    height: 75px;
+
+    .buildings{
+      display: none;
+    }
+
+    .text{
+      margin-top: 19px;
+    }
+  }
+
+  .main-nav{
+    &.sticky{
+      .text{
+        transform: none;
       }
     }
   }
 
-  .site-footer{
-    padding-left: 0px;
-    padding-right: 0px;
+  // --- Why DRA. ------------------- //
+  .our-goal-row .content-left ul{
+    padding: 0 0 0 30px;
   }
 
-  .footer-links{
-    margin-right: -17vw;
+  // --- News Page. ------------------- //
+  .news-page, .search-results-content{
+    flex-wrap: wrap;
+
+    .site-main{
+      max-width: 100%;
+      margin: 0px 30px;
+    }
+
+    .post-preview{
+      .teaser{
+        flex-wrap: wrap;
+      }
+      .excerpt{
+        flex: 1 100%;
+        margin-right: 0;
+      }
+      .categories{
+        display: block;
+      }
+      .button{
+        max-width: 300px;
+      }
+    }
+  }
+
+  .news-sidebar{
+    display: none;
+  }
+
+  // --- Search results. ------------------- //
+  .search-results-content h1.page-title{
+    line-height: 40px !important;
+  }
+
+  // --- Footer. ------------------- //
+  .footer-social{
+    .search-form{
+      width: auto;
+
+      .search-field{
+        width: auto;
+      }
+    }
   }
 }
 
-@media screen and (max-width: $minWidth) {
-  .main-nav.sticky{
+@media screen and (max-width: 1015px) {
+
+  // --- Bring in the mobile style navigaion. ------------------- //
+  .main-nav{
+    .content-wrapper{
+      line-height: inherit;
+    }
+
+    .main_menu{
+      display: none;
+    }
+  }
+
+  .column-centered{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  // --- Sticky Nav. ------------------- //
+  .sticky-secondary-nav{
     display: none;
+  }
+
+  // --- Card Items. ------------------- //
+  .card-item{
+    max-width: 100%;
+    min-height: auto;
+    margin-bottom: 4vw;
+    padding: 35px 30px;
+
+    h4, p{
+      flex: 0
+    }
+
+    &.clickable{
+      &:hover{
+        transform: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+
+  // --- Home page. ------------------- //
+
+    // --- Video Player. ------------------- //
+    .video-wrapper .video-overlay .icon-down-arrow{
+      display: none;
+    }
+
+    // --- Site Selection. ------------------- //
+    .site-selection-row{
+      padding: 50px 30px;
+    }
+
+    // --- Why Detroit. ------------------- //
+    .overview-row{
+      padding: 50px 0;
+
+      .content-left{
+        display: none !important;
+      }
+
+      .content-right{
+        min-width: 100%;
+        padding-right: 30px;
+
+        .button-wrapper{
+          text-align: center;
+        }
+
+        .button{
+          display: inline-block;
+          width: 290px;
+        }
+      }
+    }
+
+    // --- Industry Items. ------------------- //
+    .our-industries-row {
+      padding: 50px 0;
+    }
+
+    .industry-item{
+      .thumbnail{
+        width: 100%;
+        background-size: cover;
+      }
+      .details{
+        h4{
+          flex: 0;
+        }
+
+        padding: 0 30px;
+        margin-bottom: 30px;
+      }
+    }
+
+    .industry-button{
+      max-width: 300px;
+      margin-top: 0;
+    }
+
+  // --- End of Home Page. ------------------- //
+
+
+  // --- Why DRA. ------------------- //
+    .why-dra-hero .why-dra{
+      padding: 30px;
+      margin-bottom: 0;
+
+      [class^="icon-"]{
+        display: none;
+      }
+
+      h4{
+        flex: 0;
+      }
+
+      p{
+        padding: 0;
+      }
+
+    }
+
+    // --- What we offer. ------------------- //
+    .what-we-offer-content{
+      [class^="icon-"]{
+        display: none;
+      }
+
+      h4{
+        text-align: left;
+      }
+
+      ul{
+        margin-top: 30px;
+      }
+    }
+
+    // --- Live. Work. Play. ------------------- //
+    .live-work-play-content{
+      padding-left: 60px;
+      padding-right: 60px;
+
+      .content-left{
+        flex: 0 100%;
+        margin-right: 0;
+      }
+      .content-right{
+        margin-top: 20px;
+        flex: 0 100%;
+      }
+    }
+
+    // --- Economic Overview. ------------------- //
+    .economic-overview-row .content-left{
+      display: none !important;
+    }
+    .economic-overview-row .content-right{
+      padding: 70px 30px;
+    }
+
+  // --- End of why DRA. ------------------- //
+
+
+  // --- Industries Page. ------------------- //
+    .industry-hero{
+      .content-wrapper{
+        padding: 30px;
+      }
+      .content-left{
+        padding: 0;
+      }
+      .content-right{
+        padding-left: 0;
+        margin-top: 30px;
+      }
+    }
+
+    // --- Industry Items. ------------------- //
+    .industries-row {
+      padding: 50px 0;
+
+      .industry-item{
+
+        .thumbnail{
+          width: 100%;
+          background-size: cover;
+        }
+        .details{
+          h4{
+            flex: 0;
+          }
+
+          p{
+            flex: 0;
+          }
+
+          padding: 0 30px;
+          margin-bottom: 30px;
+        }
+      }
+
+      .button.outline{
+        margin-top: 0;
+        max-width: 300px;
+      }
+    }
+
+    // --- We connect. ------------------- //
+    .we-connect-row{
+      .content-right{
+        display: none !important;
+      }
+    }
+  // --- End of Industy page. ------------------- //
+
+  // --- Site Selection. ------------------- //
+    .site-selection-hero{
+      padding-left: 15px !important;
+      padding-right: 15px !important;
+    }
+
+    .top-employers-row .content-left{
+      padding: 50px 0 60px;
+    }
+
+    .site-selection-offer-row{
+      padding: 50px 30px 60px;
+
+      .content-left{
+        padding-right: 0;
+      }
+      .content-right{
+        margin-top: 30px;
+        padding: 0;
+        h4{
+          text-align: center;
+        }
+      }
+    }
+  // --- End of Site Selection. ------------------- //
+
+  // --- Contact. ------------------- //
+  .aero-contact{
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+
+    .content-left{
+      order: 2;
+      margin-top: 30px;
+    }
+
+    .content-right{
+      order: 1;
+    }
+
+    .office-location-heading{
+      font: 3.4rem/4rem $font-latoHeavy;
+      color: $lightBlue;
+      margin-bottom: 20px;
+    }
+
+    .google-map{
+      width: 100%;
+    }
+
+    .contact-information{
+      width: 100%;
+      border: none;
+    }
+
+    .contact-heading, .form-errors, .js-form-errors, .contact-success, .contact-form form{
+      width: 100%;
+    }
+
+    .contact-heading{
+      margin-bottom: 20px;
+    }
+
+    .contact-success{
+      margin: 70px 0 100px 0;
+      text-align: center;
+    }
+
+  }
+
+  // --- End of contact. ------------------- //
+
+
+
+
+
+}
+
+
+@media screen and (max-width: 975px) {
+  // --- Home Page. ------------------- //
+  .aero-testimonial-slideshow{
+    .aero-testimonial{
+      font-size: 2rem;
+      line-height: 2.6rem;
+    }
+
+    .aero-author{
+      font-size: 1.6rem;
+      line-height: 1.6rem;
+    }
+  }
+
+  // --- Footer Widgets. ------------------- //
+  .content-bottom-widgets{
+
+    .widget{
+      &:hover:not(.divider){
+        transform: none;
+        box-shadow: none;
+      }
+
+      &.divider {
+        display: none;
+      }
+    }
+  }
+
+
+
+  // --- Footer. ------------------- //
+
+  .footer-links{
+    flex-grow: 0;
+    order: 1;
+    margin: 0px auto;
+  }
+  .footer-latest-news{
+    order: 2;
+    margin: 0px auto;
+  }
+  .footer-social{
+    order: 3;
+    margin: 6.5rem auto 0;
+    width: 320px;
+
+    .search-form{
+      .search-field{
+        width: 265px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 860px) {
+
+  // --- Secondary nav. ------------------- //
+  .secondary-nav .search-form {
+    &:hover {
+      .search-field {
+        width: 170px;
+      }
+    }
+  }
+
+  // --- Modals. ------------------- //
+  .popmake-content{
+    .content-left{
+      float: none;
+      width: auto;
+      padding-right: 0;
+    }
+
+    .content-right{
+      margin-top: 30px;
+      float: none;
+      width: auto;
+    }
+  }
+
+
+  // --- Footer Widgets. ------------------- //
+  .content-bottom-widgets .widget-area{
+    flex-wrap: wrap;
+    padding: 50px 30px;
+
+    .widget{
+      flex: 1 100%;
+      margin: 0px auto;
+    }
+
+    .aero_newsletter{
+      margin-bottom: 30px;
+    }
+  }
+
+}
+
+
+@media screen and (max-width: 700px) {
+
+  // --- Secondary nav. ------------------- //
+  .secondary-nav{
+    display: none;
+  }
+
+  // --- Home Page. ------------------- //
+  .aero-testimonial-slideshow{
+    .aero-nav{
+      display: none;
+    }
+    .aero-testimonial-wrapper{
+      padding: 40px 30px;
+    }
+  }
+
+  // --- WHY DRA.. ------------------- //
+  .our-goal-row{
+    .content-left{
+      padding: 30px 30px 45px;
+    }
+
+    .content-right{
+      min-height: 350px;
+    }
+  }
+
+  // --- Higher Education. ------------------- //
+  .higher-education-row{
+    min-height: 350px;
+  }
+
+  .higher-education-content{
+    padding: 50px 30px !important;
+  }
+
+  // --- News. ------------------- //
+  .post-preview{
+    figure{
+      img{
+        &:hover{
+          transform: none;
+        }
+      }
+    }
+  }
+
+
+
+  // --- Footer Widgets. ------------------- //
+  .content-bottom-widgets{
+    background: #A4D7F4;
+
+    .widget{
+      height: auto;
+    }
+
+    .aero_newsletter {
+      .text1, .text2 {
+        font-size: 2rem;
+        line-height: 2.1rem;
+        text-align: center;
+      }
+      form{
+        margin-top: 15px;
+      }
+      input[type=text]{
+        padding: 0.5rem 1.5rem;
+        font: 1.6rem/2.8rem $font-latoBold;
+      }
+    }
+
+    .aero_more_information {
+      .phone-title, .email-title{
+        font-size: 1.5rem;
+        line-height: 1.8rem;
+      }
+      a.phone, a.email{
+        font-size: 2rem;
+        line-height: 2.1rem;
+      }
+
+    }
+  }
+
+
+
+  // --- Footer. ------------------- //
+
+  .menu-footer-1-container, .menu-footer-2-container{
+    flex: 0 100%;
+  }
+
+  .footer-links{
+    flex: 1 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .footer-latest-news{
+    display: none;
+  }
+
+  .footer-social{
+    flex: 1 100%;
+    max-width: 320px;
+  }
+
+  .search-form{
+    .search-field{
+      padding: 0.5rem 1.5rem;
+      font-size: 1.8rem;
+    }
+
+    .search-submit{
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  // --- Why DRA. ------------------- //
+  .live-work-play-content{
+    margin: 0 -7.5px !important;
+    padding: 30px 30px 45px;
+  }
+}
+
+
+@media screen and (max-width: 405px) {
+
+  // --- Footer Widgets. ------------------- //
+  .content-bottom-widgets{
+    .aero_newsletter {
+      input[type=text]{
+        margin-bottom: 5px;
+      }
+    }
   }
 }

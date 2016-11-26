@@ -22,9 +22,13 @@
         "desktop/desktop-header",
         "desktop/desktop-footer";
 
+
 /* Pages */
 /********************************************************/
 
 @import "desktop/pages/**/*";
 
-@import "mobile/*";
+
+/* Media Queries */
+/********************************************************/
+@import "mobile/mobile";

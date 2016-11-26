@@ -8,6 +8,68 @@
 
 // --- Main Navigation. ------------------- //
 
+.hamburger-menu{
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  right: 25px;
+  top: 28px;
+  z-index: 1;
+  display: none;
+
+  span{
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    background: #F5F5F5;
+    border-radius: 7px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+
+    &:nth-child(1) {
+      top: 0px;
+    }
+
+    &:nth-child(2), &:nth-child(3) {
+      top: 11px;
+    }
+
+    &:nth-child(4) {
+      top: 22px;
+    }
+  }
+
+  &.open{
+    span{
+      &:nth-child(1) {
+        top: 11px;
+        width: 0%;
+        left: 50%;
+      }
+
+      &:nth-child(2) {
+        transform: rotate(45deg);
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+
+      &:nth-child(4) {
+        top: 11px;
+        width: 0%;
+        left: 50%;
+      }
+    }
+  }
+}
+
 .main-nav{
   background: #4B4B4B;
   position: relative;
@@ -15,9 +77,11 @@
 
   .content-wrapper{
     max-width: $maxWidth;
-    min-width: $minWidth;
+    //min-width: $minWidth;
     margin: 0px auto;
     position: relative;
+    padding-left: 30px;
+    line-height: 0;
   }
 
   &.sticky{
@@ -47,6 +111,69 @@
       @include button(10px 35px, null, 22px, $font-latoBold, $darkBlue, #FFFFFF);
       @include outlineButton($darkBlue);
       background: none;
+    }
+  }
+}
+
+.mobile{
+  .menu-main-menu-container{
+    height: 82px;
+    position: relative;
+  }
+
+  .main-nav{
+    .content-wrapper{
+      padding-left: 0;
+    }
+
+    li.menu-property-search{
+      text-align: left;
+      margin-top: 0;
+
+      a{
+        display: block;
+        text-align: left;
+        padding: inherit;
+        text-transform: none;
+        font: inherit;
+        border: none;
+        padding: 15px 20px;
+        font-size: 16px;
+        font-family: $font-latoHeavy;
+        line-height: 16px;
+        color: #F5F5F5;
+
+        &:hover{
+          background: #3E3E3E;
+        }
+      }
+    }
+  }
+
+  .main_menu{
+    position: absolute;
+    top: 100%;
+    width: 100%;
+  }
+
+  .sf-menu{
+    .menu-item-has-children{
+      position: relative;
+      &:after{
+        @include downArrow;
+        position: absolute;
+        top: 18px;
+        right: 30px;
+        color: #F5F5F5;
+        transform: rotate(-90deg);
+        transition: transform 0.2s ease-in-out;
+      }
+
+      &.opened{
+        &:after{
+          transform: rotate(0deg);
+        }
+      }
     }
   }
 }
@@ -102,7 +229,6 @@ ul.secondary_menu{
 .secondary-nav{
   .content-wrapper{
     max-width: $maxWidth;
-    min-width: $minWidth;
     margin: 0px auto;
     position: relative;
   }
@@ -130,45 +256,6 @@ ul.secondary_menu{
         background: #7D7D7C;
         color: #FFFFFF;
       }
-    }
-  }
-}
-
-
-/* Search Form */
-/********************************************************/
-
-.search-form{
-  font-size: 0px;
-  padding: 10px;
-  text-align: right;
-  display: inline-block;
-  vertical-align: middle;
-
-  .search-field{
-    border: solid 1px #7D7D7C;
-    color: #7D7D7C;
-    display: inline-block;
-    font: 16px/28px $font-latoBold;
-    padding: 0 15px;
-    text-align: left;
-    width: 265px;
-  }
-
-  .search-submit{
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    background: #7D7D7C;
-    color: #FFFFFF;
-    font-size: 17px;
-    transition: background .2s ease-in-out;
-  }
-
-  &:hover {
-    .search-submit {
-      background: #4B4B4B;
-      color: #FFFFFF;
     }
   }
 }

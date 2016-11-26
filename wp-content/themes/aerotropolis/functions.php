@@ -55,7 +55,8 @@ function theme_setup() {
 		'sticky_side_menu_about'          => 'Sticky Side Menu - ABOUT',
 		'sticky_side_menu_site_selection' => 'Sticky Side Menu - SITE SELECTION',
 		'sticky_side_menu_industries'     => 'Sticky Side Menu - INDUSTRIES',
-		'footer_menu'                     => 'Footer Menu',
+		'footer_menu_1'                   => 'Footer Menu 1',
+		'footer_menu_2'                   => 'Footer Menu 2',
 		'footer_social'                   => 'Footer Social'
 	));
 
@@ -87,6 +88,11 @@ function set_content_type( $content_type ){
 	return 'text/html';
 }
 
+
+/**
+ * Remove ellipsis from blog posts
+ */
+add_filter('excerpt_more','__return_false');
 
 /**
  * Enqueues scripts and styles.

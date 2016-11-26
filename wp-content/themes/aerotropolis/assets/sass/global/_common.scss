@@ -9,10 +9,16 @@
 /* HTML Elements */
 /********************************************************/
 
+html{
+  font-family: $font-lato;
+  font-size: 62.5%;
+}
+
 body {
-  font: 18px/26px $font-lato;
   color: $darkGrey;
-  min-width: $minWidth;
+  font-size: 1.8rem;
+  line-height: 2.6rem;
+  // min-width: $minWidth;
 }
 
 a{
@@ -30,32 +36,32 @@ h1,h2,h3,h4,h5,h6{
 }
 
 h1{
-  font: 40px/50px $font-latoHeavy;
+  font: 4rem/5rem $font-latoHeavy;
   color: $darkBlue;
 }
 
 h2{
-  font: 34px/40px $font-latoHeavy;
+  font: 3.4rem/4rem $font-latoHeavy;
   color: $lightBlue;
 }
 
 h3{
-  font: 30px/35px $font-latoHeavy;
+  font: 3rem/3.5rem $font-latoHeavy;
   color: $darkGrey;
 }
 
 h4{
-  font: 28px/35px $font-latoBold;
+  font: 2.8rem/3.5rem $font-latoBold;
   color: $grey;
 }
 
 h5{
-  font: 26px/30px $font-latoBold;
+  font: 2.6rem/3rem $font-latoBold;
   color: $grey;
 }
 
 h6{
-  font: 25px/30px $font-latoBold;
+  font: 2.5rem/3rem $font-latoBold;
   color: $lightGrey;
 }
 

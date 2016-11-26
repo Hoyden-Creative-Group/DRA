@@ -45,7 +45,10 @@
 // --- End Required Styles. ------------------- //
 
 
-
+/**
+ * Be sure to also check the _desktop-header.scss and _mobile.scss for
+ * styles that include some mixins for the menu
+ */
 
 .sf-menu {
 	margin-bottom: 1em;
@@ -53,6 +56,10 @@
 
 	a {
 		transition: none;
+	}
+
+	li.mobile, p.mobile{
+		display: none;
 	}
 
 	ul {
@@ -82,23 +89,16 @@
 
 	li {
 		white-space: nowrap; /* no need for Supersubs plugin */
-		*white-space: normal; /* ...unless you support IE7 (let it wrap) */
-		-webkit-transition: background .2s;
 		transition: background .2s;
 
 		&:hover,
 		&.sfHover {
 			background: #F5F5F5;
-			/* only transition out, not in */
-			-webkit-transition: none;
-			transition: none;
 
 			a {
 				color: #4B4B4B;
 			}
 		}
-
-		ul{}
 
 		&.split{
 			display: inline-block;
@@ -115,6 +115,73 @@
 		text-transform: uppercase;
 	}
 }
+
+.mobile{
+	.sf-menu{
+		margin-bottom: 0;
+		text-align: left;
+		background: #5E5E5E;
+
+		li.mobile, p.mobile{
+			display: block;
+		}
+
+		&>li{
+			display: block;
+		}
+
+		a{
+			padding: 15px 20px;
+			color: #F5F5F5;
+		}
+
+		ul {
+			position: relative;
+			top: 0;
+			padding: 0;
+
+			li{
+				background: #6B6B6B;
+			}
+		}
+
+		li{
+			&:hover{
+				background: #3E3E3E;
+
+				a{
+					color: #F5F5F5;
+				}
+
+				&> ul {
+					display: none;
+				}
+			}
+
+			&.split{
+				display: block;
+			}
+		}
+
+	}
+
+	.split-menu{
+		li:hover{
+			background: #6B6B6B;
+		}
+
+		a{
+			transition: background .2s;
+		}
+
+		a:hover{
+			background: #3E3E3E;
+		}
+	}
+}
+
+
+
 
 // arrows
 // .sf-arrows .sf-with-ul {

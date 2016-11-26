@@ -13,8 +13,6 @@ html, body, div, span, button, input, applet, object, iframe, h1, h2, h3, h4, h5
 	padding: 0;
 	border: 0;
 	outline: none;
-	font-size: 100%;
-	font: inherit;
 	@include box-sizing( border-box );
 }
 

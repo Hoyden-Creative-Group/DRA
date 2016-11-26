@@ -14,7 +14,13 @@
 		<nav class="footer-links">
 			<?php
 				wp_nav_menu( array(
-					'theme_location' => 'footer_menu',
+					'theme_location' => 'footer_menu_1',
+					'menu_class'     => 'footer_menu',
+				 ) );
+			?>
+			<?php
+				wp_nav_menu( array(
+					'theme_location' => 'footer_menu_2',
 					'menu_class'     => 'footer_menu',
 				 ) );
 			?>

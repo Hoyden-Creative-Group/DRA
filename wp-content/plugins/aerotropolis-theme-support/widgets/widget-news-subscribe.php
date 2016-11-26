@@ -83,7 +83,7 @@ class Aero_News_Subscribe extends WP_Widget {
 
     echo '<form action="'. site_url() .'/wp-admin/admin-ajax.php" class="aero-mailchimp-widget" method="post">';
       echo '<div class="message"></div>';
-      echo '<input type="text" placeholder="Email address" name="email" class="email" />';
+      echo '<input type="email" placeholder="Email address" name="email" class="email" />';
       echo '<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_0dd5b3bdf1d979b7b8d558fd3_038174d146" tabindex="-1" value=""></div>';
       echo '<input type="hidden" name="action" value="aero_newsletter_subscribe" />';
       echo '<input type="submit" class="btn" data-value="'.$buttonText.'" value="'. $buttonText .'" />';

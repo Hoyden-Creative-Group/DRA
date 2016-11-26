@@ -26,6 +26,13 @@
   text-align: center;
 }
 
+@mixin downArrow {
+  display: inline-block;
+  content: '\69';
+  font: normal normal 12px/12px "aerotropolis";
+  text-align: center;
+}
+
 @mixin externalLink {
   display: inline-block;
   content: '\70';

@@ -157,18 +157,6 @@
 
 
       if (!$result) {
-        // global $ts_mail_errors;
-        // global $phpmailer;
-        // if (!isset($ts_mail_errors)) $ts_mail_errors = array();
-        // if (isset($phpmailer)) {
-        //   $ts_mail_errors[] = $phpmailer->ErrorInfo;
-        // }
-
-        // print_r($ts_mail_errors);
-        // print_r($to);
-        // print_r($subject);
-        // print_r($message);
-        // print_r($headers);
 
         echo '<div class="form-errors">';
           echo '<p>There was an error sending your form.  Please try again.</p>';
@@ -193,7 +181,9 @@
 
   <?php else : ?>
 
-    <form method="post" action="<?php the_permalink(); ?>">
+    <div class="js-form-errors"></div>
+
+    <form id="aero-contact-form" method="post" action="<?php the_permalink(); ?>">
       <input type="hidden" name="action" value="contact-submit" />
       <?php wp_nonce_field( 'aero_contact_submit' ); ?>
 
@@ -209,7 +199,7 @@
 
       <p class="form-field input-text">
         <label for="aero_email">Email<span class="req">*</span></label>
-        <input type="text" name="aero_email" id="aero_email" placeholder="john@appleseed.com" value="<?php echo !empty($_POST['aero_email']) ? $_POST['aero_email'] : ""; ?>" />
+        <input type="email" name="aero_email" id="aero_email" placeholder="john@appleseed.com" value="<?php echo !empty($_POST['aero_email']) ? $_POST['aero_email'] : ""; ?>" />
       </p>
 
       <p class="form-field input-text">

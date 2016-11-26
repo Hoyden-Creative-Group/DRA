@@ -136,7 +136,7 @@
       }
     }
 
-    input[type=text] {
+    input[type=email] {
       flex: 1 0 0;
       width: 120px;
       padding: 7px 15px;
@@ -189,6 +189,10 @@
         transform: scale(1.05);
       }
     }
+  }
+
+  .categories{
+    display: none;
   }
 
   .entry-title a{
