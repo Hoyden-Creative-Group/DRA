@@ -5,6 +5,9 @@
 !.gitignore
 !wp-config.php
 !README.md
+!.htaccess
+!db-backups.php
+!wp-config.php
 
 # Always ignore these files no matter at what level
 .DS_Store

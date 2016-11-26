@@ -18,29 +18,13 @@
  * @package WordPress
  */
 
-define('DB_HOST', 'localhost');
-define('DB_CHARSET', 'utf8mb4');
-define('DB_COLLATE', '');
+/** Absolute path to the WordPress directory. */
+if ( !defined('ABSPATH') )
+  define('ABSPATH', dirname(__FILE__) . '/');
 
-if( preg_match("/^www\.aerotropolis\.com/", $_SERVER['HTTP_HOST']) ) {
-  define('ENVIRONMENT', 'PROD');
-  define('WP_DEBUG', false);
-  define('DB_NAME', '');
-  define('DB_USER', '');
-  define('DB_PASSWORD', '');
-} elseif ( $_SERVER['HTTP_HOST'] == "aerotropolis.hoydencreative.com" ) {
-  define('ENVIRONMENT', 'STAGING');
-  define('WP_DEBUG', true);
-  define('DB_NAME', 'mollymas_aerotropolis');
-  define('DB_USER', 'mollymas_aero');
-  define('DB_PASSWORD', 'hoyden_aero');
-} else {
-  define('ENVIRONMENT', 'LOCAL');
-  define('WP_DEBUG', true);
-  define('DB_NAME', 'aerotropolis_v2');
-  define('DB_USER', 'root');
-  define('DB_PASSWORD', 'root');
-}
+
+// pull in environment variables
+require_once(ABSPATH . 'env.php');
 
 
 /**#@+
@@ -86,10 +70,6 @@ $table_prefix  = 'wp_';
 define('WP_DEBUG', false);
 
 /* That's all, stop editing! Happy blogging. */
-
-/** Absolute path to the WordPress directory. */
-if ( !defined('ABSPATH') )
-  define('ABSPATH', dirname(__FILE__) . '/');
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
