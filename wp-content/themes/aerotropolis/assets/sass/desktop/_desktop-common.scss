@@ -27,17 +27,9 @@
   }
 }
 
-// .vc_row, .row-content{
-//   min-width: $minWidth;
-// }
-
-
 // --- Layout. ------------------- //
 
 .content-area{
-  // overflow: hidden;
-  // min-height: 400px;
-  // min-width: $minWidth;
   margin: 0px auto;
 }
 
@@ -283,6 +275,24 @@ h1.page-title{
     .search-submit {
       background: #4B4B4B;
       color: #FFFFFF;
+    }
+  }
+}
+
+
+// --- Captioned Image. ------------------- //
+.aero-captioned{
+  .vc_figure{
+    position: relative;
+
+    .vc_figure-caption{
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      background: rgba(#FFFFFF, 0.5);
+      text-align: right;
+      padding: 3px 5px;
     }
   }
 }
