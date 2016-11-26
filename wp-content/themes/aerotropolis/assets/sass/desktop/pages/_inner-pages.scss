@@ -14,12 +14,19 @@
     padding: 50px;
     padding-right: calc(50% - #{$maxWidth}/2);
   }
+
+  .column-centered{
+    padding: 50px 0;
+  }
 }
 
 @media screen and (max-width: $maxWidth) {
   .aero-inner-page{
     .vc_col-sm-9{
       padding-right: calc(50% - #{$maxWidth}/2 + 50px);
+    }
+    .column-centered{
+      padding: 50px 30px;
     }
   }
 }
