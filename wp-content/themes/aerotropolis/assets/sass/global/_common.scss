@@ -65,6 +65,11 @@ h6{
   color: $lightGrey;
 }
 
+input[type=text], input[type=email], input[type=submit]{
+  border-radius: 0px;
+  -webkit-appearance: none;
+}
+
 
 
 /* Common Classes */

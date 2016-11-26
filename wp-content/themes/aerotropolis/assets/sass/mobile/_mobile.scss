@@ -191,6 +191,10 @@
         min-width: 100%;
         padding-right: 30px;
 
+        &>.vc_column-inner>.wpb_wrapper{
+          display: block;
+        }
+
         .button-wrapper{
           text-align: center;
         }
