@@ -1,16 +1,20 @@
 
 # BEGIN WordPress
+
 <IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.php$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.php [L]
 </IfModule>
 
 # END WordPress
 
+#------------------------------------------------------------
+# Set the php upload size
+#------------------------------------------------------------
 
 php_value upload_max_filesize 64M
 php_value post_max_size 64M
@@ -18,7 +22,69 @@ php_value max_execution_time 300
 php_value max_input_time 300
 
 
+#------------------------------------------------------------
+# Secure specific files from direct access
+#------------------------------------------------------------
+
 <Files "db-backups.php">
-Order Allow,Deny
-Deny from all
+  Order Allow,Deny
+  Deny from all
 </Files>
+
+#------------------------------------------------------------
+# Set expires headers (taken from HTML5 boilerplate)
+#------------------------------------------------------------
+
+<IfModule mod_expires.c>
+  ExpiresActive on
+
+  # Perhaps better to whitelist expires rules? Perhaps.
+  ExpiresDefault                          "access plus 1 month"
+
+  # cache.appcache needs re-requests in FF 3.6 (thx Remy ~Introducing HTML5)
+  ExpiresByType text/cache-manifest       "access plus 0 seconds"
+
+  # Your document html
+  ExpiresByType text/html                 "access plus 0 seconds"
+
+  # Data
+  ExpiresByType text/xml                  "access plus 0 seconds"
+  ExpiresByType application/xml           "access plus 0 seconds"
+  ExpiresByType application/json          "access plus 0 seconds"
+
+  # RSS feed
+  ExpiresByType application/rss+xml       "access plus 1 hour"
+
+  # Favicon (cannot be renamed)
+  ExpiresByType image/x-icon              "access plus 1 week"
+
+  # Media: images, video, audio
+  ExpiresByType image/gif                 "access plus 1 month"
+  ExpiresByType image/png                 "access plus 1 month"
+  ExpiresByType image/jpg                 "access plus 1 month"
+  ExpiresByType image/jpeg                "access plus 1 month"
+  ExpiresByType video/ogg                 "access plus 1 month"
+  ExpiresByType audio/ogg                 "access plus 1 month"
+  ExpiresByType video/mp4                 "access plus 1 month"
+  ExpiresByType video/webm                "access plus 1 month"
+
+  # HTC files  (css3pie)
+  ExpiresByType text/x-component          "access plus 1 month"
+
+  # Webfonts
+  ExpiresByType font/truetype             "access plus 1 month"
+  ExpiresByType font/opentype             "access plus 1 month"
+  ExpiresByType application/x-font-woff   "access plus 1 month"
+  ExpiresByType image/svg+xml             "access plus 1 month"
+  ExpiresByType application/vnd.ms-fontobject "access plus 1 month"
+
+  # CSS and JavaScript
+  ExpiresByType text/css                  "access plus 1 year"
+  ExpiresByType application/javascript    "access plus 1 year"
+  ExpiresByType text/javascript           "access plus 1 year"
+
+  <IfModule mod_headers.c>
+    Header append Cache-Control "public"
+  </IfModule>
+
+</IfModule>
