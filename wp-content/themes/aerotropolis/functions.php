@@ -107,7 +107,7 @@ function aerotropolis_scripts() {
 	wp_register_script( 'aero_testimonials', get_template_directory_uri() . '/assets/js/vc_extend/testimonialsSlideshow.js', array('jquery'), true, false );
 
 	if (!is_admin()) {
-		wp_register_script('aerotropolis', get_template_directory_uri() . $jsPath . '/desktop.js#asyncload', array('jquery'), CACHE_BUSTER);
+		wp_register_script('aerotropolis', get_template_directory_uri() . $jsPath . '/desktop.js', array('jquery'), CACHE_BUSTER);
 		wp_enqueue_script('aerotropolis');
 
 		// add recaptcha to contact page
@@ -139,13 +139,13 @@ add_action( 'wp_print_scripts', 'aero_detect_enqueued_scripts' );
  * Appends async to declared scripts
  */
 function aero_async_scripts($tag, $handle, $src) {
-	$defer_scripts = array(
+	$async_scripts = array(
 		'aerotropolis',
 		'popup-maker-site'
 	);
 
-	if ( in_array( $handle, $defer_scripts ) ) {
-		return '<script src="' . $src . '" defer="defer"></script>' . "\n";
+	if ( in_array( $handle, $async_scripts ) ) {
+		return '<script src="' . $src . '" async></script>' . "\n";
 	}
 
 	return $tag;
