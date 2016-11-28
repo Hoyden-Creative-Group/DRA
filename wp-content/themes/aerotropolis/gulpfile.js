@@ -17,8 +17,8 @@ var vcScripts = [
 var jsHintScripts = [];
 jsHintScripts = jsHintScripts.concat( desktopScripts, vcScripts );
 
-// -- combine vendor and custom scripts
-var desktopScripts = desktopVendorScripts.concat( desktopScripts, vcScripts );
+// -- combine scripts
+var desktopScripts = desktopVendorScripts.concat( desktopScripts );
 
 
 

@@ -52,3 +52,10 @@ AeroTestimonial.prototype.showTestimonial = function() {
     _this.timer = setTimeout(_this.nextSlide.bind(_this), _this.duration);
   });
 };
+
+if (window.aero_testimonials){
+  for (var key in window.aero_testimonials) {
+    var slideshow = window.aero_testimonials[key];
+    new AeroTestimonial(slideshow.id, slideshow.testimonials, slideshow.duration);
+  }
+}

@@ -84,7 +84,8 @@ class TestimonialsSlideshow {
       'number' => '',
       'duration' => '',
       'category' => '',
-      'class' => ''
+      'class' => '',
+      'uuid' => uniqid()
     ), $atts ) );
 
     $output = '';

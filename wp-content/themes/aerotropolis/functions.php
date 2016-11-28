@@ -12,6 +12,7 @@ define('AERO_FOOTER_SLUG', 'meetings');
 define('AERO_FOOTER_TRANSIENT', 'aero_latest_meeting');
 define('AERO_TESTIMONIALS_SLUG', 'testimonials');
 define('AERO_TESTIMONIALS_TRANSIENT', 'aero_testimonials');
+define('CACHE_BUSTER', 123);
 
 
 /**
@@ -101,20 +102,55 @@ function aerotropolis_scripts() {
 	$jsPath = getEnvVar('jsPath');
 
 	// Theme stylesheet
-	wp_enqueue_style( 'aerotropolis-desktop', get_template_directory_uri() . '/assets/dist/desktop.css', array(), 1.1);
+	wp_enqueue_style( 'aerotropolis-desktop', get_template_directory_uri() . '/assets/dist/desktop.css', array(), CACHE_BUSTER);
+
+	wp_register_script( 'aero_testimonials', get_template_directory_uri() . '/assets/js/vc_extend/testimonialsSlideshow.js', array('jquery'), true, false );
 
 	if (!is_admin()) {
-		wp_register_script('aerotropolis', get_template_directory_uri() . $jsPath . '/desktop.js', array('jquery') );
+		wp_register_script('aerotropolis', get_template_directory_uri() . $jsPath . '/desktop.js#asyncload', array('jquery'), CACHE_BUSTER);
 		wp_enqueue_script('aerotropolis');
 
 		// add recaptcha to contact page
 		if (is_page('contact')) {
-			wp_register_script('aero_recaptcha', 'https://www.google.com/recaptcha/api.js');
+			wp_register_script('aero_recaptcha', 'https://www.google.com/recaptcha/api.js#asyncload');
 			wp_enqueue_script('aero_recaptcha');
 		}
 	}
 }
-add_action( 'wp_enqueue_scripts', 'aerotropolis_scripts' );
+add_action('wp_enqueue_scripts', 'aerotropolis_scripts');
+
+
+/**
+ * A one time function to list out all script handles the current theme is using.
+ * NOT FOR PRODUCTION USE
+ */
+
+/*
+function aero_detect_enqueued_scripts() {
+	global $wp_scripts;
+	foreach( $wp_scripts->queue as $handle ) :
+		echo $handle . ' | ';
+	endforeach;
+}
+add_action( 'wp_print_scripts', 'aero_detect_enqueued_scripts' );
+*/
+
+/**
+ * Appends async to declared scripts
+ */
+function aero_async_scripts($tag, $handle, $src) {
+	$defer_scripts = array(
+		'aerotropolis',
+		'popup-maker-site'
+	);
+
+	if ( in_array( $handle, $defer_scripts ) ) {
+		return '<script src="' . $src . '" defer="defer"></script>' . "\n";
+	}
+
+	return $tag;
+}
+add_filter('script_loader_tag', 'aero_async_scripts', 10, 3);
 
 
 /**
@@ -143,13 +179,6 @@ function aero_sidebars_init() {
 }
 add_action( 'widgets_init', 'aero_sidebars_init' );
 
-
-// force show categories even if they don't have entries
-// function wpb_force_empty_cats($cat_args) {
-// 	$cat_args['hide_empty'] = 0;
-// 	return $cat_args;
-// }
-// add_filter( 'widget_categories_args', 'wpb_force_empty_cats' );
 
 
 /**

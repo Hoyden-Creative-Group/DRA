@@ -7,8 +7,10 @@
  * Visual Composer template for TestimonialsSlideshow
  */
 
+  wp_enqueue_script( 'aero_testimonials' );
+
   $testimonials = get_testimonials($number, $category);
-  $id = random_int(1, 10);
+  $id = $uuid;
 
   ob_start();
 
@@ -18,8 +20,14 @@
 ?>
 
 <script>
-  var aeroTestimonials_<?php echo $id; ?> = <?php echo json_encode($testimonials); ?>;
-  new AeroTestimonial(<?php echo $id.', aeroTestimonials_'. $id .', '. $duration * 1000; ?>);
+  if (!window.aero_testimonials) {
+    window.aero_testimonials = {};
+  }
+  window.aero_testimonials["<?php echo $id; ?>"] = {
+    id: "<?php echo $id; ?>",
+    testimonials: <?php echo json_encode($testimonials); ?>,
+    duration:  <?php echo $duration * 1000; ?>
+  };
 </script>
 
 <div id="testimonial-slideshow-<?php echo $id; ?>" class="aero-testimonial-slideshow <?php echo $class; ?>" style="background-image: url(<?php echo wp_get_attachment_image_src( $image, 'full' )[0]; ?>);">
