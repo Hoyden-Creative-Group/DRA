@@ -68,7 +68,8 @@ h6{
 input[type=text],
 input[type=email],
 input[type=submit],
-input[type=search]{
+input[type=search],
+textarea{
   border-radius: 0px;
   -webkit-appearance: none;
 }

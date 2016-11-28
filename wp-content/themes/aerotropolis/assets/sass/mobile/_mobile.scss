@@ -15,6 +15,16 @@
     margin-right: 30px !important;
   }
 
+  // --- About page. ------------------- //
+  .resources-row{
+    padding: 5vw 1vw;
+
+    .content-wrapper{
+      padding: 5vw 4vw;
+    }
+  }
+
+
   // --- Footer Widgets. ------------------- //
   .content-bottom-widgets{
     .widget {
@@ -418,6 +428,50 @@
   }
   // --- End of contact. ------------------- //
 
+  // --- About page. ------------------- //
+  .about-hero{
+    .content-left{
+      display: none !important;
+    }
+    .content-right{
+      padding: 50px 30px;
+    }
+  }
+
+  .executives-row{
+    .content-right{
+      margin-top: 50px;
+    }
+  }
+
+  .resources-row{
+    .media-resource{
+      margin-bottom: 30px;
+    }
+  }
+
+  .latest-meeting-row{
+    padding: 50px 30px;
+
+    .latest-meeting{
+      border: none;
+      padding: 0;
+    }
+
+    .meeting-wrapper{
+      max-width: 100%;
+      margin: 0;
+    }
+  }
+
+  .community-partners-row{
+    padding: 50px 30px;
+
+    h2{
+      margin-bottom: 50px;
+    }
+  }
+
 }
 
 
@@ -571,6 +625,57 @@
   }
 
 
+  // --- About page. ------------------- //
+  .resources-row{
+    padding: 50px 30px;
+
+    h2{
+      margin-bottom: 50px;
+    }
+
+    .content-wrapper{
+      background: none;
+      padding: 0;
+    }
+
+    h4{
+      color: #FFFFFF;
+    }
+
+    .media-resource{
+      width: 250px;
+
+      a{
+        width: 250px;
+        height: 250px;
+
+        &:hover{
+          .media-hover-effect{
+            transform: none;
+          }
+          .media-preview{
+            filter: none;
+          }
+        }
+      }
+    }
+
+    .media-preview{
+      width: 250px;
+      height: 250px;
+      background-size: 250px;
+    }
+  }
+
+  .development-partners-row, .executives-row{
+    padding: 50px 30px;
+
+    h2{
+      margin-bottom: 50px;
+    }
+  }
+
+
 
   // --- Footer Widgets. ------------------- //
   .content-bottom-widgets{
@@ -664,10 +769,52 @@
     margin: 0 -7.5px !important;
     padding: 30px 30px 45px;
   }
+
+  // --- About page. ------------------- //
+  // .community-partners-row{
+  //   padding: 100px 0;
+
+  //   h2{
+  //     text-align: center;
+  //     margin-bottom: 70px;
+  //   }
+  // }
+
+  .about-media-grid{
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: space-around;
+    // align-items: center;
+    // max-width: 1150px;
+    // margin: 0px auto;
+
+    // .item{
+    //   width: 25%;
+    //   min-width: 287px;
+    //   text-align: center;
+    //   margin-bottom: 30px;
+    // }
+    .item{
+      min-width: 250px;
+
+      img{
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
 }
 
 
 @media screen and (max-width: 405px) {
+
+  // --- About page. ------------------- //
+  .about-media-grid{
+    .item{
+      min-width: auto;
+      margin: 20px;
+    }
+  }
 
   // --- Footer Widgets. ------------------- //
   .content-bottom-widgets{
