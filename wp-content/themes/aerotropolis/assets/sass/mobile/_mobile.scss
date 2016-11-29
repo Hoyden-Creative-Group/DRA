@@ -279,26 +279,26 @@
     }
 
     // --- Live. Work. Play. ------------------- //
-    .live-work-play-content{
-      padding-left: 60px;
-      padding-right: 60px;
+    // .live-work-play-content{
+    //   padding-left: 60px;
+    //   padding-right: 60px;
 
-      .content-left{
-        flex: 0 100%;
-        margin-right: 0;
-      }
-      .content-right{
-        margin-top: 20px;
-        flex: 0 100%;
-      }
-    }
+    //   .content-left{
+    //     flex: 0 100%;
+    //     margin-right: 0;
+    //   }
+    //   .content-right{
+    //     margin-top: 20px;
+    //     flex: 0 100%;
+    //   }
+    // }
 
     // --- Economic Overview. ------------------- //
     .economic-overview-row .content-left{
       display: none !important;
     }
     .economic-overview-row .content-right{
-      padding: 70px 30px 10px;
+      padding: 70px 30px 50px;
     }
 
   // --- End of why DRA. ------------------- //
