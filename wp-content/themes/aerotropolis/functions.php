@@ -11,9 +11,7 @@ define('AERO_FOOTER_SLUG', 'meetings');
 define('AERO_FOOTER_TRANSIENT', 'aero_latest_meeting');
 define('AERO_TESTIMONIALS_SLUG', 'testimonials');
 define('AERO_TESTIMONIALS_TRANSIENT', 'aero_testimonials');
-
-// NOTE: CACHE_BUSTER is defined in env.php on the root and is a variable that gets
-// updated per github webhook notification as a cache buster
+// NOTE: CACHE_BUSTER is defined in env.php on the root
 
 /**
  * Helper method. Gets the proper variable based on the environment.
@@ -68,15 +66,6 @@ function theme_setup() {
 	add_theme_support( 'html5', array(
 		'search-form'
 	));
-
-	// Enable support for Post Formats.
-	// add_theme_support( 'post-formats', array(
-	// 	'image',
-	// 	'video',
-	// 	'quote',
-	// 	'link',
-	// 	'gallery'
-	// ) );
 }
 add_action( 'after_setup_theme', 'theme_setup' );
 
@@ -94,6 +83,7 @@ function set_content_type( $content_type ){
  * Remove ellipsis from blog posts
  */
 add_filter('excerpt_more','__return_false');
+
 
 /**
  * Enqueues scripts and styles.

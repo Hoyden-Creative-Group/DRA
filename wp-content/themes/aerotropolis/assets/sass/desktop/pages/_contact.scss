@@ -81,7 +81,7 @@
       // .req{
       //   color: #AB0001;
       // }
-      display: none;
+      @include user-select(none);
     }
 
     form{
@@ -115,6 +115,17 @@
         resize: none;
         height: 150px;
         padding: 8px 15px;
+      }
+
+      &.checkbox{
+        text-align: left;
+        margin-bottom: 35px;
+
+        input{
+          width: auto;
+          display: inline-block;
+          margin: 6px 10px 0 0;
+        }
       }
     }
 

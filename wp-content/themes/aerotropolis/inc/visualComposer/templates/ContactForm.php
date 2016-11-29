@@ -12,6 +12,11 @@
 <?php ob_start() ;?>
 
 <?php
+
+  // Newsletter required info
+  $apiKey = get_option('mailchimp_api_key');
+  $listID = get_option('mailchimp_list_id');
+
   function isValidEmail ($email) {
     $emailParts = explode('@', $email);
     if (sizeof($emailParts) != 2) {
@@ -134,15 +139,22 @@
       echo '</div>';
     } else {
 
+      // subscribe to newsletter check
+      if (!empty($_POST['aero_subscribe'])) {
+        try{
+          aero_mailchimp_do_subscribe($apiKey, $listID, $_POST['aero_email']);
+        } catch(Exception $err) {
+          // silently fail
+        }
+      }
+
       // build our email
       $to = $contact_email;
-      $subject = "Message sent from Aerotropolisss";
+      $subject = "Message sent from Aerotropolis";
       $headers = "From: '". strip_tags($_POST['aero_name']) ."' <". strip_tags($_POST['aero_email']) . ">\r\n";
       $headers .= "Reply-To: '". strip_tags($_POST['aero_name']) ."' <". strip_tags($_POST['aero_email']) . ">\r\n";
       $headers .= "X-Mailer: PHP/" . phpversion()."\r\n";
       $headers .= "Content-type: text/html; charset=ISO-8859-1\r\n";
-
-      // 4wV@)Mn7wA^v)9
 
       $message  = '<div style="font-size:12px; line-height:16px; font-family:Arial, Helvetica, sans-serif; width:600px;">';
       $message .=   '<p>Someone has contacted you through the website form on '. get_bloginfo('name') .'.  Please find below the information sent:</p>';
@@ -155,13 +167,10 @@
 
       $result = wp_mail($to, $subject, $message, $headers);
 
-
       if (!$result) {
-
         echo '<div class="form-errors">';
           echo '<p>There was an error sending your form.  Please try again.</p>';
         echo '</div>';
-
       } else {
         $formSent = true;
       }
@@ -188,24 +197,28 @@
       <?php wp_nonce_field( 'aero_contact_submit' ); ?>
 
       <p class="form-field input-textarea">
-        <label for="aero_message">Message<span class="req">*</span></label>
         <textarea name="aero_message" id="aero_message" placeholder="Your message"><?php echo !empty($_POST['aero_message']) ? $_POST['aero_message'] : ""; ?></textarea>
       </p>
 
       <p class="form-field input-text">
-        <label for="aero_name">Name<span class="req">*</span></label>
         <input type="text" name="aero_name" id="aero_name" placeholder="Your name" value="<?php echo !empty($_POST['aero_name']) ? $_POST['aero_name'] : ""; ?>" />
       </p>
 
       <p class="form-field input-text">
-        <label for="aero_email">Email<span class="req">*</span></label>
         <input type="email" name="aero_email" id="aero_email" placeholder="john@appleseed.com" value="<?php echo !empty($_POST['aero_email']) ? $_POST['aero_email'] : ""; ?>" />
       </p>
 
       <p class="form-field input-text">
-        <label for="aero_phonenumber">Phone Number</label>
         <input type="text" name="aero_phonenumber" id="aero_phonenumber" placeholder="218-454-8321" value="<?php echo !empty($_POST['aero_phonenumber']) ? $_POST['aero_phonenumber'] : ""; ?>" />
       </p>
+
+      <?php if (!empty($apiKey) && !empty($listID)): ?>
+      <p class="form-field checkbox">
+        <label>
+          <input type="checkbox" checked name="aero_subscribe" value="1" /> Sign up for our newsletter.
+        </label>
+      </p>
+      <?php endif; ?>
 
       <div class="captcha-wrapper">
         <div class="g-recaptcha" data-sitekey="<?php echo $captcha_site_key; ?>"></div>
