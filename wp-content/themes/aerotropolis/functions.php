@@ -7,13 +7,13 @@
  * Functions.
  */
 
-
 define('AERO_FOOTER_SLUG', 'meetings');
 define('AERO_FOOTER_TRANSIENT', 'aero_latest_meeting');
 define('AERO_TESTIMONIALS_SLUG', 'testimonials');
 define('AERO_TESTIMONIALS_TRANSIENT', 'aero_testimonials');
-define('CACHE_BUSTER', 123);
 
+// NOTE: CACHE_BUSTER is defined in env.php on the root and is a variable that gets
+// updated per github webhook notification as a cache buster
 
 /**
  * Helper method. Gets the proper variable based on the environment.
@@ -104,7 +104,7 @@ function aerotropolis_scripts() {
 	// Theme stylesheet
 	wp_enqueue_style( 'aerotropolis-desktop', get_template_directory_uri() . '/assets/dist/desktop.css', array(), CACHE_BUSTER);
 
-	wp_register_script( 'aero_testimonials', get_template_directory_uri() . '/assets/js/vc_extend/testimonialsSlideshow.js', array('jquery'), true, false );
+	wp_register_script( 'aero_testimonials', get_template_directory_uri() . '/assets/js/vc_extend/testimonialsSlideshow.js', array('jquery'), CACHE_BUSTER, false );
 
 	if (!is_admin()) {
 		wp_register_script('aerotropolis', get_template_directory_uri() . $jsPath . '/desktop.js', array('jquery'), CACHE_BUSTER);
@@ -112,7 +112,7 @@ function aerotropolis_scripts() {
 
 		// add recaptcha to contact page
 		if (is_page('contact')) {
-			wp_register_script('aero_recaptcha', 'https://www.google.com/recaptcha/api.js#asyncload');
+			wp_register_script('aero_recaptcha', 'https://www.google.com/recaptcha/api.js');
 			wp_enqueue_script('aero_recaptcha');
 		}
 	}
@@ -141,7 +141,8 @@ add_action( 'wp_print_scripts', 'aero_detect_enqueued_scripts' );
 function aero_async_scripts($tag, $handle, $src) {
 	$async_scripts = array(
 		'aerotropolis',
-		'popup-maker-site'
+		'popup-maker-site',
+		'aero_recaptcha'
 	);
 
 	if ( in_array( $handle, $async_scripts ) ) {
