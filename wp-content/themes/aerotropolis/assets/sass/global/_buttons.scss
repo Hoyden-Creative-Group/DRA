@@ -28,6 +28,7 @@
 }
 
 @mixin button($padding, $fontWeight, $fontSize, $font, $color, $backgroundColor){
+  cursor: pointer;
   display: inline-block;
   text-align: center;
   padding: $padding;
