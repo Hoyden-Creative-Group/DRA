@@ -154,31 +154,38 @@
 
 
 // --- Live, work, play. ------------------- //
-.live-work-play-content{
-  background: rgba(#FFFFFF, 0.9);
-  padding: 55px 100px;
-  margin: 100px 0;
+// .live-work-play-content{
+//   background: rgba(#FFFFFF, 0.9);
+//   padding: 55px 100px;
+//   margin: 100px 0;
+
+//   h2{
+//     text-align: center;
+//     flex: 1 100%;
+//     margin-bottom: 50px;
+//   }
+
+//   .inner-content{
+//     .wpb_wrapper{
+//       display: flex;
+//       justify-content: space-between;
+//       flex-wrap: wrap;
+//     }
+//   }
+
+//   .content-left{
+//     flex: 2 0;
+//     margin-right: 50px;
+//   }
+//   .content-right{
+//     flex: 1 0;
+//   }
+// }
+.live-work-play-row{
+  padding: 50px 30px;
 
   h2{
-    text-align: center;
-    flex: 1 100%;
     margin-bottom: 50px;
-  }
-
-  .inner-content{
-    .wpb_wrapper{
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-  }
-
-  .content-left{
-    flex: 2 0;
-    margin-right: 50px;
-  }
-  .content-right{
-    flex: 1 0;
   }
 }
 
