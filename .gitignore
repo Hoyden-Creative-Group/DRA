@@ -17,6 +17,7 @@ node_modules/
 uploads/
 wp-content/plugins/*
 stock/
+twentysixteen/
 
 # Except these directories
 !wp-content/
