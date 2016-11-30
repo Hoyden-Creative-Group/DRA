@@ -21,7 +21,7 @@
 
 <div class="<?php echo $class; ?>"<?php echo $onclick; ?>>
   <div class="thumb-wrapper">
-    <img class="thumbnail" src="<?php echo wp_get_attachment_image_src( $image, 'full' )[0]; ?>" alt="<?php echo $title; ?>" />
+    <div class="thumbnail" style="background-image: url(<?php echo wp_get_attachment_image_src( $image, 'full' )[0]; ?>);"></div>
   </div>
   <h4><?php echo $title; ?></h3>
 </div>

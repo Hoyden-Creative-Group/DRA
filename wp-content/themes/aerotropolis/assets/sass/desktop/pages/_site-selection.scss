@@ -95,7 +95,7 @@
 
 .site-selection-center-row{
   background: #B0DBE5;
-  padding: 60px 30px;
+  padding: 60px 0;
 
   h2{
     text-align: center;
@@ -104,7 +104,6 @@
   }
 
   .image-teaser{
-    width: 400px;
     margin-bottom: 45px;
 
     &.clickable{
@@ -118,7 +117,10 @@
 
     .thumbnail{
       width: 100%;
-      height: auto;
+      min-height: 250px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
       transition: transform .3s ease-in-out;
     }
 
