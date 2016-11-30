@@ -22,20 +22,22 @@
   .content-left{
     flex: 1;
     padding-right: 30px;
+
+    h2{
+      margin-bottom: 30px;
+    }
   }
 
   .content-right{
     flex: 1;
     font-family: $font-latoBold;
     padding-left: 30px;
+    border: solid 1px #B5B5B5;
+    padding: 30px 50px;
+    text-align: center;
 
     p{
       margin-bottom: 3px;
-    }
-
-    ul{
-      list-style: none;
-      padding: 0px;
     }
   }
 }

@@ -6,81 +6,88 @@
  */
 
 
+// --- Title. ------------------- //
+.why-dra-title{
+  text-align: center;
+  padding: 30px 0;
+}
+
+
 // --- Hero. ------------------- //
-.why-dra-hero{
-  padding: 40px 20px 100px 20px;
+// .why-dra-hero{
+//   padding: 40px 20px 100px 20px;
 
-  h1{
-    text-align: center;
-    color: #FFFFFF;
-    margin-bottom: 60px;
-  }
+//   h1{
+//     text-align: center;
+//     color: #FFFFFF;
+//     margin-bottom: 60px;
+//   }
 
-  .why-dra{
-    background: rgba(#FFFFFF, 0.9);
-    padding: 50px 35px;
-    height: 100%;
+//   .why-dra{
+//     background: rgba(#FFFFFF, 0.9);
+//     padding: 50px 35px;
+//     height: 100%;
 
-    [class^="icon-"]{
-      color: #167EBF;
-      font-size: 127px;
-    }
+//     [class^="icon-"]{
+//       color: #167EBF;
+//       font-size: 127px;
+//     }
 
-    .icon-cellbars:before{
-      margin-left: -6px;
-    }
+//     .icon-cellbars:before{
+//       margin-left: -6px;
+//     }
 
-    .icon-road:before{
-      margin-left: -19px;
-      font-size: 105px;
-    }
+//     .icon-road:before{
+//       margin-left: -19px;
+//       font-size: 105px;
+//     }
 
-    .icon-megaphone:before{
-      margin-left: 0px;
-    }
+//     .icon-megaphone:before{
+//       margin-left: 0px;
+//     }
 
-    h4{
-      color: $grey;
-      font-size: 26px;
-      flex: 0 0 80px;
-    }
+//     h4{
+//       color: $grey;
+//       font-size: 26px;
+//       flex: 0 0 80px;
+//     }
 
-    p{
-      padding: 0 15px;
-    }
-  }
-}
+//     p{
+//       padding: 0 15px;
+//     }
+//   }
+// }
 
-.why-dra-cards{
-  .vc_column-inner>.wpb_wrapper{
-    height: 100%;
-  }
-}
+// .why-dra-cards{
+//   .vc_column-inner>.wpb_wrapper{
+//     height: 100%;
+//   }
+// }
 
 
 // --- Our Goal. ------------------- //
 
-.our-goal-row{
-  box-shadow: 0 0 30px -3px rgba(0,0,0,0.8);
+// .our-goal-row{
+//   box-shadow: 0 0 30px -3px rgba(0,0,0,0.8);
 
-  .content-left{
-    padding: 80px 70px;
-    margin: 0px auto;
+//   .content-left{
+//     padding: 80px 70px;
+//     margin: 0px auto;
 
-    h2{
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    ul{
-      padding: 0 130px 0 70px;
-      list-style: disc;
-    }
-  }
+//     h2{
+//       text-align: center;
+//       margin-bottom: 30px;
+//     }
+//     ul{
+//       padding: 0 130px 0 70px;
+//       list-style: disc;
+//     }
+//   }
 
-  .content-right{
-    min-height: 650px;
-  }
-}
+//   .content-right{
+//     min-height: 650px;
+//   }
+// }
 
 
 // --- What we offer. ------------------- //
