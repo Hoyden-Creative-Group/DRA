@@ -209,6 +209,14 @@
     // --- Site Selection. ------------------- //
     .site-selection-row{
       padding: 50px 30px;
+
+      .image-teaser{
+        &:hover{
+          .thumbnail{
+            transform: none;
+          }
+        }
+      }
     }
 
     // --- Why Detroit. ------------------- //
