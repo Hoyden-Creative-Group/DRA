@@ -82,6 +82,28 @@
     }
   }
 
+  // --- Card Item. ------------------- //
+  .card-item{
+    padding: 3.5vw 3.9vw;
+  }
+
+  // --- Home page. ------------------- //
+  .video-wrapper{
+    .video-overlay{
+      .icon-play-button{
+        margin-top: -9vw;
+        font-size: 9vw;
+        line-height: 9vw;
+        margin-left: -6.3vw;
+      }
+      .icon-down-arrow{
+        font-size: 3vw;
+        margin-left: -3.2vw;
+        margin-bottom: 3.1vw;
+      }
+    }
+  }
+
   // --- Why DRA. ------------------- //
   .our-goal-row .content-left ul{
     padding: 0 0 0 30px;

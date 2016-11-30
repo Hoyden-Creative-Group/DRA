@@ -45,13 +45,9 @@
       z-index: 1;
       color: #FFFFFF;
       top: 50%;
-      // margin-top: -110px;
-      // font-size: 110px;
-      // margin-left: -85px;
-      margin-top: -9vw;
-      font-size: 9vw;
-      line-height: 9vw;
-      margin-left: -6.3vw;
+      margin-top: -110px;
+      font-size: 110px;
+      margin-left: -75px;
       transition: color .2s ease-in-out;
     }
 
@@ -61,13 +57,10 @@
       z-index: 1;
       color: #FFFFFF;
       bottom: 0;
-      //margin-bottom: 45px;
+      margin-bottom: 45px;
       opacity: 0.8;
-      //font-size: 40px;
-      //margin-left: -42px;
-      font-size: 3vw;
-      margin-left: -3.2vw;
-      margin-bottom: 3.1vw;
+      font-size: 40px;
+      margin-left: -42px;
       transition: opacity .3s ease-in-out, transform .3s ease-in-out;
 
       &:hover{
