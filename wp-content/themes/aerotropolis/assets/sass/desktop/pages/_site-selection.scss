@@ -91,3 +91,51 @@
     }
   }
 }
+
+.site-selection-center-row{
+  background: #B0DBE5;
+  padding: 60px 30px;
+
+  h2{
+    text-align: center;
+    margin-bottom: 4vw;
+    color: #FFFFFF;
+  }
+
+  .image-teaser{
+    width: 400px;
+    margin-bottom: 45px;
+
+    &.clickable{
+      cursor: pointer;
+    }
+
+    .thumb-wrapper{
+      height: 250px;
+      overflow: hidden;
+    }
+
+    .thumbnail{
+      width: 100%;
+      height: auto;
+      transition: transform .3s ease-in-out;
+    }
+
+    h4{
+      text-align: center;
+      color: #FFFFFF;
+      margin-top: 15px;
+      transition: color .2s ease-in-out;
+    }
+
+    &:hover{
+      .thumbnail{
+        transform: scale(1.05);
+      }
+
+      h4{
+        color: $darkGrey;
+      }
+    }
+  }
+}
