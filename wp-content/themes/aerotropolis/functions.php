@@ -349,3 +349,28 @@ function aero_mailchimp_do_subscribe( $apiKey, $listID, $emailAddress, $metaData
 }
 
 
+/**
+ * Change the WP admin login logo
+ */
+function aero_login_logo() { ?>
+	<style>
+			#login h1 a, .login h1 a {
+				background-image: url(<?php echo get_template_directory_uri(); ?>/assets/img/desktop/login-logo.png);
+				padding-bottom: 30px;
+				background-size: 180px auto;
+				height: 150px;
+				width: 200px;
+			}
+	</style>
+<?php }
+add_action( 'login_enqueue_scripts', 'aero_login_logo' );
+
+function aero_login_logo_url() {
+	 return home_url();
+}
+add_filter( 'login_headerurl', 'aero_login_logo_url' );
+
+function aero_login_logo_url_title() {
+		return 'Detroit Aerotropolis';
+}
+add_filter( 'login_headertitle', 'aero_login_logo_url_title' );
