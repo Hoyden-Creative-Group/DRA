@@ -18,7 +18,7 @@
       <?php echo empty($video_slide_to) ? "" : '<div class="icon-down-arrow scroll-down" data-slide-to="'. $video_slide_to .'"></div>'; ?>
     </div>
 
-    <video muted loop id="aero-home-video">
+    <video muted id="aero-home-video">
       <source src="<?php echo $video_webm; ?>" type="video/webm">
       <source src="<?php echo $video_mp4; ?>" type="video/mp4">
     </video>

@@ -207,6 +207,18 @@ jQuery(function($) {
       }
     });
 
+    // when the video is done playing, fade in the wallpaper
+    $videoPlayer.addEventListener('ended', function(){
+      canPausePlay = false;
+      $videoOverlay.fadeIn({
+        duration: 300,
+        queue: false,
+        complete: function() {
+          canPausePlay = true;
+        }
+      });
+    });
+
     // set a click event for down arrow over the video
     $videoScroller.on('click', function (e) {
       e.stopPropagation();
