@@ -11,6 +11,15 @@ get_header(); ?>
 
 <div id="primary" class="content-area news-page">
 	<aside class="news-sidebar">
+		<section class="widget widget_categories">
+			<ul>
+				<?php wp_list_categories(array(
+					'title_li' => '',
+					'exclude' => array(11)
+					)
+				); ?>
+			</ul>
+		</section>
 		<?php dynamic_sidebar( 'news-side-bar' ); ?>
 	</aside>
 

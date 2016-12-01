@@ -610,9 +610,9 @@ jQuery(function($) {
     }
 
     // set the height of the video to the viewport
-    if (windowWidth > MOBILE_NAV_WIDTH_THRESHOLD) {
-      $videoWrapper.height($window.height() - $videoWrapper.offset().top);
-    }
+    // if (windowWidth > MOBILE_NAV_WIDTH_THRESHOLD) {
+    //   $videoWrapper.height($window.height() - $videoWrapper.offset().top);
+    // }
 
     // set a click event on the video container to play/pause the video
     $videoContainer.on('click', function(){
