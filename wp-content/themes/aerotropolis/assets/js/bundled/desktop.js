@@ -647,7 +647,7 @@ jQuery(function($) {
     $videoPlayer.addEventListener('ended', function(){
       canPausePlay = false;
       $videoOverlay.fadeIn({
-        duration: 300,
+        duration: 800,
         queue: false,
         complete: function() {
           canPausePlay = true;
