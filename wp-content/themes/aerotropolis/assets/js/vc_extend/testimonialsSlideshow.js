@@ -14,8 +14,13 @@ function AeroTestimonial(id, testimonials, duration) {
     _this.$testimonial = $('.aero-testimonial', _this.$slideshow);
     _this.$author = $('.aero-author', _this.$slideshow);
 
-    $('.aero-left').on('click', _this.prevSlide.bind(_this));
-    $('.aero-right').on('click', _this.nextSlide.bind(_this));
+    if (_this.total > 1) {
+      $('.aero-left', _this.$slideshow).on('click', _this.prevSlide.bind(_this));
+      $('.aero-right', _this.$slideshow).on('click', _this.nextSlide.bind(_this));
+    } else {
+      $('.aero-left', _this.$slideshow).hide();
+      $('.aero-right',_this.$slideshow).hide();
+    }
 
     $('.aero-nav', _this.$slideshow).removeClass('hidden');
 
@@ -49,7 +54,9 @@ AeroTestimonial.prototype.showTestimonial = function() {
   this.$wrapper.removeClass('hidden');
 
   this.$wrapper.one("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function() {
-    _this.timer = setTimeout(_this.nextSlide.bind(_this), _this.duration);
+    if (_this.total > 1) {
+      _this.timer = setTimeout(_this.nextSlide.bind(_this), _this.duration);
+    }
   });
 };
 
