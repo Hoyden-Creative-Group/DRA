@@ -445,6 +445,7 @@ jQuery(function($) {
       $mainNav = $('.main-nav'),
       navHeight = $mainNav.outerHeight(true),
       $stickySideNav = $('.sticky-secondary-nav'),
+      $videoWrapper = $('#home-video'),
       windowWidth = $window.width(),
       MOBILE_NAV_WIDTH_THRESHOLD = 1015;
 
@@ -598,8 +599,7 @@ jQuery(function($) {
    * Sets the control events as well as the  size of the home page video
    */
   function initHomeVideo() {
-    var $videoWrapper = $('#home-video'),
-        $videoContainer = $('.video-container'),
+    var $videoContainer = $('.video-container'),
         $videoOverlay = $('.video-overlay', $videoWrapper),
         $videoPlayer = document.getElementById('aero-home-video'),
         $videoScroller = $('.scroll-down', $videoWrapper),
@@ -609,10 +609,7 @@ jQuery(function($) {
       return;
     }
 
-    // set the height of the video to the viewport
-    // if (windowWidth > MOBILE_NAV_WIDTH_THRESHOLD) {
-    //   $videoWrapper.height($window.height() - $videoWrapper.offset().top);
-    // }
+    resizeHomeVideo();
 
     // set a click event on the video container to play/pause the video
     $videoContainer.on('click', function(){
@@ -660,6 +657,19 @@ jQuery(function($) {
       e.stopPropagation();
       slideToClass($(this).data('slide-to'));
     });
+  }
+
+  function resizeHomeVideo() {
+    if (!$videoWrapper.length) {
+      return;
+    }
+
+    // set the height of the video to the viewport
+    if (windowWidth > MOBILE_NAV_WIDTH_THRESHOLD) {
+      $videoWrapper.height($window.height() - $videoWrapper.offset().top);
+    } else {
+      $videoWrapper.height('auto');
+    }
   }
 
 
@@ -849,6 +859,8 @@ jQuery(function($) {
 
     var resizeHandler = function () {
       windowWidth = $window.width();
+
+      resizeHomeVideo();
 
       // based on the window size, toggle the mobile version of the navigation
       if (windowWidth <= MOBILE_NAV_WIDTH_THRESHOLD) {
