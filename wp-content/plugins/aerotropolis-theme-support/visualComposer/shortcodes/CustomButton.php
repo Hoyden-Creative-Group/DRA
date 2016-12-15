@@ -56,6 +56,21 @@ class CustomButton {
           )
         ),
         array(
+          "type" => "dropdown",
+          "holder" => "div",
+          "heading" => "Button Alignment",
+          "param_name" => "alignment",
+          'value' => array_flip(
+            array(
+              '' => 'Select Options',
+              'left' => 'Left',
+              'right' => 'Right',
+              'center' => 'Center',
+              'full' => 'Full Width'
+            )
+          )
+        ),
+        array(
           "type" => "vc_link",
           "heading" => "Button Link",
           "param_name" => "button",
@@ -79,6 +94,7 @@ class CustomButton {
     extract( shortcode_atts( array(
       'type' => '',
       'color' => '',
+      'alignment' => '',
       'button' => '',
       'class' => ''
     ), $atts ) );

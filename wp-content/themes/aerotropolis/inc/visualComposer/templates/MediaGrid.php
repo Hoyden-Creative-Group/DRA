@@ -15,8 +15,10 @@ $media = explode(",", $media);
 
 <div class="aero-media-grid <?php echo $class; ?>">
   <?php foreach($media as $item): ?>
-    <?php $image = wp_get_attachment_image_src( $item, 'full' )[0]; ?>
-    <div class="item"><img src="<?php echo $image; ?>" /></div>
+    <?php $image = wp_get_attachment($item); ?>
+    <?php if (!empty($image['description'])): ?><a href="<?php echo $image['description']; ?>"><?php endif; ?>
+    <div class="item"><img src="<?php echo $image['src']; ?>" /></div>
+    <?php if (!empty($image['description'])): ?></a><?php endif; ?>
   <?php endforeach; ?>
 </div>
 

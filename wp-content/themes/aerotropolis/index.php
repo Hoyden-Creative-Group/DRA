@@ -14,6 +14,7 @@ get_header(); ?>
 		<section class="widget widget_categories">
 			<ul>
 				<?php wp_list_categories(array(
+					'child_of' => 0,
 					'title_li' => '',
 					'exclude' => array(11)
 					)

@@ -13,7 +13,7 @@
 ?>
 
 <?php ob_start() ;?>
-<div class="button-wrapper <?php echo $class; ?>">
+<div class="button-wrapper <?php echo trim($class .' '. $alignment); ?>">
 <?php echo $button['button']; ?>
 </div>
 <?php

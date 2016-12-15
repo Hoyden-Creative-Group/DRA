@@ -84,3 +84,33 @@ textarea{
   display: table;
   clear: both;
 }
+
+
+/* Visual Composer Elements */
+/********************************************************/
+.button-wrapper{
+  &.left{
+    text-align: left;
+  }
+  &.center{
+    text-align: center;
+  }
+  &.right{
+    text-align: right;
+  }
+  &.full{
+    a.button{
+      display: block;
+    }
+  }
+}
+
+.align-left{ text-align: left; }
+.align-center{ text-align: center; }
+.align-right{ text-align: right; }
+.float-right{ float: right; }
+.float-left{ float: left; }
+.small-padding{ padding: 15px; }
+.medium-padding{ padding: 30px; }
+.large-padding{ padding: 50px; }
+
