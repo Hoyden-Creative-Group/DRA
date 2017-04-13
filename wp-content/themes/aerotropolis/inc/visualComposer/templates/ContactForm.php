@@ -149,7 +149,7 @@
       }
 
       // build our email
-      $to = explode(",", $contact_email);
+      $to = $contact_email;
       $subject = "Message sent from Aerotropolis";
       $headers = "From: '". strip_tags($_POST['aero_name']) ."' <". strip_tags($_POST['aero_email']) . ">\r\n";
       $headers .= "Reply-To: '". strip_tags($_POST['aero_name']) ."' <". strip_tags($_POST['aero_email']) . ">\r\n";
