@@ -26,7 +26,8 @@ class Aero_News_Subscribe extends WP_Widget {
     parent::__construct('aero_news_subscribe', 'Aerotropolis Sidebar Newsletter', $options);
 
     // register our ajax hook
-    add_action('wp_ajax_aero_newsletter_subscribe', array( $this, 'aero_news_subscribe_ajax'));
+    add_action('wp_ajax_aero_news_newsletter_subscribe', array( 'Aero_News_Subscribe', 'aero_news_subscribe_ajax'));
+    add_action('wp_ajax_nopriv_aero_news_newsletter_subscribe', array( 'Aero_News_Subscribe', 'aero_news_subscribe_ajax'));
   }
 
   public function form($instance){
@@ -81,11 +82,11 @@ class Aero_News_Subscribe extends WP_Widget {
     echo empty($title) ? '' : '<h5>'. $title .'</h5>';
     echo empty($text) ? '' : '<p class="text">'. $text .'</p>';
 
-    echo '<form action="'. site_url() .'/wp-admin/admin-ajax.php" class="aero-mailchimp-widget" method="post">';
+    echo '<form action="'. admin_url( 'admin-ajax.php' ) .'" class="aero-mailchimp-widget" method="post">';
       echo '<div class="message"></div>';
       echo '<input type="email" placeholder="Email address" name="email" class="email" />';
       echo '<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_0dd5b3bdf1d979b7b8d558fd3_038174d146" tabindex="-1" value=""></div>';
-      echo '<input type="hidden" name="action" value="aero_newsletter_subscribe" />';
+      echo '<input type="hidden" name="action" value="aero_news_newsletter_subscribe" />';
       echo '<input type="submit" class="btn" data-value="'.$buttonText.'" value="'. $buttonText .'" />';
     echo '</form>';
 
