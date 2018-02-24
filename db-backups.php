@@ -17,5 +17,12 @@ $dir      = DB_BACKUP_DIR;
 
 $filename = $dir . "backup-$datestamp.sql.gz";
 
+
 $command = "mysqldump -u $dbuser --password=$dbpass $dbname | gzip > $filename";
-$result = passthru($command);
+exec($command);
+
+// Useful for debuggging
+//
+// $output = array();
+// exec($command, $output);
+// var_dump($output);

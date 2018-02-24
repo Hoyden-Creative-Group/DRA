@@ -8,6 +8,7 @@
 !.htaccess
 !db-backups.php
 !wp-config.php
+!annualmeeting.php
 
 # Always ignore these files no matter at what level
 .DS_Store
@@ -16,6 +17,8 @@
 node_modules/
 uploads/
 wp-content/plugins/*
+wp-content/themes/aerotropolis/assets
+wp-content/themes/aerotropolis/error_log
 stock/
 twentysixteen/
 

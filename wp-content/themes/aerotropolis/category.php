@@ -25,6 +25,7 @@ get_header(); ?>
   </aside>
 
   <main id="main" class="site-main" role="main">
+
     <h1 class="page-title"><?php echo single_cat_title(); ?></h1>
 
     <?php if ( have_posts() ) : ?>

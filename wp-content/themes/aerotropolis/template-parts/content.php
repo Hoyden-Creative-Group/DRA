@@ -12,10 +12,12 @@
   <?php if(has_post_thumbnail()):?>
     <figure class="image-box"><a href="<?php echo esc_url(get_permalink(get_the_id()));?>"><?php the_post_thumbnail('aero-news-excerpt');?></a></figure>
   <?php endif;?>
+  
 
-  <?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+  <?php //the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
   <?php
+  $title = get_the_title();
   $categories = get_the_category();
   $separator = ' ';
   $hasCategories = false;
@@ -30,6 +32,9 @@
   $output .= "</p>";
   echo $hasCategories ? trim( $output, $separator ) : "";
   ?>
+  
+<?php echo '<h2 class="entry-title"><a href="'.get_permalink().'"><span class="title-cat">' . $categories[0]->name . ': </span>' . $title."</a></h2>"; ?>  
+  
 
   <div class="post-meta"><?php echo get_the_date('M d, Y');?></div>
 

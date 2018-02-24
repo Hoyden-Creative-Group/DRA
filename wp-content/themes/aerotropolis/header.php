@@ -13,7 +13,17 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<?php wp_head(); ?>
+	
+	<style>
+	@media all and (-ms-high-contrast:none)
+     {
+     .content-bottom-widgets .aero_newsletter form { display:none; }
+     .content-bottom-widgets .aero_newsletter .text2::after { content:'Call 734-992-2286'; display:block; }
+     }
+	
+	</style>
 </head>
 <?php flush(); ?>
 <body <?php body_class(); ?>>

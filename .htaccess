@@ -34,10 +34,15 @@ AddHandler fcgid54-script .php
 # Set the php upload size
 #------------------------------------------------------------
 
-php_value upload_max_filesize 64M
-php_value post_max_size 64M
-php_value max_execution_time 300
-php_value max_input_time 300
+# File modified on Sat May  6 05:55:44 2017 by server
+# For security reasons, mod_php is not used on this server. Use a php.ini file for php directives
+# php_value upload_max_filesize 64M
+# For security reasons, mod_php is not used on this server. Use a php.ini file for php directives
+# php_value post_max_size 64M
+# For security reasons, mod_php is not used on this server. Use a php.ini file for php directives
+# php_value max_execution_time 300
+# For security reasons, mod_php is not used on this server. Use a php.ini file for php directives
+# php_value max_input_time 300
 
 
 #------------------------------------------------------------

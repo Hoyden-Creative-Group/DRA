@@ -61,5 +61,24 @@
 </footer>
 
 <?php wp_footer(); ?>
+
+<script>
+(function($) {
+$(document).ready(function() {
+$('.menu-item-has-children a, .mobile .sf-menu .menu-item-has-children::after').not(".sub-menu a").on("click", function (e) {
+e.preventDefault();
+});         
+});
+}) (jQuery);
+</script>
+
+<style>
+.sf-menu a { font:16px/16px latoheavy; }
+.sf-menu li.menu-item-has-children a, .mobile .sf-menu .menu-item-has-children::after { cursor: none; }
+.mobile .sf-menu li.menu-item-has-children a { cursor: pointer; }
+	.sf-menu li.menu-item-has-children .sub-menu li a { cursor:pointer; }
+</style>
+
 </body>
+
 </html>
