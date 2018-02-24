@@ -1,3 +1,15 @@
+# Password protect for STAGING only
+SetEnvIf Host aerotropolis.hoydencreative.com passreq
+AuthType Basic
+AuthName "Password Required"
+AuthUserFile /home1/mollymas/public_html/aerotropolis/.htpasswd
+Require valid-user
+Order allow,deny
+Allow from all
+Deny from env=passreq
+Satisfy any
+
+
 # BEGIN iThemes Security - Do not modify or remove this line
 # iThemes Security Config Details: 2
 	# Disable XML-RPC - Security > Settings > WordPress Tweaks > XML-RPC
