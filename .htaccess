@@ -1,4 +1,28 @@
+#------------------------------------------------------------
+# Disable the server signature
+#------------------------------------------------------------
+ServerSignature Off
+
+
+#------------------------------------------------------------
+# Prevent access to specific files
+#------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^\.(htaccess|htpasswd) - [F,L,NC]
+  RewriteRule ^(db-backups\.php|bash\.sh|php\.ini) - [F,L,NC]
+</IfModule>
+
+
+#------------------------------------------------------------
+# Disable unauthorized directory browsing
+#------------------------------------------------------------
+Options All -Indexes
+
+
+#------------------------------------------------------------
 # Password protect for STAGING only
+#------------------------------------------------------------
 SetEnvIf Host aerotropolis.hoydencreative.com passreq
 AuthType Basic
 AuthName "Password Required"
@@ -10,6 +34,7 @@ Deny from env=passreq
 Satisfy any
 
 
+#------------------------------------------------------------
 # BEGIN iThemes Security - Do not modify or remove this line
 # iThemes Security Config Details: 2
 	# Disable XML-RPC - Security > Settings > WordPress Tweaks > XML-RPC
@@ -42,6 +67,7 @@ AddHandler fcgid54-script .php
 </IfModule>
 # END WordPress
 
+
 #------------------------------------------------------------
 # Set the php upload size
 #------------------------------------------------------------
@@ -56,15 +82,6 @@ AddHandler fcgid54-script .php
 # For security reasons, mod_php is not used on this server. Use a php.ini file for php directives
 # php_value max_input_time 300
 
-
-#------------------------------------------------------------
-# Secure specific files from direct access
-#------------------------------------------------------------
-
-<Files "db-backups.php">
-  Order Allow,Deny
-  Deny from all
-</Files>
 
 #------------------------------------------------------------
 # Set expires headers (taken from HTML5 boilerplate)
